@@ -10,7 +10,7 @@ def optional_ar_input(wildcards):
                 "data/processed/{pid}/plugin_ios_activity_recognition_deltas.csv"]
 
 rule sms_features:
-    input: 
+    input:
         "data/raw/{pid}/messages_with_datetime.csv"
     params:
         sms_type = "{sms_type}",
@@ -22,7 +22,7 @@ rule sms_features:
         "../src/features/sms_features.R"
 
 rule call_features:
-    input: 
+    input:
         "data/raw/{pid}/calls_with_datetime_unified.csv"
     params:
         call_type = "{call_type}",
@@ -82,7 +82,7 @@ rule location_barnett_features:
         "../src/features/location_barnett_features.R"
 
 rule bluetooth_features:
-    input: 
+    input:
         "data/raw/{pid}/bluetooth_with_datetime.csv"
     params:
         day_segment = "{day_segment}",
@@ -146,8 +146,14 @@ rule accelerometer_features:
     params:
         day_segment = "{day_segment}",
         features = config["ACCELEROMETER"]["FEATURES"],
+        arkit_params = config["ACCELEROMETER"]["ARKIT"],
+        arkit_time_features = config["ACCELEROMETER"]["ARKIT"]["ARKIT_TIME_FEATURES"],
+        arkit_frequency_features = config["ACCELEROMETER"]["ARKIT"]["ARKIT_FREQUENCY_FEATURES"],
+        arkit_window_size = config["ACCELEROMETER"]["ARKIT"]["ARKIT_WINDOW_SIZE"],
     output:
-        "data/processed/{pid}/accelerometer_{day_segment}.csv"
+        base = "data/processed/{pid}/accelerometer_{day_segment}.csv",
+        arkit_features = "data/processed/{pid}/arkit_features_{day_segment}.csv",
+
     script:
         "../src/features/accelerometer_features.py"
 
@@ -168,7 +174,7 @@ rule applications_foreground_features:
         "../src/features/applications_foreground_features.py"
 
 rule wifi_features:
-    input: 
+    input:
         "data/raw/{pid}/wifi_with_datetime.csv"
     params:
         day_segment = "{day_segment}",

@@ -1,5 +1,7 @@
 # Valid database table names
-SENSORS: [applications_crashes, applications_foreground, applications_notifications, battery, bluetooth, calls, locations, messages, plugin_ambient_noise, plugin_device_usage, plugin_google_activity_recognition, plugin_ios_activity_recognition, screen]
+# SENSORS: [applications_crashes, applications_foreground, applications_notifications, battery, bluetooth, calls, locations, messages, plugin_ambient_noise, plugin_device_usage, plugin_google_activity_recognition, plugin_ios_activity_recognition, screen]
+
+SENSORS: [accelerometer]
 
 FITBIT_TABLE: [fitbit_data]
 FITBIT_SENSORS: [heartrate, steps, sleep, calories]
@@ -8,11 +10,13 @@ FITBIT_DATA_TYPE: [summary, intraday]
 # Participants to include in the analysis
 # You must create a file for each participant
 # named pXXX containing their device_id
-PIDS: [p01, p02]
+PIDS: [p01]
 
 # Global var with common day segments
+# DAY_SEGMENTS: &day_segments
+#   [daily, morning, afternoon, evening, night]
 DAY_SEGMENTS: &day_segments
-  [daily, morning, afternoon, evening, night]
+  [daily]
 
 # Global timezone
 # Use codes from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -38,10 +42,10 @@ READABLE_DATETIME:
 # Communication SMS features config, TYPES and FEATURES keys need to match
 SMS:
   TYPES : [received, sent]
-  FEATURES: 
+  FEATURES:
     received: [count, distinctcontacts, timefirstsms, timelastsms, countmostfrequentcontact]
     sent: [count, distinctcontacts, timefirstsms, timelastsms, countmostfrequentcontact]
-  DAY_SEGMENTS: *day_segments  
+  DAY_SEGMENTS: *day_segments
 
 # Communication call features config, TYPES and FEATURES keys need to match
 CALLS:
@@ -99,7 +103,13 @@ LIGHT:
 
 ACCELEROMETER:
   DAY_SEGMENTS: *day_segments
-  FEATURES: ["maxmagnitude", "minmagnitude", "avgmagnitude", "medianmagnitude", "stdmagnitude", "ratioexertionalactivityepisodes", "sumexertionalactivityepisodes", "longestexertionalactivityepisode", "longestnonexertionalactivityepisode", "countexertionalactivityepisodes", "countnonexertionalactivityepisodes"]
+  # FEATURES: ["maxmagnitude", "minmagnitude", "avgmagnitude", "medianmagnitude", "stdmagnitude", "ratioexertionalactivityepisodes", "sumexertionalactivityepisodes", "longestexertionalactivityepisode", "longestnonexertionalactivityepisode", "countexertionalactivityepisodes", "countnonexertionalactivityepisodes"]
+  FEATURES: ["maxmagnitude"]
+  ARKIT:
+    ARKIT_TIME_FEATURES: ["int_desc", "int_rms", "mag_desc", "pear_coef", "sma", "svm" ]
+    ARKIT_FREQUENCY_FEATURES: ["fft", "psd"]
+    ARKIT_MODE : 1 #   0 - time domain features only,  1 - time + frequency features,   2 - time + frequency + stats, 3 - statistical methods only
+    ARKIT_WINDOW_SIZE: 1 # in minutes
 
 APPLICATIONS_FOREGROUND:
   DAY_SEGMENTS: *day_segments
@@ -115,7 +125,7 @@ APPLICATIONS_FOREGROUND:
 HEARTRATE:
   DAY_SEGMENTS: *day_segments
   FEATURES: ["maxhr", "minhr", "avghr", "medianhr", "modehr", "stdhr", "diffmaxmodehr", "diffminmodehr", "entropyhr", "lengthoutofrange", "lengthfatburn", "lengthcardio", "lengthpeak"]
-  DAILY_FEATURES_FROM_SUMMARY_DATA: ["restinghr"] # calories related features might be inaccurate: ["caloriesoutofrange", "caloriesfatburn", "caloriescardio", "caloriespeak"] 
+  DAILY_FEATURES_FROM_SUMMARY_DATA: ["restinghr"] # calories related features might be inaccurate: ["caloriesoutofrange", "caloriesfatburn", "caloriescardio", "caloriespeak"]
 
 STEP:
   DAY_SEGMENTS: *day_segments
@@ -147,7 +157,7 @@ PARAMS_FOR_ANALYSIS:
 
   # Whether or not to include only days with enough valid sensed hours
   # logic can be found in rule phone_valid_sensed_days of rules/preprocessing.snakefile
-  DROP_VALID_SENSED_DAYS: 
+  DROP_VALID_SENSED_DAYS:
     ENABLED: True
 
   # Whether or not to include certain days in the analysis, logic can be found in rule days_to_analyse of rules/mystudy.snakefile

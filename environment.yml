@@ -78,4 +78,3 @@ dependencies:
     - ratelimiter==1.2.0.post0
     - snakemake==5.7.1
 prefix: /usr/local/Caskroom/miniconda/base/envs/moshi-env
-
