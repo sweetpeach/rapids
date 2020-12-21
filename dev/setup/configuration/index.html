@@ -1310,10 +1310,14 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The label <code>MY_GROUP</code> is arbitrary but it has to match the following <code>config.yaml</code> key:</p>
+<p>The label <code>MY_GROUP</code> is arbitrary but it has to match the following <code>config.yaml</code> key:
 <div class="highlight"><pre><span></span><code><span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nl">&amp;database_group</span>
   <span class="l l-Scalar l-Scalar-Plain">MY_GROUP</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint<p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, connect to your MySQL database using the host <code>host.docker.internal</code> instead of <code>127.0.0.1</code></p>
+</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
