@@ -1061,69 +1061,94 @@
                 
                 
                 <h1 id="minimal-working-example">Minimal Working Example<a class="headerlink" href="#minimal-working-example" title="Permanent link">&para;</a></h1>
-<p>This is a quick guide for creating and running a simple pipeline to extract missing, outgoing, and incoming call features for <code>daily</code> and <code>night</code> epochs of one participant monitored on the US East coast.</p>
+<p>This is a quick guide for creating and running a simple pipeline to extract missing, outgoing, and incoming <code>call</code> features for <code>daily</code> (<code>00:00:00</code> to <code>23:59:59</code>) and <code>night</code> (<code>00:00:00</code> to <code>05:59:59</code>) epochs of every day of data of one participant monitored on the US East coast with an Android smartphone.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you don&rsquo;t have <code>call</code> data that you can use to try this example you can restore this <a href="../../img/calls.csv">CSV file</a> as a table in a MySQL database.</p>
+</div>
 <ol>
 <li>Install RAPIDS and make sure your <code>conda</code> environment is active (see <a href="../../setup/installation">Installation</a>)</li>
 <li>
 <p>Make the changes listed below for the corresponding <a href="../../setup/configuration">Configuration</a> step (we provide an example of what the relevant sections in your <code>config.yml</code> will look like after you are done)</p>
-<details class="info"><summary>Things to change on each configuration step</summary><p>1. Setup your database connection credentials in <code>.env</code>. We assume your credentials group is called <code>MY_GROUP</code>.</p>
-<p>2. <code>America/New_York</code> should be the default timezone</p>
-<p>3. Create a participant file <code>p01.yaml</code> based on one of your participants and add <code>p01</code> to <code>[PIDS]</code> in <code>config.yaml</code>. The following would be the content of your <code>p01.yaml</code> participant file:
+<details class="info"><summary>Required configuration changes</summary><ol>
+<li>
+<p><strong>Add your <a href="../../setup/configuration#database-credentials">database credentials</a>.</strong> </p>
+<p>Setup your database connection credentials in <code>.env</code>, we assume your credentials group in the <code>.env</code> file is called <code>MY_GROUP</code>.</p>
+</li>
+<li>
+<p><strong>Choose the <a href="../../setup/configuration#timezone-of-your-study">timezone of your study</a>.</strong> </p>
+<p>Since this example is processing data collected on the US East cost, <code>America/New_York</code> should be the configured timezone, change this according to your data.</p>
+</li>
+<li>
+<p><strong>Create your <a href="../../setup/configuration#participant-files">participants files</a>.</strong></p>
+<p>Since we are processing data from a single participant, you only need to create a single participant file called <code>p01.yaml</code>. This participant file only has a <code>PHONE</code> section because this hypothetical participant was only monitored with an smartphone. You also need to add <code>p01</code> to <code>[PIDS]</code> in <code>config.yaml</code>. The following would be the content of your <code>p01.yaml</code> participant file:
     <div class="highlight"><pre><span></span><code><span class="nt">PHONE</span><span class="p">:</span>
-    <span class="nt">DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">aaaaaaaa-1111-bbbb-2222-cccccccccccc</span><span class="p p-Indicator">]</span> <span class="c1"># your participant&#39;s AWARE device id</span>
+    <span class="nt">DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">a748ee1a-1d0b-4ae9-9074-279a2b6ba524</span><span class="p p-Indicator">]</span> <span class="c1"># the participant&#39;s AWARE device id</span>
     <span class="nt">PLATFORMS</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">android</span><span class="p p-Indicator">]</span> <span class="c1"># or ios</span>
     <span class="nt">LABEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MyTestP01</span> <span class="c1"># any string</span>
     <span class="nt">START_DATE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2020-01-01</span> <span class="c1"># this can also be empty</span>
     <span class="nt">END_DATE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2021-01-01</span> <span class="c1"># this can also be empty</span>
 </code></pre></div></p>
-<p>4. <code>[TIME_SEGMENTS][TYPE]</code> should be the default <code>PERIODIC</code>. Change <code>[TIME_SEGMENTS][FILE]</code> with the path of a file containing the following lines:
+</li>
+<li>
+<p><strong>Select what <a href="../../setup/configuration#time-segments">time segments</a> you want to extract features on.</strong> </p>
+<p><code>[TIME_SEGMENTS][TYPE]</code> should be the default <code>PERIODIC</code>. Change <code>[TIME_SEGMENTS][FILE]</code> with the path (for example <code>data/external/timesegments_periodic.csv</code>) of a file containing the following lines:
      <div class="highlight"><pre><span></span><code>label,start_time,length,repeats_on,repeats_value
 daily,00:00:00,23H 59M 59S,every_day,0
 night,00:00:00,5H 59M 59S,every_day,0
 </code></pre></div></p>
-<p>5. If you collected data with AWARE you won&rsquo;t need to modify the attributes of <code>[DEVICE_DATA][PHONE]</code></p>
-<p>6. Set <code>[PHONE_CALLS][PROVIDERS][RAPIDS][COMPUTE]</code> to <code>True</code></p>
+</li>
+<li>
+<p><strong>Modify your <a href="../../setup/configuration#device-data-source-configuration">device data source configuration</a></strong></p>
+<p>In this example we do not need to modify this section because we are using smartphone data collected with AWARE stored on a MySQL database.</p>
+</li>
+<li>
+<p><strong>Select what <a href="../../setup/configuration#sensor-and-features-to-process">sensors and features</a> you want to process.</strong> </p>
+<p>Set <code>[PHONE_CALLS][PROVIDERS][RAPIDS][COMPUTE]</code> to <code>True</code> in the <code>config.yaml</code> file.</p>
+</li>
+</ol>
 </details>
-<details class="example"><summary>Example of the <code>config.yaml</code> sections after the changes outlined above</summary><div class="highlight"><pre><span></span><code>PIDS: [p01]
+<details class="example"><summary>Example of the <code>config.yaml</code> sections after the changes outlined above</summary><p>Highlighted lines are related to the configuration steps above.
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nt">PIDS</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">p01</span><span class="p p-Indicator">]</span>
+</span>
+<span class="nt">TIMEZONE</span><span class="p">:</span> <span class="nl">&amp;timezone</span>
+<span class="hll"><span class="l l-Scalar l-Scalar-Plain">America/New_York</span>
+</span>
+<span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nl">&amp;database_group</span>
+<span class="hll"><span class="l l-Scalar l-Scalar-Plain">MY_GROUP</span>
+</span>
+<span class="c1"># ... other irrelevant sections</span>
 
-TIMEZONE: &amp;timezone
-America/New_York
+<span class="nt">TIME_SEGMENTS</span><span class="p">:</span> <span class="nl">&amp;time_segments</span>
+<span class="hll">    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PERIODIC</span>
+</span><span class="hll">    <span class="nt">FILE</span><span class="p">:</span> <span class="s">&quot;data/external/timesegments_periodic.csv&quot;</span> <span class="c1"># make sure the three lines specified above are in the file</span>
+</span>    <span class="nt">INCLUDE_PAST_PERIODIC_SEGMENTS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span>
 
-DATABASE_GROUP: &amp;database_group
-MY_GROUP
-
-# ... other irrelevant sections
-
-TIME_SEGMENTS: &amp;time_segments
-    TYPE: PERIODIC
-    FILE: &quot;data/external/timesegments_periodic.csv&quot; # make sure the three lines specified above are in the file
-    INCLUDE_PAST_PERIODIC_SEGMENTS: FALSE
-
-# No need to change this if you collected AWARE data on a database and your credentials are grouped under `MY_GROUP` in `.env`
-DEVICE_DATA:
-    PHONE:
-        SOURCE: 
-            TYPE: DATABASE
-            DATABASE_GROUP: *database_group
-            DEVICE_ID_COLUMN: device_id # column name
-        TIMEZONE: 
-            TYPE: SINGLE # SINGLE or MULTIPLE
-            VALUE: *timezone 
+<span class="c1"># No need to change this if you collected AWARE data on a database and your credentials are grouped under `MY_GROUP` in `.env`</span>
+<span class="nt">DEVICE_DATA</span><span class="p">:</span>
+    <span class="nt">PHONE</span><span class="p">:</span>
+        <span class="nt">SOURCE</span><span class="p">:</span> 
+            <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DATABASE</span>
+            <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nv">*database_group</span>
+            <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_id</span> <span class="c1"># column name</span>
+        <span class="nt">TIMEZONE</span><span class="p">:</span> 
+            <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SINGLE</span> <span class="c1"># SINGLE or MULTIPLE</span>
+            <span class="nt">VALUE</span><span class="p">:</span> <span class="nv">*timezone</span> 
 
 
-############## PHONE ###########################################################
-################################################################################
+<span class="c1">############## PHONE ###########################################################</span>
+<span class="c1">################################################################################</span>
 
-# ... other irrelevant sections
+<span class="c1"># ... other irrelevant sections</span>
 
-# Communication call features config, TYPES and FEATURES keys need to match
-PHONE_CALLS:
-    TABLE: calls # change if your calls table has a different name
-    PROVIDERS:
-        RAPIDS:
-            COMPUTE: True # set this to True!
-            CALL_TYPES: ...
-</code></pre></div>
+<span class="c1"># Communication call features config, TYPES and FEATURES keys need to match</span>
+<span class="nt">PHONE_CALLS</span><span class="p">:</span>
+    <span class="nt">TABLE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calls</span> <span class="c1"># change if your calls table has a different name</span>
+    <span class="nt">PROVIDERS</span><span class="p">:</span>
+        <span class="nt">RAPIDS</span><span class="p">:</span>
+<span class="hll">            <span class="nt">COMPUTE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># set this to True!</span>
+</span>            <span class="nt">CALL_TYPES</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+</code></pre></div></p>
 </details>
 </li>
 <li>

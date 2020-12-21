@@ -1089,6 +1089,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#there-is-no-package-called-rmariadb" class="md-nav__link">
+    There is no package called RMariaDB
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1251,6 +1258,13 @@
         <li class="md-nav__item">
   <a href="#embedded-nul-in-string" class="md-nav__link">
     Embedded nul in string
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#there-is-no-package-called-rmariadb" class="md-nav__link">
+    There is no package called RMariaDB
   </a>
   
 </li>
@@ -1449,15 +1463,23 @@ ClobberError: This transaction has incompatible packages due to a shared path.
 <details class="done" open="open"><summary>Solution</summary><p>This problem is due to the way <code>RMariaDB</code> handles a mismatch between data types in R and MySQL (see <a href="https://github.com/r-dbi/RMariaDB/issues/121">this issue</a>). Since it seems this problem won&rsquo;t be handled by <code>RMariaDB</code>, you have two options:</p>
 <ol>
 <li>If it&rsquo;s only a few rows that are causing this problem, remove the the null character from the conflictive table cell.</li>
-<li>If it&rsquo;s not feasible to modify your data you can try swapping <code>RMariaDB</code> with <code>RMySQL</code>. Just have in mind you might have problems connecting to modern MySQL servers running in Liunx:<ul>
+<li>If it&rsquo;s not feasible to modify your data you can try swapping <code>RMariaDB</code> with <code>RMySQL</code>. Just have in mind you might have problems connecting to modern MySQL servers running in Linux:<ul>
 <li>Add <code>RMySQL</code> to the renv environment by running the following command in a terminal open on RAPIDS root folder
 <div class="highlight"><pre><span></span><code>R -e <span class="s1">&#39;renv::install(&quot;RMySQL&quot;)&#39;</span>
 </code></pre></div></li>
-<li>Go to <code>src/data/download_phone_data.R</code> and replace <code>library(RMariaDB)</code> with <code>library(RMySQL)</code></li>
+<li>Go to <code>src/data/download_phone_data.R</code> or <code>src/data/download_fitbit_data.R</code> and replace <code>library(RMariaDB)</code> with <code>library(RMySQL)</code></li>
 <li>In the same file replace <code>dbEngine &lt;- dbConnect(MariaDB(), default.file = "./.env", group = group)</code> with <code>dbEngine &lt;- dbConnect(MySQL(), default.file = "./.env", group = group)</code></li>
 </ul>
 </li>
 </ol>
+</details>
+<h2 id="there-is-no-package-called-rmariadb">There is no package called <code>RMariaDB</code><a class="headerlink" href="#there-is-no-package-called-rmariadb" title="Permanent link">&para;</a></h2>
+<details class="failure" open="open"><summary>Problem</summary><p>You get the following error when executing RAPIDS:
+<div class="highlight"><pre><span></span><code>Error in library<span class="o">(</span>RMariaDB<span class="o">)</span> : there is no package called <span class="s1">&#39;RMariaDB&#39;</span>
+Execution halted
+</code></pre></div></p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>In RAPIDS v0.1.0 we replaced <code>RMySQL</code> R package with <code>RMariaDB</code>, this error means your R virtual environment is out of date, to update it run <code>snakemake -j1 renv_restore</code></p>
 </details>
                 
               

@@ -1195,7 +1195,7 @@
 <ol>
 <li><a href="../../setup/installation">Install</a> RAPIDS</li>
 <li>Configure the <a href="../../setup/configuration/#database-credentials">user credentials</a> of a local or remote MySQL server with writing permissions in your <code>.env</code> file. The config file where you need to modify the <code>DATABASE_GROUP</code> is at <code>example_profile/example_config.yaml</code>.</li>
-<li>Unzip the <a href="https://osf.io/skqfv/files/">test database</a> to <code>data/external/rapids_example.sql</code> and run:
+<li><em>Skip this step if you are using RAPIDS docker container</em>. Unzip the <a href="https://osf.io/skqfv/files/">test database</a> to <code>data/external/rapids_example.sql</code> and run:
     <div class="highlight"><pre><span></span><code>./rapids -j1 restore_sql_file --profile example_profile
 </code></pre></div></li>
 <li>Create the participant files for this example by running:
