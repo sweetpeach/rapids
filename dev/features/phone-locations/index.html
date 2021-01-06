@@ -1428,12 +1428,12 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <tr>
 <td>movingtostaticratio</td>
 <td>-</td>
-<td>Ratio between the number of rows labeled Moving versus Static</td>
+<td>Ratio between stationary time and total location sensed time. A lat/long coordinate pair is labelled as stationary if it’s speed (distance/time) to the next coordinate pair is less than 1km/hr. A higher value represents a more stationary routine. These times are computed by multiplying the number of rows by <code>[SAMPLING_FREQUENCY]</code></td>
 </tr>
 <tr>
 <td>outlierstimepercent</td>
 <td>-</td>
-<td>Ratio between the number of rows that belong to non-significant clusters divided by the total number of rows in a time segment.</td>
+<td>Ratio between the time spent in non-significant clusters divided by the time spent in all clusters (total location sensed time). A higher value represents more time spent in non-significant clusters. These times are computed by multiplying the number of rows by <code>[SAMPLING_FREQUENCY]</code></td>
 </tr>
 <tr>
 <td>maxlengthstayatclusters</td>
