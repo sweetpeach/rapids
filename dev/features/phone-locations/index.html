@@ -1312,7 +1312,7 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 - data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/phone_locations.csv
 </code></pre></div>
 </div>
-<p>Parameters description for <code>[PHONE_LOCATIONS][PROVIDERS][BARNETT]</code>:</p>
+<p>Parameters description for <code>[PHONE_LOCATIONS][PROVIDERS][DORYAB]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1353,9 +1353,13 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <td><code>[SAMPLING_FREQUENCY]</code></td>
 <td>Expected time difference between any two location rows in minutes. If set to <code>0</code>, the sampling frequency will be inferred automatically as the median of all the differences between any two consecutive row timestamps (recommended if you are using <code>FUSED_RESAMPLED</code> data). This parameter impacts all the time calculations.</td>
 </tr>
+<tr>
+<td><code>[CLUSTER_ON]</code></td>
+<td>Set this flag to <code>PARTICIPANT_DATASET</code> to create clusters based on the entire participant&rsquo;s dataset or to <code>TIME_SEGMENT</code> to create clusters based on all the instances of the corresponding time segment (e.g. all mornings).</td>
+</tr>
 </tbody>
 </table>
-<p>Features description for <code>[PHONE_LOCATIONS][PROVIDERS][BARNETT]</code>:</p>
+<p>Features description for <code>[PHONE_LOCATIONS][PROVIDERS][DORYAB]</code>:</p>
 <table>
 <thead>
 <tr>
