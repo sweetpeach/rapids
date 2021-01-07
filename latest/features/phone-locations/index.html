@@ -1312,7 +1312,7 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 - data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/phone_locations.csv
 </code></pre></div>
 </div>
-<p>Parameters description for <code>[PHONE_LOCATIONS][PROVIDERS][BARNETT]</code>:</p>
+<p>Parameters description for <code>[PHONE_LOCATIONS][PROVIDERS][DORYAB]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1353,9 +1353,13 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <td><code>[SAMPLING_FREQUENCY]</code></td>
 <td>Expected time difference between any two location rows in minutes. If set to <code>0</code>, the sampling frequency will be inferred automatically as the median of all the differences between any two consecutive row timestamps (recommended if you are using <code>FUSED_RESAMPLED</code> data). This parameter impacts all the time calculations.</td>
 </tr>
+<tr>
+<td><code>[CLUSTER_ON]</code></td>
+<td>Set this flag to <code>PARTICIPANT_DATASET</code> to create clusters based on the entire participant&rsquo;s dataset or to <code>TIME_SEGMENT</code> to create clusters based on all the instances of the corresponding time segment (e.g. all mornings).</td>
+</tr>
 </tbody>
 </table>
-<p>Features description for <code>[PHONE_LOCATIONS][PROVIDERS][BARNETT]</code>:</p>
+<p>Features description for <code>[PHONE_LOCATIONS][PROVIDERS][DORYAB]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1428,12 +1432,12 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <tr>
 <td>movingtostaticratio</td>
 <td>-</td>
-<td>Ratio between the number of rows labeled Moving versus Static</td>
+<td>Ratio between stationary time and total location sensed time. A lat/long coordinate pair is labelled as stationary if it’s speed (distance/time) to the next coordinate pair is less than 1km/hr. A higher value represents a more stationary routine. These times are computed by multiplying the number of rows by <code>[SAMPLING_FREQUENCY]</code></td>
 </tr>
 <tr>
 <td>outlierstimepercent</td>
 <td>-</td>
-<td>Ratio between the number of rows that belong to non-significant clusters divided by the total number of rows in a time segment.</td>
+<td>Ratio between the time spent in non-significant clusters divided by the time spent in all clusters (total location sensed time). A higher value represents more time spent in non-significant clusters. These times are computed by multiplying the number of rows by <code>[SAMPLING_FREQUENCY]</code></td>
 </tr>
 <tr>
 <td>maxlengthstayatclusters</td>

@@ -1316,12 +1316,15 @@
 </code></pre></div></p>
 </div>
 <div class="admonition hint">
-<p class="admonition-title">Hint<p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, connect to your MySQL database using the host <code>host.docker.internal</code> instead of <code>127.0.0.1</code></p>
+<p class="admonition-title">Hint<p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using the <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code></p>
 </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can ignore this step if you are only processing Fitbit data in CSV files.</p>
+<ul>
+<li>You can ignore this step if you are only processing Fitbit data in CSV files.</li>
+<li>RAPIDS only supports MySQL/MariaDB databases. If you would like to add support for a different database engine get in touch and we can discuss how to implement it.</li>
+</ul>
 </div>
 <hr />
 <h2 id="timezone-of-your-study">Timezone of your study<a class="headerlink" href="#timezone-of-your-study" title="Permanent link">&para;</a></h2>
