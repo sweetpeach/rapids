@@ -20,7 +20,7 @@
     
     
       
-        <title>Fitbit Steps Summary - RAPIDS</title>
+        <title>Phone Keyboard - RAPIDS</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fitbit-steps-summary" class="md-skip">
+        <a href="#phone-keyboard" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header-nav__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fitbit Steps Summary
+              Phone Keyboard
             
           </span>
         </div>
@@ -425,12 +425,14 @@
           
 
 
+  
+
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
     
     <label class="md-nav__link" for="nav-4-2">
       Phone
@@ -592,11 +594,20 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../phone-keyboard/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Phone Keyboard
     </a>
+    
   </li>
 
         
@@ -688,14 +699,12 @@
           
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
     
     <label class="md-nav__link" for="nav-4-3">
       Fitbit
@@ -753,49 +762,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Fitbit Steps Summary
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../fitbit-steps-summary/" class="md-nav__link">
       Fitbit Steps Summary
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rapids-provider" class="md-nav__link">
-    RAPIDS provider
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1128,21 +1099,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rapids-provider" class="md-nav__link">
-    RAPIDS provider
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1153,13 +1109,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/carissalow/rapids/edit/master/docs/features/fitbit-steps-summary.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/carissalow/rapids/edit/master/docs/features/phone-keyboard.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="fitbit-steps-summary">Fitbit Steps Summary<a class="headerlink" href="#fitbit-steps-summary" title="Permanent link">&para;</a></h1>
-<p>Sensor parameters description for <code>[FITBIT_STEPS_SUMMARY]</code>:</p>
+                <h1 id="phone-keyboard">Phone Keyboard<a class="headerlink" href="#phone-keyboard" title="Permanent link">&para;</a></h1>
+<p>Sensor parameters description for <code>[PHONE_KEYBOARD]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1170,142 +1126,13 @@
 <tbody>
 <tr>
 <td><code>[TABLE]</code></td>
-<td>Database table name or file path where the steps summary data is stored. The configuration keys in <a href="../../setup/configuration/#device-data-source-configuration">Device Data Source Configuration</a> control whether this parameter is interpreted as table or file.</td>
-</tr>
-</tbody>
-</table>
-<p>The format of the column(s) containing the Fitbit sensor data can be <code>JSON</code> or <code>PLAIN_TEXT</code>. The data in <code>JSON</code> format is obtained directly from the Fitbit API. We support <code>PLAIN_TEXT</code> in case you already parsed your data and don&rsquo;t have access to your participants&rsquo; Fitbit accounts anymore. If your data is in <code>JSON</code> format then summary and intraday data come packed together. </p>
-<p>We provide examples of the input format that RAPIDS expects, note that both examples for <code>JSON</code> and <code>PLAIN_TEXT</code> are tabular and the actual format difference comes in the <code>fitbit_data</code> column (we truncate the <code>JSON</code> example for brevity).</p>
-<details class="example"><summary>Example of the structure of source data</summary><div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">JSON</label><div class="tabbed-content">
-<table>
-<thead>
-<tr>
-<th>device_id</th>
-<th>fitbit_data</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>&ldquo;activities-steps&rdquo;:[{&ldquo;dateTime&rdquo;:&rdquo;2020-10-07&rdquo;,&rdquo;value&rdquo;:&rdquo;1775&rdquo;}],&rdquo;activities-steps-intraday&rdquo;:{&ldquo;dataset&rdquo;:[{&ldquo;time&rdquo;:&rdquo;00:00:00&rdquo;,&rdquo;value&rdquo;:5},{&ldquo;time&rdquo;:&rdquo;00:01:00&rdquo;,&rdquo;value&rdquo;:3},{&ldquo;time&rdquo;:&rdquo;00:02:00&rdquo;,&rdquo;value&rdquo;:0},&hellip;],&rdquo;datasetInterval&rdquo;:1,&rdquo;datasetType&rdquo;:&rdquo;minute&rdquo;}}</td>
-</tr>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>&ldquo;activities-steps&rdquo;:[{&ldquo;dateTime&rdquo;:&rdquo;2020-10-08&rdquo;,&rdquo;value&rdquo;:&rdquo;3201&rdquo;}],&rdquo;activities-steps-intraday&rdquo;:{&ldquo;dataset&rdquo;:[{&ldquo;time&rdquo;:&rdquo;00:00:00&rdquo;,&rdquo;value&rdquo;:14},{&ldquo;time&rdquo;:&rdquo;00:01:00&rdquo;,&rdquo;value&rdquo;:11},{&ldquo;time&rdquo;:&rdquo;00:02:00&rdquo;,&rdquo;value&rdquo;:10},&hellip;],&rdquo;datasetInterval&rdquo;:1,&rdquo;datasetType&rdquo;:&rdquo;minute&rdquo;}}</td>
-</tr>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>&ldquo;activities-steps&rdquo;:[{&ldquo;dateTime&rdquo;:&rdquo;2020-10-09&rdquo;,&rdquo;value&rdquo;:&rdquo;998&rdquo;}],&rdquo;activities-steps-intraday&rdquo;:{&ldquo;dataset&rdquo;:[{&ldquo;time&rdquo;:&rdquo;00:00:00&rdquo;,&rdquo;value&rdquo;:0},{&ldquo;time&rdquo;:&rdquo;00:01:00&rdquo;,&rdquo;value&rdquo;:0},{&ldquo;time&rdquo;:&rdquo;00:02:00&rdquo;,&rdquo;value&rdquo;:0},&hellip;],&rdquo;datasetInterval&rdquo;:1,&rdquo;datasetType&rdquo;:&rdquo;minute&rdquo;}}</td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">PLAIN_TEXT</label><div class="tabbed-content">
-<p>All columns are mandatory.</p>
-<table>
-<thead>
-<tr>
-<th>device_id</th>
-<th>local_date_time</th>
-<th>steps</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-07</td>
-<td>1775</td>
-</tr>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-08</td>
-<td>3201</td>
-</tr>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-09</td>
-<td>998</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</details>
-<h2 id="rapids-provider">RAPIDS provider<a class="headerlink" href="#rapids-provider" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Available time segments</p>
-<ul>
-<li>Only available for segments that span 1 or more complete days (e.g. Jan 1<sup>st</sup> 00:00 to Jan 3<sup>rd</sup> 23:59)</li>
-</ul>
-</div>
-<div class="admonition info">
-<p class="admonition-title">File Sequence</p>
-<div class="highlight"><pre><span></span><code>- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_steps_summary_raw.csv
-- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_steps_summary_parsed.csv
-- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_steps_summary_parsed_with_datetime.csv
-- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_steps_summary_features/fitbit_steps_summary_<span class="o">{</span>language<span class="o">}</span>_<span class="o">{</span>provider_key<span class="o">}</span>.csv
-- data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/fitbit_steps_summary.csv
-</code></pre></div>
-</div>
-<p>Parameters description for <code>[FITBIT_STEPS_SUMMARY][PROVIDERS][RAPIDS]</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>[COMPUTE]</code></td>
-<td>Set to <code>True</code> to extract <code>FITBIT_STEPS_SUMMARY</code> features from the <code>RAPIDS</code> provider</td>
-</tr>
-<tr>
-<td><code>[FEATURES]</code></td>
-<td>Features to be computed from steps summary data, see table below</td>
-</tr>
-</tbody>
-</table>
-<p>Features description for <code>[FITBIT_STEPS_SUMMARY][PROVIDERS][RAPIDS]</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Units</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>maxsumsteps</td>
-<td>steps</td>
-<td>The maximum daily step count during a time segment.</td>
-</tr>
-<tr>
-<td>minsumsteps</td>
-<td>steps</td>
-<td>The minimum daily step count during a time segment.</td>
-</tr>
-<tr>
-<td>avgsumsteps</td>
-<td>steps</td>
-<td>The average daily step count during a time segment.</td>
-</tr>
-<tr>
-<td>mediansumsteps</td>
-<td>steps</td>
-<td>The median of daily step count during a time segment.</td>
-</tr>
-<tr>
-<td>stdsumsteps</td>
-<td>steps</td>
-<td>The standard deviation of daily step count during a time segment.</td>
+<td>Database table where the keyboard data is stored</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Assumptions/Observations</p>
-<p>NA</p>
+<p class="admonition-title">Note</p>
+<p>No feature providers have been implemented for this sensor yet, however you can use its key (<code>PHONE_KEYBOARD</code>) to improve <a href="../phone-data-yield"><code>PHONE_DATA_YIELD</code></a> or you can <a href="../add-new-features">implement your own features</a>.</p>
 </div>
                 
               
@@ -1325,7 +1152,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../fitbit-sleep-summary/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../phone-data-yield/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1334,19 +1161,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Fitbit Sleep Summary
+                Phone Data Yield
               </div>
             </div>
           </a>
         
         
-          <a href="../fitbit-steps-intraday/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../phone-light/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Fitbit Steps Intraday
+                Phone Light
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

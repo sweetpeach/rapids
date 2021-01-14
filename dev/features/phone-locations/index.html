@@ -479,8 +479,47 @@
 
 
   <li class="md-nav__item">
+    <a href="../phone-applications-crashes/" class="md-nav__link">
+      Phone Applications Crashes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../phone-applications-foreground/" class="md-nav__link">
       Phone Applications Foreground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../phone-applications-notifications/" class="md-nav__link">
+      Phone Applications Notifications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../phone-aware-log/" class="md-nav__link">
+      Phone Aware Log
     </a>
   </li>
 
@@ -546,6 +585,19 @@
   <li class="md-nav__item">
     <a href="../phone-data-yield/" class="md-nav__link">
       Phone Data Yield
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../phone-keyboard/" class="md-nav__link">
+      Phone Keyboard
     </a>
   </li>
 
@@ -1136,22 +1188,22 @@
 </tr>
 <tr>
 <td><code>[LOCATIONS_TO_USE]</code></td>
-<td>Type of location data to use, one of <code>ALL</code>, <code>GPS</code> or <code>FUSED_RESAMPLED</code>. This filter is based on the <code>provider</code> column of the AWARE locations table, <code>ALL</code> includes every row, <code>GPS</code> only includes rows where provider is gps, and <code>FUSED_RESAMPLED</code> only includes rows where provider is fused after being resampled.</td>
+<td>Type of location data to use, one of <code>ALL</code>, <code>GPS</code>, <code>ALL_RESAMPLED</code> or <code>FUSED_RESAMPLED</code>. This filter is based on the <code>provider</code> column of the AWARE locations table, <code>ALL</code> includes every row, <code>GPS</code> only includes rows where provider is gps, <code>ALL_RESAMPLED</code> includes all rows after being resampled, and <code>FUSED_RESAMPLED</code> only includes rows where provider is fused after being resampled.</td>
 </tr>
 <tr>
 <td><code>[FUSED_RESAMPLED_CONSECUTIVE_THRESHOLD]</code></td>
-<td>if <code>FUSED_RESAMPLED</code> is used, the original fused data has to be resampled, a location row will be resampled to the next valid timestamp (see the Assumptions/Observations below) only if the time difference between them is less or equal than this threshold (in minutes).</td>
+<td>if <code>ALL_RESAMPLED</code> or <code>FUSED_RESAMPLED</code> is used, the original fused data has to be resampled, a location row will be resampled to the next valid timestamp (see the Assumptions/Observations below) only if the time difference between them is less or equal than this threshold (in minutes).</td>
 </tr>
 <tr>
 <td><code>[FUSED_RESAMPLED_TIME_SINCE_VALID_LOCATION]</code></td>
-<td>if <code>FUSED_RESAMPLED</code> is used, the original fused data has to be resampled, a location row will be resampled at most for this long (in minutes)</td>
+<td>if <code>ALL_RESAMPLED</code> or <code>FUSED_RESAMPLED</code> is used, the original fused data has to be resampled, a location row will be resampled at most for this long (in minutes)</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Assumptions/Observations</p>
 <p><strong>Types of location data to use</strong>
-AWARE Android and iOS clients can collect location coordinates through the phone's GPS, the network cellular towers around the phone or Google's fused location API. If you want to use only the GPS provider set <code>[LOCATIONS_TO_USE]</code> to <code>GPS</code>, if you want to use all providers (not recommended due to the difference in accuracy) set <code>[LOCATIONS_TO_USE]</code> to <code>ALL</code>, if your AWARE client was configured to use fused location only or want to focus only on this provider, set <code>[LOCATIONS_TO_USE]</code> to <code>RESAMPLE_FUSED</code>. <code>RESAMPLE_FUSED</code> takes the original fused location coordinates and replicates each pair forward in time as long as the phone was sensing data as indicated by the joined timestamps of <a href="../phone-data-yield/"><code>[PHONE_DATA_YIELD][SENSORS]</code></a>, this is done because Google's API only logs a new location coordinate pair when it is sufficiently different in time or space from the previous one.</p>
+AWARE Android and iOS clients can collect location coordinates through the phone's GPS, the network cellular towers around the phone, or Google's fused location API. If you want to use only the GPS provider set <code>[LOCATIONS_TO_USE]</code> to <code>GPS</code>, if you want to use all providers set <code>[LOCATIONS_TO_USE]</code> to <code>ALL</code>, if you collected location data from different providers including the fused API use <code>ALL_RESAMPLED</code>, if your AWARE client was configured to use fused location only or want to focus only on this provider, set <code>[LOCATIONS_TO_USE]</code> to <code>RESAMPLE_FUSED</code>. <code>ALL_RESAMPLED</code> and <code>RESAMPLE_FUSED</code> take the original location coordinates and replicate each pair forward in time as long as the phone was sensing data as indicated by the joined timestamps of <a href="../phone-data-yield/"><code>[PHONE_DATA_YIELD][SENSORS]</code></a>, this is done because Google's API only logs a new location coordinate pair when it is sufficiently different in time or space from the previous one and because GPS and network providers can log data at variable rates.</p>
 <p>There are two parameters associated with resampling fused location. <code>FUSED_RESAMPLED_CONSECUTIVE_THRESHOLD</code> (in minutes, default 30) controls the maximum gap between any two coordinate pairs to replicate the last known pair (for example, participant A's phone did not collect data between 10.30am and 10:50am and between 11:05am and 11:40am, the last known coordinate pair will be replicated during the first period but not the second, in other words, we assume that we cannot longer guarantee the participant stayed at the last known location if the phone did not sense data for more than 30 minutes). <code>FUSED_RESAMPLED_TIME_SINCE_VALID_LOCATION</code> (in minutes, default 720 or 12 hours) stops the last known fused location from being replicated longer that this threshold even if the phone was sensing data continuously (for example, participant A went home at 9pm and their phone was sensing data without gaps until 11am the next morning, the last known location will only be replicated until 9am). If you have suggestions to modify or improve this resampling, let us know.</p>
 </div>
 <h2 id="barnett-provider">BARNETT provider<a class="headerlink" href="#barnett-provider" title="Permanent link">&para;</a></h2>
@@ -1328,6 +1380,10 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <tr>
 <td><code>[FEATURES]</code></td>
 <td>Features to be computed, see table below</td>
+</tr>
+<tr>
+<td><code>[ACCURACY_LIMIT]</code></td>
+<td>An integer in meters, any location rows with an accuracy higher than this will be dropped. This number means there&rsquo;s a 68% probability the true location is within this radius</td>
 </tr>
 <tr>
 <td><code>[DBSCAN_EPS]</code></td>
