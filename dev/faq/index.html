@@ -1514,13 +1514,15 @@ ClobberError: This transaction has incompatible packages due to a shared path.
 </details>
 <details class="done" open="open"><summary>Solution</summary><p>This problem is due to the way <code>RMariaDB</code> handles a mismatch between data types in R and MySQL (see <a href="https://github.com/r-dbi/RMariaDB/issues/121">this issue</a>). Since it seems this problem won&rsquo;t be handled by <code>RMariaDB</code>, you have two options:</p>
 <ol>
-<li>If it&rsquo;s only a few rows that are causing this problem, remove the the null character from the conflictive table cell.</li>
+<li>Remove the the null character from the conflictive table cell(s). You can adapt the following query on a MySQL server 8.0 or older
+    <div class="highlight"><pre><span></span><code><span class="k">update</span> <span class="n">YOUR_TABLE</span> <span class="k">set</span> <span class="n">YOUR_COLUMN</span> <span class="o">=</span> <span class="n">regexp_replace</span><span class="p">(</span><span class="n">YOUR_COLUMN</span><span class="p">,</span> <span class="s1">&#39;\0&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</code></pre></div></li>
 <li>If it&rsquo;s not feasible to modify your data you can try swapping <code>RMariaDB</code> with <code>RMySQL</code>. Just have in mind you might have problems connecting to modern MySQL servers running in Linux:<ul>
 <li>Add <code>RMySQL</code> to the renv environment by running the following command in a terminal open on RAPIDS root folder
 <div class="highlight"><pre><span></span><code>R -e <span class="s1">&#39;renv::install(&quot;RMySQL&quot;)&#39;</span>
 </code></pre></div></li>
 <li>Go to <code>src/data/download_phone_data.R</code> or <code>src/data/download_fitbit_data.R</code> and replace <code>library(RMariaDB)</code> with <code>library(RMySQL)</code></li>
-<li>In the same file replace <code>dbEngine &lt;- dbConnect(MariaDB(), default.file = "./.env", group = group)</code> with <code>dbEngine &lt;- dbConnect(MySQL(), default.file = "./.env", group = group)</code></li>
+<li>In the same file(s) replace <code>dbEngine &lt;- dbConnect(MariaDB(), default.file = "./.env", group = group)</code> with <code>dbEngine &lt;- dbConnect(MySQL(), default.file = "./.env", group = group)</code></li>
 </ul>
 </li>
 </ol>
