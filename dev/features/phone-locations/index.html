@@ -1357,6 +1357,10 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <td><code>[CLUSTER_ON]</code></td>
 <td>Set this flag to <code>PARTICIPANT_DATASET</code> to create clusters based on the entire participant&rsquo;s dataset or to <code>TIME_SEGMENT</code> to create clusters based on all the instances of the corresponding time segment (e.g. all mornings).</td>
 </tr>
+<tr>
+<td><code>[CLUSTERING_ALGORITHM]</code></td>
+<td>The original Doryab et al implementation uses <code>DBSCAN</code>, <code>OPTICS</code> is also available with similar (but not identical) clustering results and lower memory consumption.</td>
+</tr>
 </tbody>
 </table>
 <p>Features description for <code>[PHONE_LOCATIONS][PROVIDERS][DORYAB]</code>:</p>
@@ -1477,6 +1481,8 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 Significant locations are determined using DBSCAN clustering on locations that a patient visit over the course of the period of data collection.</p>
 <p><strong>The Circadian Calculation</strong>
 For a detailed description of how this is calculated, see <a href="../../citation#doryab-locations">Canzian et al</a>.</p>
+<p><strong>Fine Tuning Clustering Parameters</strong>
+Based on an experiment where we collected fused location data for 7 days with a mean accuracy of 86 &amp; SD of 350.874635, we determined that <code>EPS/MAX_EPS</code>=100 produced closer clustering results to reality. Higher values (&gt;100) missed out some significant places like a short grocery visit while lower values (&lt;100) picked up traffic lights and stop signs while driving as significant locations. We recommend you set <code>EPS</code> based on the accuracy of your location data (the more accurate your data is, the lower you should be able to set EPS).</p>
 </div>
                 
               

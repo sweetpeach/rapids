@@ -1288,21 +1288,21 @@
                 
                 <h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
 <h2 id="cannot-connect-to-your-mysql-server">Cannot connect to your MySQL server<a class="headerlink" href="#cannot-connect-to-your-mysql-server" title="Permanent link">&para;</a></h2>
-<details class="failure" open="open"><summary>Problem</summary><div class="highlight"><pre><span></span><code>**Error in .local<span class="o">(</span>drv, <span class="se">\.</span>..<span class="o">)</span> :** **Failed to connect to database: Error:
+<details class="failure" open="open"><summary>Problem</summary><div class="highlight"><pre><span></span><code>**Error <span class="k">in</span> .local<span class="o">(</span>drv, <span class="se">\.</span>..<span class="o">)</span> :** **Failed to connect to database: Error:
 Can<span class="se">\&#39;</span>t initialize character <span class="nb">set</span> unknown <span class="o">(</span>path: compiled<span class="se">\_</span>in<span class="o">)</span>** :
 
 Calls: dbConnect -&gt; dbConnect -&gt; .local -&gt; .Call
 Execution halted
 <span class="o">[</span>Tue Mar <span class="m">10</span> <span class="m">19</span>:40:15 <span class="m">2020</span><span class="o">]</span>
-Error in rule download_dataset:
+Error <span class="k">in</span> rule download_dataset:
     jobid: <span class="m">531</span>
     output: data/raw/p60/locations_raw.csv
 
 RuleException:
-CalledProcessError in line <span class="m">20</span> of /home/ubuntu/rapids/rules/preprocessing.snakefile:
+CalledProcessError <span class="k">in</span> line <span class="m">20</span> of /home/ubuntu/rapids/rules/preprocessing.snakefile:
 Command <span class="s1">&#39;set -euo pipefail;  Rscript --vanilla /home/ubuntu/rapids/.snakemake/scripts/tmp_2jnvqs7.download_dataset.R&#39;</span> returned non-zero <span class="nb">exit</span> status <span class="m">1</span>.
-File <span class="s2">&quot;/home/ubuntu/rapids/rules/preprocessing.snakefile&quot;</span>, line <span class="m">20</span>, in __rule_download_dataset
-File <span class="s2">&quot;/home/ubuntu/anaconda3/envs/moshi-env/lib/python3.7/concurrent/futures/thread.py&quot;</span>, line <span class="m">57</span>, in run
+File <span class="s2">&quot;/home/ubuntu/rapids/rules/preprocessing.snakefile&quot;</span>, line <span class="m">20</span>, <span class="k">in</span> __rule_download_dataset
+File <span class="s2">&quot;/home/ubuntu/anaconda3/envs/moshi-env/lib/python3.7/concurrent/futures/thread.py&quot;</span>, line <span class="m">57</span>, <span class="k">in</span> run
 Shutting down, this might take some time.
 Exiting because a job execution failed. Look above <span class="k">for</span> error message
 </code></pre></div>
@@ -1323,7 +1323,7 @@ Exiting because a job execution failed. Look above <span class="k">for</span> er
 </details>
 <hr />
 <h2 id="error-table-xxx-doesnt-exist-while-running-the-download_phone_data-or-download_fitbit_data-rule">Error <code>Table XXX doesn't exist</code> while running the <code>download_phone_data</code> or <code>download_fitbit_data</code> rule.<a class="headerlink" href="#error-table-xxx-doesnt-exist-while-running-the-download_phone_data-or-download_fitbit_data-rule" title="Permanent link">&para;</a></h2>
-<details class="failure" open="open"><summary>Problem</summary><div class="highlight"><pre><span></span><code>Error in .local<span class="o">(</span>conn, statement, ...<span class="o">)</span> : 
+<details class="failure" open="open"><summary>Problem</summary><div class="highlight"><pre><span></span><code>Error <span class="k">in</span> .local<span class="o">(</span>conn, statement, ...<span class="o">)</span> : 
   could not run statement: Table <span class="s1">&#39;db_name.table_name&#39;</span> doesn<span class="err">&#39;</span>t exist
 Calls: colnames ... .local -&gt; dbSendQuery -&gt; dbSendQuery -&gt; .local -&gt; .Call
 Execution halted
@@ -1446,7 +1446,7 @@ ERROR: configuration failed <span class="k">for</span> package <span class="s1">
 <details class="failure" open="open"><summary>Problem</summary><p>You get the following error:
 <div class="highlight"><pre><span></span><code>CondaMultiError: CondaVerificationError: The package <span class="k">for</span> tk located at /home/ubuntu/miniconda2/pkgs/tk-8.6.9-hed695b0_1003
     appears to be corrupted. The path <span class="s1">&#39;include/mysqlStubs.h&#39;</span>
-    specified in the package manifest cannot be found.
+    specified <span class="k">in</span> the package manifest cannot be found.
 ClobberError: This transaction has incompatible packages due to a shared path.
     packages: conda-forge/linux-64::llvm-openmp-10.0.0-hc9558a2_0, anaconda/linux-64::intel-openmp-2019.4-243
     path: <span class="s1">&#39;lib/libiomp5.so&#39;</span>
@@ -1456,8 +1456,8 @@ ClobberError: This transaction has incompatible packages due to a shared path.
 </details>
 <h2 id="embedded-nul-in-string">Embedded nul in string<a class="headerlink" href="#embedded-nul-in-string" title="Permanent link">&para;</a></h2>
 <details class="failure" open="open"><summary>Problem</summary><p>You get the following error when downloading sensor data:
-<div class="highlight"><pre><span></span><code>Error in result_fetch<span class="o">(</span>res@ptr, <span class="nv">n</span> <span class="o">=</span> n<span class="o">)</span> : 
-  embedded nul in string:
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> result_fetch<span class="o">(</span>res@ptr, <span class="nv">n</span> <span class="o">=</span> n<span class="o">)</span> : 
+  embedded nul <span class="k">in</span> string:
 </code></pre></div></p>
 </details>
 <details class="done" open="open"><summary>Solution</summary><p>This problem is due to the way <code>RMariaDB</code> handles a mismatch between data types in R and MySQL (see <a href="https://github.com/r-dbi/RMariaDB/issues/121">this issue</a>). Since it seems this problem won&rsquo;t be handled by <code>RMariaDB</code>, you have two options:</p>
@@ -1475,7 +1475,7 @@ ClobberError: This transaction has incompatible packages due to a shared path.
 </details>
 <h2 id="there-is-no-package-called-rmariadb">There is no package called <code>RMariaDB</code><a class="headerlink" href="#there-is-no-package-called-rmariadb" title="Permanent link">&para;</a></h2>
 <details class="failure" open="open"><summary>Problem</summary><p>You get the following error when executing RAPIDS:
-<div class="highlight"><pre><span></span><code>Error in library<span class="o">(</span>RMariaDB<span class="o">)</span> : there is no package called <span class="s1">&#39;RMariaDB&#39;</span>
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> library<span class="o">(</span>RMariaDB<span class="o">)</span> : there is no package called <span class="s1">&#39;RMariaDB&#39;</span>
 Execution halted
 </code></pre></div></p>
 </details>
