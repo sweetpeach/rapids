@@ -1368,7 +1368,7 @@
 </code></pre></div></p>
 </div>
 <div class="admonition hint">
-<p class="admonition-title">Hint<p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using the <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code></p>
+<p class="admonition-title">Hint<p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code>. In a Linux host you need to run our docker container using <code>docker run --network="host" -d moshiresearch/rapids:latest</code> and then <code>127.0.0.1</code> will point to your host machine.</p>
 </p>
 </div>
 <div class="admonition note">

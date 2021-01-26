@@ -1202,8 +1202,8 @@ git pull
 <div class="highlight"><pre><span></span><code>git add modified-file1 modified-file2
 git commit -m <span class="s2">&quot;Add my new feature&quot;</span> <span class="c1"># use a concise description</span>
 </code></pre></div></li>
-<li>Integrate your new feature to <code>develop</code></li>
-</ol>
+<li>
+<p>Integrate your new feature to <code>develop</code></p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Internal Developer</label><div class="tabbed-content">
 <p>You are an internal developer if you have writing permissions to the repository.</p>
 <p>Most feature branches are never pushed to the repo, only do so if you expect that its development will take days (to avoid losing your work if you computer is damaged). Otherwise follow the following instructions to locally rebase your feature branch into <code>develop</code> and push those rebased changes online.</p>
@@ -1224,6 +1224,8 @@ git branch -d feature/feature1
 Then open a pull request to the <code>develop</code> branch using Github&rsquo;s GUI</p>
 </div>
 </div>
+</li>
+</ol>
 <h2 id="release-a-new-version">Release a New Version<a class="headerlink" href="#release-a-new-version" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Pull the latest develop 
