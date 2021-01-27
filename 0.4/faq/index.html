@@ -1148,6 +1148,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unrecognized-output-timezone-americanew_york" class="md-nav__link">
+    Unrecognized output timezone "America/New_York"
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1317,6 +1324,13 @@
         <li class="md-nav__item">
   <a href="#there-is-no-package-called-rmariadb" class="md-nav__link">
     There is no package called RMariaDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unrecognized-output-timezone-americanew_york" class="md-nav__link">
+    Unrecognized output timezone "America/New_York"
   </a>
   
 </li>
@@ -1535,6 +1549,15 @@ Execution halted
 </details>
 <details class="done" open="open"><summary>Solution</summary><p>In RAPIDS v0.1.0 we replaced <code>RMySQL</code> R package with <code>RMariaDB</code>, this error means your R virtual environment is out of date, to update it run <code>snakemake -j1 renv_restore</code></p>
 </details>
+<h2 id="unrecognized-output-timezone-americanew_york">Unrecognized output timezone &ldquo;America/New_York&rdquo;<a class="headerlink" href="#unrecognized-output-timezone-americanew_york" title="Permanent link">&para;</a></h2>
+<details class="failure" open="open"><summary>Problem</summary></details>
+<p>When running RAPIDS with R 4.0.3 on MacOS on M1, lubridate may throw an error associated with the timezone.
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> C_force_tz<span class="o">(</span>time, <span class="nv">tz</span> <span class="o">=</span> tzone, roll<span class="o">)</span>:
+   CCTZ: Unrecognized output timezone: <span class="s2">&quot;America/New_York&quot;</span>
+Calls: get_timestamp_filter ... .parse_date_time -&gt; .strptime -&gt; force_tz -&gt; C_force_tz
+</code></pre></div></p>
+<details class="done" open="open"><summary>Solution</summary></details>
+<p>This is because R timezone library is not set. Please add <code>Sys.setenv(“TZDIR” = file.path(R.home(), “share”, “zoneinfo”))</code> to the file active.R in renv folder to set the timezone library. For further details on how to test if <code>TZDIR</code> is properly set, please refer to <code>https://github.com/tidyverse/lubridate/issues/928#issuecomment-720059233</code>. </p>
                 
               
               
