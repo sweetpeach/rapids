@@ -1472,9 +1472,9 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <td>Speed variance in a time segment considering only the instances labeled as Moving.</td>
 </tr>
 <tr>
-<td>circadianmovement</td>
+<td><del class="critic">circadianmovement</del></td>
 <td>-</td>
-<td>"It encodes the extent to which a person&rsquo;s location patterns follow a 24-hour circadian cycle." <a href="../../citation#doryab-locations">Doryab et al.</a>.</td>
+<td>Not suggested for use at the moment, see Observations below. "It encodes the extent to which a person&rsquo;s location patterns follow a 24-hour circadian cycle." <a href="../../citation#doryab-locations">Doryab et al.</a>.</td>
 </tr>
 <tr>
 <td>numberofsignificantplaces</td>
@@ -1552,8 +1552,8 @@ For a detailed description of how this is calculated, see <a href="../../citatio
 <p class="admonition-title">Assumptions/Observations</p>
 <p><strong>Significant Locations Identified</strong>
 Significant locations are determined using DBSCAN clustering on locations that a patient visit over the course of the period of data collection.</p>
-<p><strong>The Circadian Calculation</strong>
-For a detailed description of how this is calculated, see <a href="../../citation#doryab-locations">Canzian et al</a>.</p>
+<p><strong>Circadian Movement Calculation</strong>
+Note Feb 3 2021. It seems the implementation of this feature is not correct, we suggest not to use this feature until a fix is in place. For a detailed description of how this should be calculated, see <a href="https://pubmed.ncbi.nlm.nih.gov/28344895/">Saeb et al</a>.</p>
 <p><strong>Fine Tuning Clustering Parameters</strong>
 Based on an experiment where we collected fused location data for 7 days with a mean accuracy of 86 &amp; SD of 350.874635, we determined that <code>EPS/MAX_EPS</code>=100 produced closer clustering results to reality. Higher values (&gt;100) missed out some significant places like a short grocery visit while lower values (&lt;100) picked up traffic lights and stop signs while driving as significant locations. We recommend you set <code>EPS</code> based on the accuracy of your location data (the more accurate your data is, the lower you should be able to set EPS).</p>
 <p><strong>Duration Calculation</strong>
