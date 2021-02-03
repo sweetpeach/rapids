@@ -712,6 +712,19 @@
 
 
   <li class="md-nav__item">
+    <a href="../features/fitbit-data-yield/" class="md-nav__link">
+      Fitbit Data Yield
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../features/fitbit-heartrate-summary/" class="md-nav__link">
       Fitbit Heart Rate Summary
     </a>
@@ -1155,6 +1168,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unimplemented-max_no_field_types" class="md-nav__link">
+    Unimplemented MAX_NO_FIELD_TYPES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-rapids-on-apple-silicon-m1-mac" class="md-nav__link">
+    Running RAPIDS on Apple Silicon M1 Mac
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1331,6 +1358,20 @@
         <li class="md-nav__item">
   <a href="#unrecognized-output-timezone-americanew_york" class="md-nav__link">
     Unrecognized output timezone "America/New_York"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unimplemented-max_no_field_types" class="md-nav__link">
+    Unimplemented MAX_NO_FIELD_TYPES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-rapids-on-apple-silicon-m1-mac" class="md-nav__link">
+    Running RAPIDS on Apple Silicon M1 Mac
   </a>
   
 </li>
@@ -1550,14 +1591,29 @@ Execution halted
 <details class="done" open="open"><summary>Solution</summary><p>In RAPIDS v0.1.0 we replaced <code>RMySQL</code> R package with <code>RMariaDB</code>, this error means your R virtual environment is out of date, to update it run <code>snakemake -j1 renv_restore</code></p>
 </details>
 <h2 id="unrecognized-output-timezone-americanew_york">Unrecognized output timezone &ldquo;America/New_York&rdquo;<a class="headerlink" href="#unrecognized-output-timezone-americanew_york" title="Permanent link">&para;</a></h2>
-<details class="failure" open="open"><summary>Problem</summary></details>
-<p>When running RAPIDS with R 4.0.3 on MacOS on M1, lubridate may throw an error associated with the timezone.
+<details class="failure" open="open"><summary>Problem</summary><p>When running RAPIDS with R 4.0.3 on MacOS on M1, lubridate may throw an error associated with the timezone.
 <div class="highlight"><pre><span></span><code>Error <span class="k">in</span> C_force_tz<span class="o">(</span>time, <span class="nv">tz</span> <span class="o">=</span> tzone, roll<span class="o">)</span>:
    CCTZ: Unrecognized output timezone: <span class="s2">&quot;America/New_York&quot;</span>
 Calls: get_timestamp_filter ... .parse_date_time -&gt; .strptime -&gt; force_tz -&gt; C_force_tz
 </code></pre></div></p>
+</details>
 <details class="done" open="open"><summary>Solution</summary></details>
 <p>This is because R timezone library is not set. Please add <code>Sys.setenv(“TZDIR” = file.path(R.home(), “share”, “zoneinfo”))</code> to the file active.R in renv folder to set the timezone library. For further details on how to test if <code>TZDIR</code> is properly set, please refer to <code>https://github.com/tidyverse/lubridate/issues/928#issuecomment-720059233</code>. </p>
+<h2 id="unimplemented-max_no_field_types">Unimplemented MAX_NO_FIELD_TYPES<a class="headerlink" href="#unimplemented-max_no_field_types" title="Permanent link">&para;</a></h2>
+<details class="failure" open="open"><summary>Problem</summary><p>You get the following error when downloading Fitbit data:
+<div class="highlight"><pre><span></span><code>Error: Unimplemented MAX_NO_FIELD_TYPES
+Execution halted
+</code></pre></div></p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>At the moment RMariaDB <a href="https://github.com/r-dbi/RMariaDB/issues/127">cannot handle</a> MySQL columns of JSON type. Change the type of your Fitbit data column to <code>longtext</code> (note that the content will not change and will still be a JSON object just interpreted as a string).</p>
+</details>
+<h2 id="running-rapids-on-apple-silicon-m1-mac">Running RAPIDS on Apple Silicon M1 Mac<a class="headerlink" href="#running-rapids-on-apple-silicon-m1-mac" title="Permanent link">&para;</a></h2>
+<details class="failure" open="open"><summary>Problem</summary><p>You get the following error when installing pandoc or running rapids:
+ <div class="highlight"><pre><span></span><code>MoSHI/rapids/renv/staging/1/00LOCK-KernSmooth/00new/KernSmooth/libs/KernSmooth.so: mach-0, but wrong architecture
+</code></pre></div></p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>As of Feb 2020 in M1 macs, R needs to be installed via brew under Rosetta (x86 arch) due to some incompatibility with selected R libraries. To do this, run your terminal <a href="https://www.youtube.com/watch?v=nv2ylxro7rM&amp;t=138s">via Rosetta</a>, then proceed with the usual brew installation command. x86 homebrew should be installed in <code>/usr/local/bin/brew</code>, you can check which brew you are using by typing <code>which brew</code>. Then use x86 homebrew to install R and restore RAPIDS packages (<code>renv_restore</code>). </p>
+</details>
                 
               
               
