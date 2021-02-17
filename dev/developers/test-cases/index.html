@@ -1392,6 +1392,180 @@
                 <h1 id="test-cases">Test Cases<a class="headerlink" href="#test-cases" title="Permanent link">&para;</a></h1>
 <p>Along with the continued development and the addition of new sensors and features to the RAPIDS pipeline, tests for the currently available sensors and features are being implemented. Since this is a Work In Progress this page will be updated with the list of sensors and features for which testing is available. For each of the sensors listed a description of the data used for testing (test cases) are outline. Currently for all intent and testing purposes the <code>tests/data/raw/test01/</code> contains all the test data files for testing android data formats and <code>tests/data/raw/test02/</code> contains all the test data files for testing iOS data formats. It follows that the expected (verified output) are contained in the <code>tests/data/processed/test01/</code> and <code>tests/data/processed/test02/</code> for Android and iOS respectively. <code>tests/data/raw/test03/</code> and <code>tests/data/raw/test04/</code> contain data files for testing empty raw data files for android and iOS respectively.</p>
 <p>The following is a list of the sensors that testing is currently available.</p>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Provider</th>
+<th>Periodic</th>
+<th>Frequency</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phone Accelerometer</td>
+<td>Panda</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Accelerometer</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Activity Recognition</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Applications Foreground</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Battery</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Bluetooth</td>
+<td>Doryab</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Bluetooth</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Phone Calls</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Conversation</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Data Yield</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Light</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Locations</td>
+<td>Doryab</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Locations</td>
+<td>Barnett</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Messages</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone Screen</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone WiFi Connected</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Phone WiFi Visible</td>
+<td>RAPIDS</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fitbit Data Yield</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fitbit Heart Rate Summary</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fitbit Heart Rate Intraday</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fitbit Sleep Summary</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fitbit Steps Summary</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fitbit Steps Intraday</td>
+<td>RAPIDS</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
 <h2 id="messages-sms">Messages (SMS)<a class="headerlink" href="#messages-sms" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The raw message data file contains data for 2 separate days.</li>
