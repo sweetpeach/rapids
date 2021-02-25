@@ -1439,6 +1439,10 @@
 <p>We use the <code>develop/master</code> variation of the <a href="https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow">OneFlow</a> git flow</p>
 <h2 id="add-new-features">Add New Features<a class="headerlink" href="#add-new-features" title="Permanent link">&para;</a></h2>
 <p>We use feature (topic) branches to implement new features</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Internal Developer</label><div class="tabbed-content">
+<p>You are an internal developer if you have writing permissions to the repository.</p>
+<p>Most feature branches are never pushed to the repo, only do so if you expect that its development will take days (to avoid losing your work if you computer is damaged). Otherwise follow the following instructions to locally rebase your feature branch into <code>develop</code> and push those rebased changes online.</p>
+<p><strong>Starting your feature branch</strong></p>
 <ol>
 <li>Pull the latest develop 
 <div class="highlight"><pre><span></span><code>git checkout develop
@@ -1453,30 +1457,78 @@ git pull
 <div class="highlight"><pre><span></span><code>git add modified-file1 modified-file2
 git commit -m <span class="s2">&quot;Add my new feature&quot;</span> <span class="c1"># use a concise description</span>
 </code></pre></div></li>
+</ol>
+<p><strong>Merging back your feature branch</strong></p>
+<p>If your changes took time to be implemented it is possible that there are new commits in our <code>develop</code> branch, so we need to rebase your feature branch.</p>
+<ol>
 <li>
-<p>Integrate your new feature to <code>develop</code></p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Internal Developer</label><div class="tabbed-content">
-<p>You are an internal developer if you have writing permissions to the repository.</p>
-<p>Most feature branches are never pushed to the repo, only do so if you expect that its development will take days (to avoid losing your work if you computer is damaged). Otherwise follow the following instructions to locally rebase your feature branch into <code>develop</code> and push those rebased changes online.</p>
+<p>Fetch the latest changes to develop
+<div class="highlight"><pre><span></span><code>git fetch origin develop
+</code></pre></div></p>
+</li>
+<li>
+<p>Rebase your feature branch
 <div class="highlight"><pre><span></span><code>git checkout feature/feature1
-git fetch origin develop
 git rebase -i develop
-git checkout develop
+</code></pre></div></p>
+</li>
+<li>
+<p>Integrate your new feature to <code>develop</code>
+<div class="highlight"><pre><span></span><code>git checkout develop
 git merge --no-ff feature/feature1 <span class="c1"># (use the default merge message)</span>
 git push origin develop
 git branch -d feature/feature1
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">External Developer</label><div class="tabbed-content">
 <p>You are an external developer if you do NOT have writing permissions to the repository.</p>
+<p><strong>Starting your feature branch</strong></p>
+<ol>
+<li>Fork and clone our repository on Github</li>
+<li>Switch to the latest develop 
+<div class="highlight"><pre><span></span><code>git checkout develop
+</code></pre></div></li>
+<li>Create your feature branch
+<div class="highlight"><pre><span></span><code>git checkout -b feature/external-test
+</code></pre></div></li>
+<li>Add, modify or delete the necessary files to add your new feature</li>
+<li>Stage and commit your changes using VS Code git GUI or the following commands
+<div class="highlight"><pre><span></span><code>git add modified-file1 modified-file2
+git commit -m <span class="s2">&quot;Add my new feature&quot;</span> <span class="c1"># use a concise description</span>
+</code></pre></div></li>
+</ol>
+<p><strong>Merging back your feature branch</strong></p>
+<p>If your changes took time to be implemented, it is possible that there are new commits in our <code>develop</code> branch, so we need to rebase your feature branch.</p>
+<ol>
+<li>
+<p>Add our repo as another <code>remote</code>
+<div class="highlight"><pre><span></span><code>git remote add upstream https://github.com/carissalow/rapids/
+</code></pre></div></p>
+</li>
+<li>
+<p>Fetch the latest changes to develop
+<div class="highlight"><pre><span></span><code>git fetch upstream develop 
+</code></pre></div></p>
+</li>
+<li>
+<p>Rebase your feature branch
+<div class="highlight"><pre><span></span><code>git checkout feature/external-test
+git rebase -i develop
+</code></pre></div></p>
+</li>
+<li>
 <p>Push your feature branch online
 <div class="highlight"><pre><span></span><code>git push --set-upstream origin feature/external-test
-</code></pre></div>
-Then open a pull request to the <code>develop</code> branch using Github&rsquo;s GUI</p>
-</div>
-</div>
+</code></pre></div></p>
+</li>
+<li>
+<p>Open a pull request to the <code>develop</code> branch using Github&rsquo;s GUI</p>
 </li>
 </ol>
+</div>
+</div>
 <h2 id="release-a-new-version">Release a New Version<a class="headerlink" href="#release-a-new-version" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Pull the latest develop 
