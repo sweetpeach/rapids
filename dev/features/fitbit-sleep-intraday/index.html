@@ -17,7 +17,7 @@
     
     
       
-        <title>Fitbit Sleep Summary - RAPIDS</title>
+        <title>Fitbit Sleep Intraday - RAPIDS</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fitbit-sleep-summary" class="md-skip">
+        <a href="#fitbit-sleep-intraday" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fitbit Sleep Summary
+              Fitbit Sleep Intraday
             
           </span>
         </div>
@@ -819,6 +819,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../fitbit-sleep-summary/" class="md-nav__link">
+        Fitbit Sleep Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -830,12 +844,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Fitbit Sleep Summary
+          Fitbit Sleep Intraday
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Fitbit Sleep Summary
+        Fitbit Sleep Intraday
       </a>
       
         
@@ -858,24 +872,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#price-provider" class="md-nav__link">
+    PRICE provider
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fitbit-sleep-intraday/" class="md-nav__link">
-        Fitbit Sleep Intraday
-      </a>
     </li>
   
 
@@ -1406,6 +1413,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#price-provider" class="md-nav__link">
+    PRICE provider
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1418,13 +1432,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/carissalow/rapids/edit/master/docs/features/fitbit-sleep-summary.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/carissalow/rapids/edit/master/docs/features/fitbit-sleep-intraday.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="fitbit-sleep-summary">Fitbit Sleep Summary<a class="headerlink" href="#fitbit-sleep-summary" title="Permanent link">&para;</a></h1>
-<p>Sensor parameters description for <code>[FITBIT_SLEEP_SUMMARY]</code>:</p>
+                <h1 id="fitbit-sleep-intraday">Fitbit Sleep Intraday<a class="headerlink" href="#fitbit-sleep-intraday" title="Permanent link">&para;</a></h1>
+<p>Sensor parameters description for <code>[FITBIT_SLEEP_INTRADAY]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1435,7 +1449,7 @@
 <tbody>
 <tr>
 <td><code>[TABLE]</code></td>
-<td>Database table name or file path where the sleep summary data is stored. The configuration keys in <a href="../../setup/configuration/#device-data-source-configuration">Device Data Source Configuration</a> control whether this parameter is interpreted as table or file.</td>
+<td>Database table name or file path where the sleep intraday data is stored. The configuration keys in <a href="../../setup/configuration/#device-data-source-configuration">Device Data Source Configuration</a> control whether this parameter is interpreted as table or file.</td>
 </tr>
 </tbody>
 </table>
@@ -1466,100 +1480,46 @@
 </table>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">PLAIN_TEXT</label><div class="tabbed-content">
-<p>All columns are mandatory, however, all except <code>device_id</code> and <code>local_date_time</code> can be empty if you don&rsquo;t have that data. Just have in mind that some features will be empty if some of these columns are empty.</p>
+<p>All columns are mandatory, however, all except <code>device_id</code>, <code>local_date_time</code> and <code>duration</code> can be empty if you don&rsquo;t have that data. Just have in mind that some features might be inaccurate or empty as <code>type_episode_id</code>, <code>level</code>, <code>is_main_sleep</code>, and <code>type</code> are used for sleep episodes extraction. <code>type_episode_id</code> is based on where it is extracted: if it is extracted from the 1<sup>st</sup> &ldquo;minutesData&rdquo; block, the <code>type_episode_id</code> field will be 0. Similarly, the kth block will be k-1. Actually, you only need to make sure rows extracted from the same &ldquo;minutesData&rdquo; block are assigned with the same unique <code>type_episode_id</code> value.</p>
 <table>
 <thead>
 <tr>
 <th>device_id</th>
-<th>local_start_date_time</th>
-<th>local_end_date_time</th>
-<th>efficiency</th>
-<th>minutes_after_wakeup</th>
-<th>minutes_asleep</th>
-<th>minutes_awake</th>
-<th>minutes_to_fall_asleep</th>
-<th>minutes_in_bed</th>
+<th>type_episode_id</th>
+<th>local_date_time</th>
+<th>duration</th>
+<th>level</th>
 <th>is_main_sleep</th>
 <th>type</th>
-<th>count_awake</th>
-<th>duration_awake</th>
-<th>count_awakenings</th>
-<th>count_restless</th>
-<th>duration_restless</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
+<td>0</td>
 <td>2020-10-07 15:55:00</td>
-<td>2020-10-07 18:10:00</td>
-<td>91</td>
+<td>60</td>
+<td>awake</td>
 <td>0</td>
-<td>123</td>
-<td>12</td>
-<td>0</td>
-<td>135</td>
-<td>1</td>
 <td>classic</td>
-<td>2</td>
-<td>3</td>
-<td>10</td>
-<td>8</td>
-<td>9</td>
 </tr>
 <tr>
 <td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-07 09:49:00</td>
-<td>2020-10-07 10:52:30</td>
-<td>100</td>
-<td>1</td>
-<td>62</td>
 <td>0</td>
-<td>0</td>
-<td>63</td>
+<td>2020-10-07 15:56:00</td>
+<td>60</td>
+<td>awake</td>
 <td>0</td>
 <td>classic</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
 </tr>
 <tr>
 <td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-08 00:40:00</td>
-<td>2020-10-08 06:01:30</td>
-<td>89</td>
 <td>0</td>
-<td>275</td>
-<td>33</td>
+<td>2020-10-07 15:57:00</td>
+<td>60</td>
+<td>restless</td>
 <td>0</td>
-<td>321</td>
-<td>1</td>
 <td>classic</td>
-<td>3</td>
-<td>21</td>
-<td>16</td>
-<td>13</td>
-<td>25</td>
-</tr>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-09 00:35:30</td>
-<td>2020-10-09 05:57:30</td>
-<td>96</td>
-<td>0</td>
-<td>309</td>
-<td>13</td>
-<td>0</td>
-<td>322</td>
-<td>1</td>
-<td>classic</td>
-<td>1</td>
-<td>3</td>
-<td>8</td>
-<td>7</td>
-<td>10</td>
 </tr>
 </tbody>
 </table>
@@ -1591,19 +1551,15 @@
 </table>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">PLAIN_TEXT</label><div class="tabbed-content">
-<p>All columns are mandatory, however, all except <code>device_id</code> and <code>local_date_time</code> can be empty if you don&rsquo;t have that data. Just have in mind that some features will be empty if some of these columns are empty.</p>
+<p>All columns are mandatory, however, all except <code>device_id</code>, <code>local_date_time</code> and <code>duration</code> can be empty if you don&rsquo;t have that data. Just have in mind that some features might be inaccurate or empty as <code>type_episode_id</code>, <code>level</code>, <code>is_main_sleep</code>, and <code>type</code> are used for sleep episodes extraction. <code>type_episode_id</code> is based on where it is extracted: if it is extracted from the 1<sup>st</sup> &ldquo;data&rdquo; and &ldquo;shortData&rdquo; block, the <code>type_episode_id</code> field will be 0. Similarly, the kth block will be k-1. Actually, you only need to make sure rows extracted from the same &ldquo;minutesData&rdquo; block are assigned with the same unique <code>type_episode_id</code> value.</p>
 <table>
 <thead>
 <tr>
 <th>device_id</th>
-<th>local_start_date_time</th>
-<th>local_end_date_time</th>
-<th>efficiency</th>
-<th>minutes_after_wakeup</th>
-<th>minutes_asleep</th>
-<th>minutes_awake</th>
-<th>minutes_to_fall_asleep</th>
-<th>minutes_in_bed</th>
+<th>type_episode_id</th>
+<th>local_date_time</th>
+<th>duration</th>
+<th>level</th>
 <th>is_main_sleep</th>
 <th>type</th>
 </tr>
@@ -1611,53 +1567,55 @@
 <tbody>
 <tr>
 <td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
+<td>0</td>
 <td>2020-10-10 15:36:30</td>
-<td>2020-10-10 16:37:00</td>
-<td>92</td>
-<td>0</td>
-<td>55</td>
-<td>5</td>
-<td>0</td>
 <td>60</td>
+<td>restless</td>
 <td>0</td>
 <td>classic</td>
 </tr>
 <tr>
 <td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
+<td>0</td>
+<td>2020-10-10 15:37:30</td>
+<td>660</td>
+<td>asleep</td>
+<td>0</td>
+<td>classic</td>
+</tr>
+<tr>
+<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
+<td>0</td>
+<td>2020-10-10 15:48:30</td>
+<td>60</td>
+<td>restless</td>
+<td>0</td>
+<td>classic</td>
+</tr>
+<tr>
+<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
+<td>1</td>
 <td>2020-10-10 01:46:30</td>
-<td>2020-10-10 08:10:00</td>
-<td>88</td>
-<td>0</td>
-<td>318</td>
-<td>65</td>
-<td>0</td>
-<td>383</td>
+<td>420</td>
+<td>light</td>
 <td>1</td>
 <td>stages</td>
 </tr>
 <tr>
 <td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-11 00:12:30</td>
-<td>2020-10-11 11:47:00</td>
-<td>89</td>
 <td>1</td>
-<td>562</td>
-<td>132</td>
-<td>0</td>
-<td>694</td>
-<td>1</td>
-<td>stages</td>
-</tr>
-<tr>
-<td>a748ee1a-1d0b-4ae9-9074-279a2b6ba524</td>
-<td>2020-10-12 01:31:00</td>
-<td>2020-10-12 09:34:30</td>
-<td>93</td>
-<td>0</td>
-<td>415</td>
-<td>68</td>
-<td>0</td>
-<td>483</td>
+<td>2020-10-10 01:53:30</td>
+<td>1230</td>
+<td>deep</td>
 <td>1</td>
 <td>stages</td>
 </tr>
@@ -1670,19 +1628,20 @@
 <div class="admonition info">
 <p class="admonition-title">Available time segments</p>
 <ul>
-<li>Only available for segments that span 1 or more complete days (e.g. Jan 1<sup>st</sup> 00:00 to Jan 3<sup>rd</sup> 23:59)</li>
+<li>Available for all time segments</li>
 </ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">File Sequence</p>
-<div class="highlight"><pre><span></span><code>- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_summary_raw.csv
-- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_summary_parsed.csv
-- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_summary_parsed_with_datetime.csv
-- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_summary_features/fitbit_sleep_summary_<span class="o">{</span>language<span class="o">}</span>_<span class="o">{</span>provider_key<span class="o">}</span>.csv
-- data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_summary.csv
+<div class="highlight"><pre><span></span><code>- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_raw.csv
+- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_parsed.csv
+- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_episodes_resampled.csv
+- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_episodes_resampled_with_datetime.csv
+- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_features/fitbit_sleep_intraday_<span class="o">{</span>language<span class="o">}</span>_<span class="o">{</span>provider_key<span class="o">}</span>.csv
+- data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday.csv
 </code></pre></div>
 </div>
-<p>Parameters description for <code>[FITBIT_SLEEP_SUMMARY][PROVIDERS][RAPIDS]</code>:</p>
+<p>Parameters description for <code>[FITBIT_SLEEP_INTRADAY][PROVIDERS][RAPIDS]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1693,19 +1652,166 @@
 <tbody>
 <tr>
 <td><code>[COMPUTE]</code></td>
-<td>Set to <code>True</code> to extract <code>FITBIT_SLEEP_SUMMARY</code> features from the <code>RAPIDS</code> provider</td>
-</tr>
-<tr>
-<td><code>[SLEEP_TYPES]</code></td>
-<td>Types of sleep to be included in the feature extraction computation. Fitbit provides 3 types of sleep: <code>main</code>, <code>nap</code>, <code>all</code>.</td>
+<td>Set to <code>True</code> to extract <code>FITBIT_SLEEP_INTRADAY</code> features from the <code>RAPIDS</code> provider</td>
 </tr>
 <tr>
 <td><code>[FEATURES]</code></td>
-<td>Features to be computed from sleep summary data, see table below</td>
+<td>Features to be computed from sleep intraday data, see table below</td>
+</tr>
+<tr>
+<td><code>[SLEEP_LEVELS]</code></td>
+<td>Fitbit’s sleep API Version 1 only provides <code>CLASSIC</code> records. However, Version 1.2 provides 2 types of records: <code>CLASSIC</code> and <code>STAGES</code>. <code>STAGES</code> is only available in devices with a heart rate sensor and even those devices will fail to report it if the battery is low or the device is not tight enough. While <code>CLASSIC</code> contains 3 sleep levels (<code>awake</code>, <code>restless</code>, and <code>asleep</code>), <code>STAGES</code> contains 4 sleep levels (<code>wake</code>, <code>deep</code>, <code>light</code>, <code>rem</code>). To make it consistent, RAPIDS grouped them into 2 <code>UNIFIED</code> sleep levels: <code>awake</code> (<code>CLASSIC</code>: <code>awake</code> and <code>restless</code>; <code>STAGES</code>: <code>wake</code>) and <code>asleep</code> (<code>CLASSIC</code>: <code>asleep</code>; <code>STAGES</code>: <code>deep</code>, <code>light</code>, and <code>rem</code>).</td>
+</tr>
+<tr>
+<td><code>[SLEEP_TYPES]</code></td>
+<td>Types of sleep to be included in the feature extraction computation. Fitbit provides 2 types of sleep: <code>main</code>, <code>nap</code>.</td>
+</tr>
+<tr>
+<td><code>[INCLUDE_SLEEP_LATER_THAN]</code></td>
+<td>All resampled sleep rows (bin interval: one minute) that started after this time will be included in the feature computation. It is a number ranging from 0 (midnight) to 1439 (23:59) which denotes the number of minutes after midnight. If a segment is longer than one day, this value is for every day.</td>
+</tr>
+<tr>
+<td><code>[REFERENCE_TIME]</code></td>
+<td>The reference point from which the <code>[ROUTINE]</code> features are to be computed. Chosen from <code>MIDNIGHT</code> and <code>START_OF_THE_SEGMENT</code>, default is <code>MIDNIGHT</code>. If you have multiple time segments per day it might be more informative to set this flag to <code>START_OF_THE_SEGMENT</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>Features description for <code>[FITBIT_SLEEP_SUMMARY][PROVIDERS][RAPIDS]</code>:</p>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][RAPIDS][LEVELS_AND_TYPES]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>countepisode<code>[LEVEL][TYPE]</code></td>
+<td>episodes</td>
+<td>Number of <code>[LEVEL][TYPE]</code>sleep episodes. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code>and <code>[TYPE]</code> can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+<tr>
+<td>sumduration<code>[LEVEL][TYPE]</code></td>
+<td>minutes</td>
+<td>Total duration of all <code>[LEVEL][TYPE]</code>sleep episodes. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code> and <code>[TYPE]</code>can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+<tr>
+<td>maxduration<code>[LEVEL][TYPE]</code></td>
+<td>minutes</td>
+<td>Longest duration of any <code>[LEVEL][TYPE]</code>sleep episode. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code> and <code>[TYPE]</code>can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+<tr>
+<td>minduration<code>[LEVEL][TYPE]</code></td>
+<td>minutes</td>
+<td>Shortest duration of any <code>[LEVEL][TYPE]</code>sleep episode. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code> and <code>[TYPE]</code>can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+<tr>
+<td>avgduration<code>[LEVEL][TYPE]</code></td>
+<td>minutes</td>
+<td>Average duration of all <code>[LEVEL][TYPE]</code>sleep episodes. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code> and <code>[TYPE]</code>can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+<tr>
+<td>medianduration<code>[LEVEL][TYPE]</code></td>
+<td>minutes</td>
+<td>Median duration of all <code>[LEVEL][TYPE]</code>sleep episodes. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code> and <code>[TYPE]</code>can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+<tr>
+<td>stdduration<code>[LEVEL][TYPE]</code></td>
+<td>minutes</td>
+<td>Standard deviation duration of all <code>[LEVEL][TYPE]</code>sleep episodes. <code>[LEVEL]</code>is one of <code>[SLEEP_LEVELS]</code> (e.g. awake-classic or rem-stages) and <code>[TYPE]</code> is one of <code>[SLEEP_TYPES]</code> (e.g. main). Both <code>[LEVEL]</code> and <code>[TYPE]</code>can also be <code>all</code> when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True, which ignores the levels and groups by sleep types.</td>
+</tr>
+</tbody>
+</table>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][RAPIDS]</code> RATIOS <code>[ACROSS_LEVELS]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ratiocount<code>[LEVEL]</code></td>
+<td>-</td>
+<td>Ratio between the <strong>count</strong> of episodes of a single sleep <code>[LEVEL]</code> and the <strong>count</strong> of all episodes of all levels during both <code>main</code> and <code>nap</code> sleep types. This answers the question: what percentage of all <code>wake</code>, <code>deep</code>, <code>light</code>, and <code>rem</code> episodes were <code>rem</code>? (e.g., <span class="arithmatex">\(countepisode[remstages][all] / countepisode[all][all]\)</span>)</td>
+</tr>
+<tr>
+<td>ratioduration<code>[LEVEL]</code></td>
+<td>-</td>
+<td>Ratio between the <strong>duration</strong> of episodes of a single sleep <code>[LEVEL]</code> and the <strong>duration</strong> of all episodes of all levels during both <code>main</code> and <code>nap</code> sleep types. This answers the question: what percentage of all <code>wake</code>, <code>deep</code>, <code>light</code>, and <code>rem</code> time was <code>rem</code>? (e.g., <span class="arithmatex">\(sumduration[remstages][all] / sumduration[all][all]\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][RAPIDS]</code> RATIOS <code>[ACROSS_TYPES]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ratiocountmain</td>
+<td>-</td>
+<td>Ratio between the <strong>count</strong> of all <code>main</code> episodes (independently of the levels inside) divided by the <strong>count</strong> of all <code>main</code> and <code>nap</code> episodes. This answers the question: what percentage of all sleep episodes (<code>main</code> and <code>nap</code>) were <code>main</code>? We do not provide the ratio for <code>nap</code> because is complementary. (<span class="arithmatex">\(countepisode[all][main] / countepisode[all][all]\)</span>)</td>
+</tr>
+<tr>
+<td>ratiodurationmain</td>
+<td>-</td>
+<td>Ratio between the <strong>duration</strong> of all <code>main</code> episodes (independently of the levels inside) divided by the <strong>duration</strong> of all <code>main</code> and <code>nap</code> episodes. This answers the question: what percentage of all sleep time (<code>main</code> and <code>nap</code>) was <code>main</code>? We do not provide the ratio for <code>nap</code> because is complementary. (<span class="arithmatex">\(sumduration[all][main] / sumduration[all][all]\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][RAPIDS]</code> RATIOS <code>[WITHIN_LEVELS]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ratiocount<code>[TYPE]</code>within<code>[LEVEL]</code></td>
+<td>-</td>
+<td>Ratio between the <strong>count</strong> of episodes of a single sleep <code>[LEVEL]</code> during <code>main</code> sleep divided by the <strong>count</strong> of episodes of a single sleep <code>[LEVEL]</code> during <code>main</code> <strong>and</strong> <code>nap</code>. This answers the question: are <code>rem</code> episodes more frequent during <code>main</code> than <code>nap</code> sleep? We do not provide the ratio for <code>nap</code> because is complementary. (<span class="arithmatex">\(countepisode[remstages][main] / countepisode[remstages][all]\)</span>)</td>
+</tr>
+<tr>
+<td>ratioduration<code>[TYPE]</code>within<code>[LEVEL]</code></td>
+<td>-</td>
+<td>Ratio between the <strong>duration</strong> of episodes of a single sleep <code>[LEVEL]</code> during <code>main</code> sleep divided by the <strong>duration</strong> of episodes of a single sleep <code>[LEVEL]</code> during <code>main</code> <strong>and</strong> <code>nap</code>. This answers the question: is <code>rem</code> time more frequent during <code>main</code> than <code>nap</code> sleep? We do not provide the ratio for <code>nap</code> because is complementary. (<span class="arithmatex">\(countepisode[remstages][main] / countepisode[remstages][all]\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][RAPIDS]</code> RATIOS <code>[WITHIN_TYPES]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ratiocount<code>[LEVEL]</code>within<code>[TYPE]</code></td>
+<td>-</td>
+<td>Ratio between the <strong>count</strong> of episodes of a single sleep <code>[LEVEL]</code> and the <strong>count</strong> of all episodes of all levels during either <code>main</code> or <code>nap</code> sleep types. This answers the question: what percentage of all <code>wake</code>, <code>deep</code>, <code>light</code>, and <code>rem</code> episodes were <code>rem</code> during <code>main</code>/<code>nap</code> sleep time? (e.g., <span class="arithmatex">\(countepisode[remstages][main] / countepisode[all][main]\)</span>)</td>
+</tr>
+<tr>
+<td>ratioduration<code>[LEVEL]</code>within<code>[TYPE]</code></td>
+<td>-</td>
+<td>Ratio between the <strong>duration</strong> of episodes of a single sleep <code>[LEVEL]</code> and the <strong>duration</strong> of all episodes of all levels during either <code>main</code> or <code>nap</code> sleep types. This answers the question: what percentage of all <code>wake</code>, <code>deep</code>, <code>light</code>, and <code>rem</code> time was <code>rem</code> during <code>main</code>/<code>nap</code> sleep time? (e.g., <span class="arithmatex">\(sumduration[remstages][main] / sumduration[all][main]\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][RAPIDS][ROUTINE]</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1716,81 +1822,270 @@
 </thead>
 <tbody>
 <tr>
-<td>countepisodeTYPE</td>
-<td>episodes</td>
-<td>Number of sleep episodes for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>avgefficiencyTYPE</td>
-<td>scores</td>
-<td>Average sleep efficiency for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>sumdurationafterwakeupTYPE</td>
+<td>starttimefirstmainsleep</td>
 <td>minutes</td>
-<td>Total duration the user stayed in bed after waking up for a certain sleep type during a time segment.</td>
+<td>Start time (in minutes since <code>REFERENCE_TIME</code>) of the first main sleep episode after <code>INCLUDE_EPISODES_LATER_THAN</code>.</td>
 </tr>
 <tr>
-<td>sumdurationasleepTYPE</td>
+<td>endtimelastmainsleep</td>
 <td>minutes</td>
-<td>Total sleep duration for a certain sleep type during a time segment.</td>
+<td>End time (in minutes since <code>REFERENCE_TIME</code>) of the last main sleep episode after <code>INCLUDE_EPISODES_LATER_THAN</code>.</td>
 </tr>
 <tr>
-<td>sumdurationawakeTYPE</td>
+<td>starttimefirstnap</td>
 <td>minutes</td>
-<td>Total duration the user stayed awake but still in bed for a certain sleep type during a time segment.</td>
+<td>Start time (in minutes since <code>REFERENCE_TIME</code>) of the first nap episode after <code>INCLUDE_EPISODES_LATER_THAN</code>.</td>
 </tr>
 <tr>
-<td>sumdurationtofallasleepTYPE</td>
+<td>endtimelastnap</td>
 <td>minutes</td>
-<td>Total duration the user spent to fall asleep for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>sumdurationinbedTYPE</td>
-<td>minutes</td>
-<td>Total duration the user stayed in bed (sumdurationtofallasleep + sumdurationawake + sumdurationasleep + sumdurationafterwakeup) for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>avgdurationafterwakeupTYPE</td>
-<td>minutes</td>
-<td>Average duration the user stayed in bed after waking up for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>avgdurationasleepTYPE</td>
-<td>minutes</td>
-<td>Average sleep duration for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>avgdurationawakeTYPE</td>
-<td>minutes</td>
-<td>Average duration the user stayed awake but still in bed for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>avgdurationtofallasleepTYPE</td>
-<td>minutes</td>
-<td>Average duration the user spent to fall asleep for a certain sleep type during a time segment.</td>
-</tr>
-<tr>
-<td>avgdurationinbedTYPE</td>
-<td>minutes</td>
-<td>Average duration the user stayed in bed (sumdurationtofallasleep + sumdurationawake + sumdurationasleep + sumdurationafterwakeup) for a certain sleep type during a time segment.</td>
+<td>End time (in minutes since <code>REFERENCE_TIME</code>) of the last nap episode after <code>INCLUDE_EPISODES_LATER_THAN</code>.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Assumptions/Observations</p>
 <ol>
-<li>
-<p>There are three sleep types (TYPE): <code>main</code>, <code>nap</code>, <code>all</code>. The <code>all</code> type contains both main sleep and naps.</p>
-</li>
-<li>
-<p>There are two versions of Fitbit’s sleep API (<a href="https://dev.fitbit.com/build/reference/web-api/sleep-v1/">version 1</a> and <a href="https://dev.fitbit.com/build/reference/web-api/sleep/">version 1.2</a>), and each provides raw sleep data in a different format:</p>
+<li>Deleting values from <code>[SLEEP_LEVELS]</code> or <code>[SLEEP_TYPES]</code> will only change the features you receive from <code>[LEVELS_AND_TYPES]</code>. For example if <code>STAGES</code> only contains <code>[rem, light]</code> you will not receive <code>countepisode[wake|deep][TYPE]</code> or sum, max, min, avg, median, or std <code>duration</code>. These values will not influence <code>RATIOS</code> or <code>ROUTINE</code> features.</li>
+<li>Any <code>[LEVEL]</code> grouping is done within the elements of each class <code>CLASSIC</code>, <code>STAGES</code>, and <code>UNIFIED</code>. That is, we never combine <code>CLASSIC</code> or <code>STAGES</code> types to compute features when <code>LEVELS_AND_TYPES_COMBINING_ALL</code> is True or when computing <code>RATIOS</code>.</li>
+</ol>
+</div>
+<h2 id="price-provider">PRICE provider<a class="headerlink" href="#price-provider" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Available time segments</p>
 <ul>
-<li><em>Count &amp; duration summaries</em>. <code>v1</code> contains <code>count_awake</code>, <code>duration_awake</code>, <code>count_awakenings</code>, <code>count_restless</code>, and <code>duration_restless</code> fields for every sleep record but <code>v1.2</code> does not.</li>
+<li>Available for any time segments larger or equal to one day</li>
 </ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">File Sequence</p>
+<div class="highlight"><pre><span></span><code>- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_raw.csv
+- data/raw/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_parsed.csv
+- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_episodes_resampled.csv
+- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_episodes_resampled_with_datetime.csv
+- data/interim/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday_features/fitbit_sleep_intraday_<span class="o">{</span>language<span class="o">}</span>_<span class="o">{</span>provider_key<span class="o">}</span>.csv
+- data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/fitbit_sleep_intraday.csv
+</code></pre></div>
+</div>
+<p>Parameters description for <code>[FITBIT_SLEEP_INTRADAY][PROVIDERS][PRICE]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[COMPUTE]</code></td>
+<td>Set to <code>True</code> to extract <code>FITBIT_SLEEP_INTRADAY</code> features from the <code>PRICE</code> provider</td>
+</tr>
+<tr>
+<td><code>[FEATURES]</code></td>
+<td>Features to be computed from sleep intraday data, see table below</td>
+</tr>
+<tr>
+<td><code>[SLEEP_LEVELS]</code></td>
+<td>Fitbit’s sleep API Version 1 only provides <code>CLASSIC</code> records. However, Version 1.2 provides 2 types of records: <code>CLASSIC</code> and <code>STAGES</code>. <code>STAGES</code> is only available in devices with a heart rate sensor and even those devices will fail to report it if the battery is low or the device is not tight enough. While <code>CLASSIC</code> contains 3 sleep levels (<code>awake</code>, <code>restless</code>, and <code>asleep</code>), <code>STAGES</code> contains 4 sleep levels (<code>wake</code>, <code>deep</code>, <code>light</code>, <code>rem</code>). To make it consistent, RAPIDS grouped them into 2 <code>UNIFIED</code> sleep levels: <code>awake</code> (<code>CLASSIC</code>: <code>awake</code> and <code>restless</code>; <code>STAGES</code>: <code>wake</code>) and <code>asleep</code> (<code>CLASSIC</code>: <code>asleep</code>; <code>STAGES</code>: <code>deep</code>, <code>light</code>, and <code>rem</code>).</td>
+</tr>
+<tr>
+<td><code>[DAY_TYPE]</code></td>
+<td>The features of this provider can be computed using daily averages/standard deviations that were extracted on <code>WEEKEND</code> days only, <code>WEEK</code> days only, or <code>ALL</code> days</td>
+</tr>
+<tr>
+<td><code>[GROUP_EPISODES_WITHIN]</code></td>
+<td>This parameter contains 2 values: <code>[START_TIME]</code> and <code>[LENGTH]</code>. Only <code>main</code> sleep episodes that intersect or contain the period between [<code>START_TIME</code>, <code>START_TIME</code> + <code>LENGTH</code>] are taken into account to compute the features described below. Both <code>[START_TIME]</code> and <code>[LENGTH]</code> are in minutes. <code>[START_TIME]</code> is a number ranging from 0 (midnight) to 1439 (23:59) which denotes the number of minutes after midnight. <code>[LENGTH]</code> is a number smaller than 1440 (24 hours).</td>
+</tr>
+</tbody>
+</table>
+<p>Features description for <code>[FITBIT_STEPS_INTRADAY][PROVIDERS][PRICE]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>avgduration<code>[LEVEL]</code>main<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Average duration of daily <code>LEVEL</code> sleep episodes. You can include daily average that were computed on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>avgratioduration<code>[LEVEL]</code>withinmain<code>[DAY_TYPE]</code></td>
+<td>-</td>
+<td>Average ratio between daily <code>LEVEL</code> time and in-bed time inferred from <code>main</code> sleep episodes. <code>LEVEL</code> is one of <code>SLEEP_LEVELS</code> (e.g. awake-classic or rem-stages). In-bed time is the total duration of all <code>main</code> sleep episodes for each day. You can include daily ratios that were computed on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>avgstarttimeofepisodemain<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Average start time of the first <code>main</code> sleep episode of each day in a time segment. You can include daily start times from episodes detected on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>avgendtimeofepisodemain<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Average end time of the last <code>main</code> sleep episode of each day in a time segment. You can include daily end times from episodes detected on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>avgmidpointofepisodemain<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Average mid time between the start of the first <code>main</code> sleep episode and the end of the last <code>main</code> sleep episode of each day in a time segment. You can include episodes detected on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>stdstarttimeofepisodemain<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Standard deviation of start time of the first <code>main</code> sleep episode of each day in a time segment. You can include daily start times from episodes detected on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>stdendtimeofepisodemain<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Standard deviation of end time of the last <code>main</code> sleep episode of each day in a time segment. You can include daily end times from episodes detected on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>stdmidpointofepisodemain<code>[DAY_TYPE]</code></td>
+<td>minutes</td>
+<td>Standard deviation of mid time between the start of the first <code>main</code> sleep episode and the end of the last <code>main</code> sleep episode of each day in a time segment. You can include episodes detected on weekend days, week days or both depending on the value of the <code>DAY_TYPE</code> flag.</td>
+</tr>
+<tr>
+<td>socialjetlag</td>
+<td>minutes</td>
+<td>Difference in minutes between the avgstarttimeofepisodemain (bed time) of weekends and weekdays.</td>
+</tr>
+<tr>
+<td>meanssdstarttimeofepisodemain</td>
+<td>minutes squared</td>
+<td>Same as <code>avgstarttimeofepisodemain[DAY_TYPE]</code> but the average is computed over the squared differences of each pair of consecutive start times.</td>
+</tr>
+<tr>
+<td>meanssdendtimeofepisodemain</td>
+<td>minutes squared</td>
+<td>Same as <code>avgendtimeofepisodemain[DAY_TYPE]</code> but the average is computed over the squared differences of each pair of consecutive end times.</td>
+</tr>
+<tr>
+<td>meanssdmidpointofepisodemain</td>
+<td>minutes squared</td>
+<td>Same as <code>avgmidpointofepisodemain[DAY_TYPE]</code> but the average is computed over the squared differences of each pair of consecutive mid times.</td>
+</tr>
+<tr>
+<td>medianssdstarttimeofepisodemain</td>
+<td>minutes squared</td>
+<td>Same as <code>avgstarttimeofepisodemain[DAY_TYPE]</code> but the median is computed over the squared differences of each pair of consecutive start times.</td>
+</tr>
+<tr>
+<td>medianssdendtimeofepisodemain</td>
+<td>minutes squared</td>
+<td>Same as <code>avgendtimeofepisodemain[DAY_TYPE]</code> but the median is computed over the squared differences of each pair of consecutive end times.</td>
+</tr>
+<tr>
+<td>medianssdmidpointofepisodemain</td>
+<td>minutes squared</td>
+<td>Same as <code>avgmidpointofepisodemain[DAY_TYPE]</code> but the median is computed over the squared differences of each pair of consecutive mid times.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Assumptions/Observations</p>
+<ol>
+<li>These features are based on descriptive statistics computed across daily values (start/end/mid times of sleep episodes). This is the reason why they are only available on time segments that are longer than 24 hours (we need at least 1 day to get the average).</li>
+<li>Even though Fitbit provides 2 types of sleep episodes (<code>main</code> and <code>nap</code>), only <code>main</code> sleep episodes are considered.</li>
+<li>
+<p>How do we assign sleep episodes to specific dates?</p>
+<p><code>START_TIME</code> and <code>LENGTH</code> control the dates that sleep episodes belong to. For a pair of <code>[START_TIME]</code> and <code>[LENGTH]</code>, sleep episodes (blue boxes) can only be placed at the following places:</p>
+<p><figure>
+    <img src="../../img/features_fitbit_sleep_intraday.png" max-width="100%" />
+    <figcaption>Relationship between sleep episodes and the given times<code>([START_TIME], [LENGTH])</code></figcaption>
+</figure></p>
+<ul>
+<li>
+<p>If the end time of a sleep episode is before <code>[START_TIME]</code>, it will belong to the day before its start date (e.g. sleep episode #1).</p>
 </li>
 <li>
-<p><em>API columns</em>. Features are computed based on the values provided by Fitbit’s API: <code>efficiency</code>, <code>minutes_after_wakeup</code>, <code>minutes_asleep</code>, <code>minutes_awake</code>, <code>minutes_to_fall_asleep</code>, <code>minutes_in_bed</code>, <code>is_main_sleep</code> and <code>type</code>.</p>
+<p>if (1) the start time or the end time of a sleep episode are between (overlap) <code>[START_TIME]</code> and <code>[START_TIME] + [LENGTH]</code> or (2) the start time is before <code>[START_TIME]</code> and the end time is after <code>[START_TIME] + [LENGTH]</code>, it will belong to its start date (e.g. sleep episode #2, #3, #4, #5).</p>
+</li>
+<li>
+<p>If the start time of a sleep episode is after <code>START_TIME] + [LENGTH]</code>, it will belong to the day after its start date (e.g. sleep episode #6).</p>
+</li>
+</ul>
+<p>Only <code>main</code> sleep episodes that intersect or contain the period between <code>[START_TIME]</code> and <code>[START_TIME] + [LENGTH]</code> will be included in the feature computation. If we process the following <code>main</code> sleep episodes: </p>
+<table>
+<thead>
+<tr>
+<th>episode</th>
+<th>start</th>
+<th>end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2021-02-01 12:00</td>
+<td>2021-02-01 15:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2021-02-01 21:00</td>
+<td>2021-02-02 03:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2021-02-02 05:00</td>
+<td>2021-02-02 08:00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2021-02-02 11:00</td>
+<td>2021-02-02 14:00</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2021-02-02 19:00</td>
+<td>2021-02-03 06:00</td>
+</tr>
+</tbody>
+</table>
+<p>And our parameters:</p>
+<ul>
+<li>
+<p><code>[INCLUDE_EPISODES_INTERSECTING][START_TIME]</code> = 1320 (today&rsquo;s 22:00)</p>
+</li>
+<li>
+<p><code>[INCLUDE_EPISODES_INTERSECTING][LENGTH]</code> = 720 (tomorrow&rsquo;s 10:00, or 22:00 + 12 hours)</p>
+</li>
+</ul>
+<p>Only sleep episodes 2, 3,and 5 would be considered.</p>
+</li>
+<li>
+<p>Time related features represent the number of minutes between the start/end/midpoint of sleep episodes and the assigned day&rsquo;s midnight.</p>
+</li>
+<li>
+<p>All <code>main</code> sleep episodes are chunked within the requested <a href="../../setup/configuration/#time-segments">time segments</a> which need to be at least 24 hours or more long (1, 2, 3, 7 days, etc.). Then, daily features will be extracted and averaged across the length of the time segment, for example:</p>
+<p>The daily features extracted on 2021-02-01 will be:</p>
+<ul>
+<li>
+<p>starttimeofepisodemain (bedtime) is <code>21 * 60</code> (episode 2 start time 2021-02-01 21:00)</p>
+</li>
+<li>
+<p>endtimeofepisodemain (wake time) is <code>32 * 60</code>(episode 3 end time 2021-02-02 08:00 + 24)</p>
+</li>
+<li>
+<p>midpointofepisodemain (midpoint sleep) is <code>[(21 * 60) + (32 * 60)] / 2</code></p>
+</li>
+</ul>
+<p>The daily features extracted on 2021-02-02 will be:</p>
+<ul>
+<li>
+<p>starttimeofepisodemain (bedtime) is <code>19 * 60</code> (episode 5 start time 2021-02-01 19:00)</p>
+</li>
+<li>
+<p>endtimeofepisodemain (wake time) is <code>30 * 60</code>(episode 5 end time 2021-02-03 06:00 + 24)</p>
+</li>
+<li>
+<p>midpointofepisodemain (midpoint sleep) is <code>[(19 * 60) + (30 * 60)] / 2</code></p>
+</li>
+</ul>
+<p>And <code>avgstarttimeofepisodemain[DAY_TYPE]</code> will be <code>([21 * 60] + [19 * 60]) / 2</code> </p>
 </li>
 </ol>
 </div>
@@ -1811,7 +2106,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../fitbit-heartrate-intraday/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../fitbit-sleep-summary/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1820,19 +2115,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Fitbit Heart Rate Intraday
+              Fitbit Sleep Summary
             </div>
           </div>
         </a>
       
       
-        <a href="../fitbit-sleep-intraday/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../fitbit-steps-summary/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Fitbit Sleep Intraday
+              Fitbit Steps Summary
             </div>
           </div>
           <div class="md-footer__button md-icon">
