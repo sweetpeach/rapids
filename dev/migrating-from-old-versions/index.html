@@ -1748,9 +1748,9 @@
 </details>
 <details class="check"><summary>Deploy RAPIDS in a new folder</summary><ul>
 <li>Clone RAPIDS 1.x in a new folder (do not pull the updates in your current folder)</li>
+<li>Activate your conda environment</li>
 <li>Install renv again <code>snakemake -j1 renv_install</code> (for Ubuntu take advantage of the <a href="../setup/installation">platform specific R <code>renv</code> instructions</a>)</li>
 <li>Restore renv packages <code>snakemake -j1 renv_restore</code> (for Ubuntu take advantage of the <a href="../setup/installation">platform specific R <code>renv</code> instructions</a>)</li>
-<li>Activate your conda environment</li>
 <li>Move your participant files <code>pxx.yaml</code> to the new folder</li>
 <li>Move your time segment files to the new folder</li>
 <li>Move your <code>.env</code> file to the new folder</li>
