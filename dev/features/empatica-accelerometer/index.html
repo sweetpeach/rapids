@@ -12,8 +12,8 @@
       
         
       
-      <link rel="shortcut icon" href="../../img/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8+insiders-1.17.0">
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6+insiders-2.3.1">
     
     
       
@@ -21,10 +21,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.10cb3b3f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3a1236c2.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.697e47cb.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.de2705de.min.css">
         
       
     
@@ -34,7 +34,7 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto",;--md-code-font-family:"Roboto Mono",}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -78,11 +78,9 @@
     
       
 
-
-
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="RAPIDS" class="md-header__button md-logo" aria-label="RAPIDS">
+    <a href="../.." title="RAPIDS" class="md-header__button md-logo" aria-label="RAPIDS" data-md-component="logo">
       
   <img src="../../img/logo.png" alt="logo">
 
@@ -106,29 +104,29 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
+    
+      <form class="md-header__option" data-md-component="palette">
         
           
           
-          
-          <button class="md-header__button md-icon" title="Switch to light mode" aria-label="Switch to light mode" data-md-option="palette" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 00-5 5 5 5 0 005 5h10a5 5 0 005-5 5 5 0 00-5-5m0 8a3 3 0 01-3-3 3 3 0 013-3 3 3 0 013 3 3 3 0 01-3 3z"/></svg>
-          </button>
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" type="radio" name="__palette" id="__palette_1">
+          <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+          </label>
         
           
           
-          
-          <button class="md-header__button md-icon" title="Switch to dark mode" aria-label="Switch to dark mode" data-md-option="palette" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2m10-3a5 5 0 015 5 5 5 0 01-5 5H7a5 5 0 01-5-5 5 5 0 015-5h10M7 9a3 3 0 00-3 3 3 3 0 003 3h10a3 3 0 003-3 3 3 0 00-3-3H7z"/></svg>
-          </button>
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue" type="radio" name="__palette" id="__palette_2">
+          <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+          </label>
         
-      
-      
-    </div>
+      </form>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
@@ -137,16 +135,18 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
-      <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -164,10 +164,10 @@
     
       <div class="md-header__source">
         
-<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source">
+<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     carissalow/rapids
@@ -191,17 +191,15 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="RAPIDS" class="md-nav__button md-logo" aria-label="RAPIDS">
+    <a href="../.." title="RAPIDS" class="md-nav__button md-logo" aria-label="RAPIDS" data-md-component="logo">
       
   <img src="../../img/logo.png" alt="logo">
 
@@ -211,10 +209,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source">
+<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     carissalow/rapids
@@ -252,23 +250,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
       
-        <label class="md-nav__link" for="nav-2">
+        <label class="md-nav__link" for="__nav_2">
           Setup
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Setup" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Setup
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -276,8 +273,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../file-structure/" class="md-nav__link">
-        File Structure
+      <a href="../../setup/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow-examples/minimal/" class="md-nav__link">
+        Minimal Example
       </a>
     </li>
   
@@ -359,23 +370,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="nav-3">
-          Example Workflows
+        <label class="md-nav__link" for="__nav_3">
+          Data Streams
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Example Workflows" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+      <nav class="md-nav" aria-label="Data Streams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Example Workflows
+          Data Streams
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -383,8 +393,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow-examples/minimal/" class="md-nav__link">
-        Minimal
+      <a href="../../datastreams/data-streams-introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Phone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Phone" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Phone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/aware-mysql/" class="md-nav__link">
+        aware_mysql
       </a>
     </li>
   
@@ -397,8 +447,221 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow-examples/analysis/" class="md-nav__link">
-        Analysis
+      <a href="../../datastreams/aware-csv/" class="md-nav__link">
+        aware_csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/aware-influxdb/" class="md-nav__link">
+        aware_influxdb (beta)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/mandatory-phone-format/" class="md-nav__link">
+        Mandatory Phone Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Fitbit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fitbit" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Fitbit
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitjson-mysql/" class="md-nav__link">
+        fitbitjson_mysql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitjson-csv/" class="md-nav__link">
+        fitbitjson_csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitparsed-mysql/" class="md-nav__link">
+        fitbitparsed_mysql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitparsed-csv/" class="md-nav__link">
+        fitbitparsed_csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/mandatory-fitbit-format/" class="md-nav__link">
+        Mandatory Fitbit Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Empatica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Empatica" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Empatica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/empatica-zip/" class="md-nav__link">
+        empatica_zip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/mandatory-empatica-format/" class="md-nav__link">
+        Mandatory Empatica Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/add-new-data-streams/" class="md-nav__link">
+        Add New Data Streams
       </a>
     </li>
   
@@ -426,23 +689,22 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
       
-        <label class="md-nav__link" for="nav-4">
+        <label class="md-nav__link" for="__nav_4">
           Behavioral Features
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Behavioral Features" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Behavioral Features
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -467,23 +729,22 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
       
-        <label class="md-nav__link" for="nav-4-2">
+        <label class="md-nav__link" for="__nav_4_2">
           Phone
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Phone" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-2">
+        <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Phone
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -549,20 +810,6 @@
     <li class="md-nav__item">
       <a href="../phone-applications-notifications/" class="md-nav__link">
         Phone Applications Notifications
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../phone-aware-log/" class="md-nav__link">
-        Phone Aware Log
       </a>
     </li>
   
@@ -687,6 +934,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../phone-log/" class="md-nav__link">
+        Phone Log
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../phone-messages/" class="md-nav__link">
         Phone Messages
       </a>
@@ -753,23 +1014,22 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
       
       
       
       
-        <label class="md-nav__link" for="nav-4-3">
+        <label class="md-nav__link" for="__nav_4_3">
           Fitbit
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Fitbit" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-3">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Fitbit
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -887,23 +1147,22 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
       
       
       
       
-        <label class="md-nav__link" for="nav-4-4">
+        <label class="md-nav__link" for="__nav_4_4">
           Empatica
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Empatica" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-4">
+        <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
           Empatica
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -939,7 +1198,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#dbdp-provider" class="md-nav__link">
@@ -1081,23 +1340,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
       
-        <label class="md-nav__link" for="nav-5">
+        <label class="md-nav__link" for="__nav_5">
           Visualizations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Visualizations" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Visualizations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1146,23 +1404,72 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
       
-        <label class="md-nav__link" for="nav-6">
+        <label class="md-nav__link" for="__nav_6">
+          Analysis Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Analysis Workflows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Analysis Workflows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow-examples/analysis/" class="md-nav__link">
+        Complete Example
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
           Developers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Developers" data-md-level="1">
-        <label class="md-nav__title" for="nav-6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Developers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1281,23 +1588,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
       
-        <label class="md-nav__link" for="nav-7">
+        <label class="md-nav__link" for="__nav_8">
           Others
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Others" data-md-level="1">
-        <label class="md-nav__title" for="nav-7">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Others
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1306,7 +1612,7 @@
   
     <li class="md-nav__item">
       <a href="../../migrating-from-old-versions/" class="md-nav__link">
-        Migrating from beta
+        Migrating from an old version
       </a>
     </li>
   
@@ -1333,8 +1639,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
-        FAQ
+      <a href="../../common-errors/" class="md-nav__link">
+        Common Errors
       </a>
     </li>
   
@@ -1383,7 +1689,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1397,7 +1703,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#dbdp-provider" class="md-nav__link">
@@ -1414,7 +1720,7 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -1434,7 +1740,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>[TABLE]</code></td>
+<td><code>[CONTAINER]</code></td>
 <td>Name of the CSV file containing accelerometer data that is compressed inside an Empatica zip file. Since these zip files are created <a href="https://support.empatica.com/hc/en-us/articles/201608896-Data-export-and-formatting-from-E4-connect-">automatically</a> by Empatica, there is no need to change the value of this attribute.</td>
 </tr>
 </tbody>
@@ -1448,9 +1754,7 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">File Sequence</p>
-<div class="highlight"><pre><span></span><code>- data/raw/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer_unzipped_<span class="o">{</span>zip-file<span class="o">}</span>.csv <span class="c1"># one per zip file</span>
-- data/raw/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer_raw_<span class="o">{</span>zip-file<span class="o">}</span>.csv <span class="c1"># one per zip file</span>
-- data/raw/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer_joined.csv
+<div class="highlight"><pre><span></span><code>- data/raw/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer_raw.csv
 - data/raw/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer_with_datetime.csv
 - data/interim/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer_features/empatica_accelerometer_<span class="o">{</span>language<span class="o">}</span>_<span class="o">{</span>provider_key<span class="o">}</span>.csv
 - data/processed/features/<span class="o">{</span>pid<span class="o">}</span>/empatica_accelerometer.csv
@@ -1521,13 +1825,50 @@
                 
               
               
-                
+  <!-- Add custom comment system integration here -->
+  <!-- Utterances integration -->
+
+  <h2 id="__comments">Comments</h2>
+
+   <script type="text/javascript">
+    var rapids_utterances_theme = false
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+          // wait for utterances to load and send it's first message.
+          addEventListener('message', event => {
+            if (event.origin !== 'https://utteranc.es' || rapids_utterances_theme == true) {
+              return;
+            }
+            rapids_utterances_theme = true
+            if(document.body.getAttribute("data-md-color-scheme") == "default")
+              document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "github-light" },"https://utteranc.es/")
+            else
+              document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "photon-dark" },"https://utteranc.es/")
+          });
+          document.getElementById('__palette_1').onclick = function(){
+            document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "github-light" },"https://utteranc.es/")
+          }
+          document.getElementById('__palette_2').onclick = function(){
+            document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "photon-dark" },"https://utteranc.es/")
+          }
+        }
+      }
+  </script>
+
+  <script src="https://utteranc.es/client.js"
+    repo="carissalow/rapids"
+    issue-term="pathname"
+    label="docs comments"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
 
 
-              
             </article>
           </div>
         </div>
+        
       </main>
       
         
@@ -1580,6 +1921,7 @@
             Material for MkDocs Insiders
           </a>
         
+        
       </div>
       
   <div class="md-footer-social">
@@ -1600,20 +1942,13 @@
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.9849d06a.min.js", "version": {"method": "mike"}}</script>
     
-      <script src="../../assets/javascripts/vendor.191088e8.min.js"></script>
-      <script src="../../assets/javascripts/bundle.d4cf0930.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: ["navigation.sections", "search.suggest", "search.highlight"],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.e77c40e2.min.js"
-          }, typeof search !== "undefined" && search),
-          version: {"method": "mike"}
-        })
-      </script>
+    
+      <script src="../../assets/javascripts/bundle.7da13850.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

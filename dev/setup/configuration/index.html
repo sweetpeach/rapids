@@ -12,8 +12,8 @@
       
         
       
-      <link rel="shortcut icon" href="../../img/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8+insiders-1.17.0">
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6+insiders-2.3.1">
     
     
       
@@ -21,10 +21,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.10cb3b3f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3a1236c2.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.697e47cb.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.de2705de.min.css">
         
       
     
@@ -34,7 +34,7 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto",;--md-code-font-family:"Roboto Mono",}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -78,11 +78,9 @@
     
       
 
-
-
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="RAPIDS" class="md-header__button md-logo" aria-label="RAPIDS">
+    <a href="../.." title="RAPIDS" class="md-header__button md-logo" aria-label="RAPIDS" data-md-component="logo">
       
   <img src="../../img/logo.png" alt="logo">
 
@@ -106,29 +104,29 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
+    
+      <form class="md-header__option" data-md-component="palette">
         
           
           
-          
-          <button class="md-header__button md-icon" title="Switch to light mode" aria-label="Switch to light mode" data-md-option="palette" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 00-5 5 5 5 0 005 5h10a5 5 0 005-5 5 5 0 00-5-5m0 8a3 3 0 01-3-3 3 3 0 013-3 3 3 0 013 3 3 3 0 01-3 3z"/></svg>
-          </button>
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" type="radio" name="__palette" id="__palette_1">
+          <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+          </label>
         
           
           
-          
-          <button class="md-header__button md-icon" title="Switch to dark mode" aria-label="Switch to dark mode" data-md-option="palette" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2m10-3a5 5 0 015 5 5 5 0 01-5 5H7a5 5 0 01-5-5 5 5 0 015-5h10M7 9a3 3 0 00-3 3 3 3 0 003 3h10a3 3 0 003-3 3 3 0 00-3-3H7z"/></svg>
-          </button>
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue" type="radio" name="__palette" id="__palette_2">
+          <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+          </label>
         
-      
-      
-    </div>
+      </form>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
@@ -137,16 +135,18 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
-      <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -164,10 +164,10 @@
     
       <div class="md-header__source">
         
-<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source">
+<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     carissalow/rapids
@@ -191,17 +191,15 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="RAPIDS" class="md-nav__button md-logo" aria-label="RAPIDS">
+    <a href="../.." title="RAPIDS" class="md-nav__button md-logo" aria-label="RAPIDS" data-md-component="logo">
       
   <img src="../../img/logo.png" alt="logo">
 
@@ -211,10 +209,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source">
+<a href="https://github.com/carissalow/rapids/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     carissalow/rapids
@@ -254,23 +252,22 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="nav-2">
+        <label class="md-nav__link" for="__nav_2">
           Setup
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Setup" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Setup
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -278,8 +275,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../file-structure/" class="md-nav__link">
-        File Structure
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow-examples/minimal/" class="md-nav__link">
+        Minimal Example
       </a>
     </li>
   
@@ -334,39 +345,12 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#database-credentials" class="md-nav__link">
-    Database credentials
+  <a href="#supported-data-streams" class="md-nav__link">
+    Supported data streams
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#timezone-of-your-study" class="md-nav__link">
-    Timezone of your study
-  </a>
-  
-    <nav class="md-nav" aria-label="Timezone of your study">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-timezone" class="md-nav__link">
-    Single timezone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-timezones" class="md-nav__link">
-    Multiple timezones
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -418,8 +402,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#device-data-source-configuration" class="md-nav__link">
-    Device Data Source Configuration
+  <a href="#timezone-of-your-study" class="md-nav__link">
+    Timezone of your study
+  </a>
+  
+    <nav class="md-nav" aria-label="Timezone of your study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-timezone" class="md-nav__link">
+    Single timezone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-timezones" class="md-nav__link">
+    Multiple timezones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-stream-configuration" class="md-nav__link">
+    Data Stream Configuration
   </a>
   
 </li>
@@ -487,23 +498,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="nav-3">
-          Example Workflows
+        <label class="md-nav__link" for="__nav_3">
+          Data Streams
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Example Workflows" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+      <nav class="md-nav" aria-label="Data Streams" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Example Workflows
+          Data Streams
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -511,8 +521,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow-examples/minimal/" class="md-nav__link">
-        Minimal
+      <a href="../../datastreams/data-streams-introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Phone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Phone" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Phone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/aware-mysql/" class="md-nav__link">
+        aware_mysql
       </a>
     </li>
   
@@ -525,8 +575,221 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow-examples/analysis/" class="md-nav__link">
-        Analysis
+      <a href="../../datastreams/aware-csv/" class="md-nav__link">
+        aware_csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/aware-influxdb/" class="md-nav__link">
+        aware_influxdb (beta)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/mandatory-phone-format/" class="md-nav__link">
+        Mandatory Phone Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Fitbit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fitbit" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Fitbit
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitjson-mysql/" class="md-nav__link">
+        fitbitjson_mysql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitjson-csv/" class="md-nav__link">
+        fitbitjson_csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitparsed-mysql/" class="md-nav__link">
+        fitbitparsed_mysql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/fitbitparsed-csv/" class="md-nav__link">
+        fitbitparsed_csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/mandatory-fitbit-format/" class="md-nav__link">
+        Mandatory Fitbit Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Empatica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Empatica" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Empatica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/empatica-zip/" class="md-nav__link">
+        empatica_zip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/mandatory-empatica-format/" class="md-nav__link">
+        Mandatory Empatica Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastreams/add-new-data-streams/" class="md-nav__link">
+        Add New Data Streams
       </a>
     </li>
   
@@ -552,23 +815,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="nav-4">
+        <label class="md-nav__link" for="__nav_4">
           Behavioral Features
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Behavioral Features" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Behavioral Features
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -593,23 +855,22 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
       
-        <label class="md-nav__link" for="nav-4-2">
+        <label class="md-nav__link" for="__nav_4_2">
           Phone
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Phone" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-2">
+        <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Phone
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -675,20 +936,6 @@
     <li class="md-nav__item">
       <a href="../../features/phone-applications-notifications/" class="md-nav__link">
         Phone Applications Notifications
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../features/phone-aware-log/" class="md-nav__link">
-        Phone Aware Log
       </a>
     </li>
   
@@ -813,6 +1060,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../features/phone-log/" class="md-nav__link">
+        Phone Log
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../features/phone-messages/" class="md-nav__link">
         Phone Messages
       </a>
@@ -879,23 +1140,22 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
       
       
       
       
-        <label class="md-nav__link" for="nav-4-3">
+        <label class="md-nav__link" for="__nav_4_3">
           Fitbit
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Fitbit" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-3">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Fitbit
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1011,23 +1271,22 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
       
       
       
       
-        <label class="md-nav__link" for="nav-4-4">
+        <label class="md-nav__link" for="__nav_4_4">
           Empatica
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Empatica" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-4">
+        <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
           Empatica
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1167,23 +1426,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
       
-        <label class="md-nav__link" for="nav-5">
+        <label class="md-nav__link" for="__nav_5">
           Visualizations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Visualizations" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Visualizations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1232,23 +1490,72 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
       
-        <label class="md-nav__link" for="nav-6">
+        <label class="md-nav__link" for="__nav_6">
+          Analysis Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Analysis Workflows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Analysis Workflows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow-examples/analysis/" class="md-nav__link">
+        Complete Example
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
           Developers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Developers" data-md-level="1">
-        <label class="md-nav__title" for="nav-6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Developers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1367,23 +1674,22 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
       
-        <label class="md-nav__link" for="nav-7">
+        <label class="md-nav__link" for="__nav_8">
           Others
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Others" data-md-level="1">
-        <label class="md-nav__title" for="nav-7">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Others
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
               
@@ -1392,7 +1698,7 @@
   
     <li class="md-nav__item">
       <a href="../../migrating-from-old-versions/" class="md-nav__link">
-        Migrating from beta
+        Migrating from an old version
       </a>
     </li>
   
@@ -1419,8 +1725,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
-        FAQ
+      <a href="../../common-errors/" class="md-nav__link">
+        Common Errors
       </a>
     </li>
   
@@ -1469,7 +1775,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1483,39 +1789,12 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#database-credentials" class="md-nav__link">
-    Database credentials
+  <a href="#supported-data-streams" class="md-nav__link">
+    Supported data streams
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#timezone-of-your-study" class="md-nav__link">
-    Timezone of your study
-  </a>
-  
-    <nav class="md-nav" aria-label="Timezone of your study">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-timezone" class="md-nav__link">
-    Single timezone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-timezones" class="md-nav__link">
-    Multiple timezones
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1567,8 +1846,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#device-data-source-configuration" class="md-nav__link">
-    Device Data Source Configuration
+  <a href="#timezone-of-your-study" class="md-nav__link">
+    Timezone of your study
+  </a>
+  
+    <nav class="md-nav" aria-label="Timezone of your study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-timezone" class="md-nav__link">
+    Single timezone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-timezones" class="md-nav__link">
+    Multiple timezones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-stream-configuration" class="md-nav__link">
+    Data Stream Configuration
   </a>
   
 </li>
@@ -1588,7 +1894,7 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -1600,11 +1906,11 @@
                 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
 <p>You need to follow these steps to configure your RAPIDS deployment before you can extract behavioral features</p>
 <ol>
-<li>Add your <a href="#database-credentials">database credentials</a></li>
-<li>Choose the <a href="#timezone-of-your-study">timezone of your study</a></li>
+<li>Verify RAPIDS can process your <a href="#supported-data-streams">data streams</a></li>
 <li>Create your <a href="#participant-files">participants files</a></li>
 <li>Select what <a href="#time-segments">time segments</a> you want to extract features on</li>
-<li>Modify your <a href="#device-data-source-configuration">device data source configuration</a></li>
+<li>Choose the <a href="#timezone-of-your-study">timezone of your study</a></li>
+<li>Configure your <a href="#data-stream-configuration">data streams</a></li>
 <li>Select what <a href="#sensor-and-features-to-process">sensors and features</a> you want to process</li>
 </ol>
 <p>When you are done with this configuration, go to <a href="../execution">executing RAPIDS</a>.</p>
@@ -1613,71 +1919,9 @@
 <p>Every time you see <code>config["KEY"]</code> or <code>[KEY]</code> in these docs we are referring to the corresponding key in the <code>config.yaml</code> file.</p>
 </div>
 <hr />
-<h2 id="database-credentials">Database credentials<a class="headerlink" href="#database-credentials" title="Permanent link">&para;</a></h2>
-<p>Only follow this step if you are processing smartphone or Fitbit data stored in a database. For reference, we list below the data sources RAPIDS support for each type of device.</p>
-<ol>
-<li>Create an empty file called <code class="highlight">.env</code> in your RAPIDS root directory</li>
-<li>Add the following lines and replace your database-specific  credentials (user, password, host, and database):</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">MY_GROUP</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">user=MY_USER</span>
-<span class="l l-Scalar l-Scalar-Plain">password=MY_PASSWORD</span>
-<span class="l l-Scalar l-Scalar-Plain">host=MY_HOST</span>
-<span class="l l-Scalar l-Scalar-Plain">port=3306</span>
-<span class="l l-Scalar l-Scalar-Plain">database=MY_DATABASE</span>
-</code></pre></div>
-<details class="warning"><summary>What is <code>[MY_GROUP]</code>?</summary><p>The label <code>[MY_GROUP]</code> is arbitrary but it has to match the following <code>config.yaml</code> key:
-<div class="highlight"><pre><span></span><code><span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nl">&amp;database_group</span>
-  <span class="l l-Scalar l-Scalar-Plain">MY_GROUP</span>
-</code></pre></div></p>
-</details>
-<details class="hint"><summary>Connecting to localhost (host machine) from inside our docker container</summary><p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code>. In a Linux host you need to run our docker container using <code>docker run --network="host" -d moshiresearch/rapids:latest</code> and then <code>127.0.0.1</code> will point to your host machine.</p>
-</details>
-<details class="hint"><summary>Data sources supported for each device type</summary><table>
-<thead>
-<tr>
-<th>Device</th>
-<th>Database</th>
-<th>CSV Files</th>
-<th>Zip files</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Smartphone</td>
-<td>Yes (MySQL)</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Fitbit</td>
-<td>Yes (MySQL)</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Empatica</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>RAPIDS only supports MySQL/MariaDB databases. If you would like to add support for a different database engine get in touch and we can discuss how to implement it.</li>
-<li>Fitbit data can be processed as the JSON object produced by Fitbit&rsquo;s API (recommended) or in a parsed tabular fashion.</li>
-<li>Empatica devices produce a zip file with a CSV file per sensor which can be processed directly in RAPIDS.</li>
-</ul>
-</details>
-<hr />
-<h2 id="timezone-of-your-study">Timezone of your study<a class="headerlink" href="#timezone-of-your-study" title="Permanent link">&para;</a></h2>
-<h3 id="single-timezone">Single timezone<a class="headerlink" href="#single-timezone" title="Permanent link">&para;</a></h3>
-<p>If your study only happened in a single time zone, select the appropriate code form this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list</a> and change the following config key. Double check your timezone code pick, for example US Eastern Time is <code>America/New_York</code> not <code>EST</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">TIMEZONE</span><span class="p">:</span> <span class="nl">&amp;timezone</span>
-  <span class="l l-Scalar l-Scalar-Plain">America/New_York</span>
-</code></pre></div>
-<h3 id="multiple-timezones">Multiple timezones<a class="headerlink" href="#multiple-timezones" title="Permanent link">&para;</a></h3>
-<p>Support coming soon.</p>
+<h2 id="supported-data-streams">Supported data streams<a class="headerlink" href="#supported-data-streams" title="Permanent link">&para;</a></h2>
+<p>A data stream refers to sensor data collected using a specific type of <strong>device</strong> with a specific <strong>format</strong> and stored in a specific <strong>container</strong>. For example, the <code>aware_mysql</code> data stream handles smartphone data (<strong>device</strong>) collected with the <a href="https://awareframework.com/">AWARE Framework</a> (<strong>format</strong>) stored in a MySQL database (<strong>container</strong>).</p>
+<p>Check the table in <a href="../../datastreams/data-streams-introduction">introduction to data streams</a> to know what data streams we support. If your data stream is supported, continue to the next configuration section, <strong>you will use its label later in this guide</strong> (e.g. <code>aware_mysql</code>). If your steam is not supported but you want to implement it, follow the tutorial to <a href="../../datastreams/add-new-data-streams">add support for new data streams</a> and get in touch by email or in Slack if you have any questions.</p>
 <hr />
 <h2 id="participant-files">Participant files<a class="headerlink" href="#participant-files" title="Permanent link">&para;</a></h2>
 <p>Participant files link together multiple devices (smartphones and wearables) to specific participants and identify them throughout RAPIDS. You can create these files manually or <a href="#automatic-creation-of-participant-files">automatically</a>. Participant files are stored in <code>data/external/participant_files/pxx.yaml</code> and follow a unified <a href="#structure-of-participants-files">structure</a>.</p>
@@ -1703,7 +1947,8 @@
   <span class="nt">LABEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test01</span>
   <span class="nt">START_DATE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2020-04-23</span>
   <span class="nt">END_DATE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2020-10-28</span>
-<span class="nt">EMPATICA</span><span class="p">:</span> <span class="c1"># Empatica doesn&#39;t have a device_id because the devices produce zip files per participant</span>
+<span class="nt">EMPATICA</span><span class="p">:</span>
+  <span class="nt">DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">empatica1</span><span class="p p-Indicator">]</span>
   <span class="nt">LABEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test01</span>
   <span class="nt">START_DATE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2020-04-23</span>
   <span class="nt">END_DATE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2020-10-28</span>
@@ -1724,7 +1969,7 @@
 </tr>
 <tr>
 <td><code>[PLATFORMS]</code></td>
-<td>An array that specifies the OS of each smartphone in  <code>[DEVICE_IDS]</code> , use a combination of  <code>android</code>  or  <code>ios</code>  (we support participants that changed platforms in the middle of your study!). If you have an  <code>aware_device</code>  table in your database you can set  <code>[PLATFORMS]: [multiple]</code>  and RAPIDS will infer them automatically.</td>
+<td>An array that specifies the OS of each smartphone in  <code>[DEVICE_IDS]</code> , use a combination of  <code>android</code>  or  <code>ios</code>  (we support participants that changed platforms in the middle of your study!). You can set <code>[PLATFORMS]: [infer]</code>  and RAPIDS will infer them automatically (each phone data stream infer this differently, e.g. <code>aware_mysql</code> uses the <code>aware_device</code> table).</td>
 </tr>
 <tr>
 <td><code>[LABEL]</code></td>
@@ -1732,11 +1977,11 @@
 </tr>
 <tr>
 <td><code>[START_DATE]</code></td>
-<td>A string with format  <code>YYY-MM-DD</code> . Only data collected  <em>after</em>  this date will be included in the analysis</td>
+<td>A string with format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Only data collected  <em>after</em>  this date time will be included in the analysis. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 <tr>
 <td><code>[END_DATE]</code></td>
-<td>A string with format  <code>YYY-MM-DD</code> . Only data collected  <em>before</em>  this date will be included in the analysis</td>
+<td>A string with format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Only data collected  <em>before</em>  this date time will be included in the analysis. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1760,11 +2005,11 @@
 </tr>
 <tr>
 <td><code>[START_DATE]</code></td>
-<td>A string with format  <code>YYY-MM-DD</code> . Only data collected  <em>after</em>  this date will be included in the analysis</td>
+<td>A string with format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Only data collected  <em>after</em>  this date time will be included in the analysis. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 <tr>
 <td><code>[END_DATE]</code></td>
-<td>A string with format  <code>YYY-MM-DD</code> . Only data collected  <em>before</em>  this date will be included in the analysis</td>
+<td>A string with format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Only data collected  <em>before</em>  this date time will be included in the analysis. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1779,31 +2024,39 @@
 </thead>
 <tbody>
 <tr>
+<td><code>[DEVICE_IDS]</code></td>
+<td>An array of the strings that uniquely identify each Empatica device used by this participant. Since the most common use case involves having multiple zip files from a single device for each person, set this device id to an arbitrary string (we usually use their <code>pid</code>)</td>
+</tr>
+<tr>
 <td><code>[LABEL]</code></td>
 <td>A string that is used in reports and visualizations.</td>
 </tr>
 <tr>
 <td><code>[START_DATE]</code></td>
-<td>A string with format  <code>YYY-MM-DD</code> . Only data collected  <em>after</em>  this date will be included in the analysis</td>
+<td>A string with format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Only data collected  <em>after</em>  this date time will be included in the analysis. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 <tr>
 <td><code>[END_DATE]</code></td>
-<td>A string with format  <code>YYY-MM-DD</code> . Only data collected  <em>before</em>  this date will be included in the analysis</td>
+<td>A string with format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Only data collected  <em>before</em>  this date time will be included in the analysis. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <h3 id="automatic-creation-of-participant-files">Automatic creation of participant files<a class="headerlink" href="#automatic-creation-of-participant-files" title="Permanent link">&para;</a></h3>
-<p>You have two options a) use the <code>aware_device</code> table in your database or b) use a CSV file. In either case, in your <code>config.yaml</code>, set the devices (<code>PHONE</code>, <code>FITBIT</code>, <code>EMPATICA</code>) <code>[ADD]</code> flag to <code>TRUE</code> depending on what devices you used in your study. Set <code>[DEVICE_ID_COLUMN]</code> to the name of the column that uniquely identifies each device  (only for <code>PHONE</code> and <code>FITBIT</code>).</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">aware_device table</label><div class="tabbed-content">
-<p>Set the following keys in your <code>config.yaml</code></p>
+<p>You can use a CSV file with a row per participant to automatically create participant files. </p>
+<details><summary><code>AWARE_DEVICE_TABLE</code> was deprecated</summary><p>In previous versions of RAPIDS, you could create participant files automatically using the <code>aware_device</code> table. We deprecated this option but you can still achieve the same results if you export the output of the following SQL query as a CSV file and follow the instructions below:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">device_id</span><span class="p">,</span> <span class="n">device_id</span> <span class="k">as</span> <span class="n">fitbit_id</span><span class="p">,</span> <span class="n">CONCAT</span><span class="p">(</span><span class="ss">&quot;p&quot;</span><span class="p">,</span> <span class="n">_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">empatica_id</span><span class="p">,</span> <span class="n">CONCAT</span><span class="p">(</span><span class="ss">&quot;p&quot;</span><span class="p">,</span> <span class="n">_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">pid</span><span class="p">,</span> <span class="k">if</span><span class="p">(</span><span class="n">brand</span> <span class="o">=</span> <span class="ss">&quot;iPhone&quot;</span><span class="p">,</span> <span class="ss">&quot;ios&quot;</span><span class="p">,</span> <span class="ss">&quot;android&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">platform</span><span class="p">,</span> <span class="n">CONCAT</span><span class="p">(</span><span class="ss">&quot;p&quot;</span><span class="p">,</span> <span class="n">_id</span><span class="p">)</span>  <span class="k">as</span> <span class="n">label</span><span class="p">,</span> <span class="n">DATE_FORMAT</span><span class="p">(</span><span class="n">FROM_UNIXTIME</span><span class="p">((</span><span class="k">timestamp</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">-</span> <span class="mi">86400</span><span class="p">),</span> <span class="ss">&quot;%Y-%m-%d&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">start_date</span><span class="p">,</span> <span class="k">CURRENT_DATE</span> <span class="k">as</span> <span class="n">end_date</span> <span class="k">from</span> <span class="n">aware_device</span> <span class="k">order</span> <span class="k">by</span> <span class="n">_id</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p>In your <code>config.yaml</code>:</p>
+<ol>
+<li>Set <code>CSV_FILE_PATH</code> to a CSV file path that complies with the specs described below</li>
+<li>Set the devices (<code>PHONE</code>, <code>FITBIT</code>, <code>EMPATICA</code>) <code>[ADD]</code> flag to <code>TRUE</code> depending on what devices you used in your study.</li>
+<li>Set <code>[DEVICE_ID_COLUMN]</code> to the column&rsquo;s name in your CSV file that uniquely identifies each device.</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="nt">CREATE_PARTICIPANT_FILES</span><span class="p">:</span>
-  <span class="nt">SOURCE</span><span class="p">:</span>
-    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWARE_DEVICE_TABLE</span>
-    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nv">*database_group</span>
-    <span class="nt">CSV_FILE_PATH</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
-    <span class="nt">TIMEZONE</span><span class="p">:</span> <span class="nv">*timezone</span>
+  <span class="nt">CSV_FILE_PATH</span><span class="p">:</span> <span class="s">&quot;your_path/to_your.csv&quot;</span>
   <span class="nt">PHONE_SECTION</span><span class="p">:</span>
     <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TRUE</span> <span class="c1"># or FALSE</span>
     <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_id</span> <span class="c1"># column name</span>
@@ -1812,33 +2065,12 @@
     <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span> <span class="c1"># or FALSE</span>
     <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fitbit_id</span> <span class="c1"># column name</span>
     <span class="nt">IGNORED_DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
-  <span class="nt">EMPATICA_SECTION</span><span class="p">:</span> <span class="c1"># Empatica doesn&#39;t have a device_id column because the devices produce zip files per participant</span>
-    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span> <span class="c1"># or FALSE</span>
-</code></pre></div>
-<p>Then run </p>
-<div class="highlight"><pre><span></span><code>snakemake -j1 create_participants_files
-</code></pre></div>
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">CSV file</label><div class="tabbed-content">
-<p>Set the following keys in your <code>config.yaml</code>. </p>
-<p><div class="highlight"><pre><span></span><code><span class="nt">CREATE_PARTICIPANT_FILES</span><span class="p">:</span>
-  <span class="nt">SOURCE</span><span class="p">:</span>
-    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CSV_FILE</span>
-    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
-    <span class="nt">CSV_FILE_PATH</span><span class="p">:</span> <span class="s">&quot;your_path/to_your.csv&quot;</span>
-    <span class="nt">TIMEZONE</span><span class="p">:</span> <span class="nv">*timezone</span>
-  <span class="nt">PHONE_SECTION</span><span class="p">:</span>
-    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TRUE</span> <span class="c1"># or FALSE</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_id</span> <span class="c1"># column name</span>
+  <span class="nt">EMPATICA_SECTION</span><span class="p">:</span>
+    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span>
+    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">empatica_id</span> <span class="c1"># column name</span>
     <span class="nt">IGNORED_DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
-  <span class="nt">FITBIT_SECTION</span><span class="p">:</span>
-    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span> <span class="c1"># or FALSE</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fitbit_id</span> <span class="c1"># column name</span>
-    <span class="nt">IGNORED_DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
-  <span class="nt">EMPATICA_SECTION</span><span class="p">:</span> <span class="c1"># Empatica doesn&#39;t have a device_id column because the devices produce zip files per participant</span>
-    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span> <span class="c1"># or FALSE</span>
 </code></pre></div>
-Your CSV file (<code>[SOURCE][CSV_FILE_PATH]</code>) should have the following columns but you can omit any values you don&rsquo;t have on each column:</p>
+<p>Your CSV file (<code>[CSV_FILE_PATH]</code>) should have the following columns (headers) but the values within each column can be empty:</p>
 <table>
 <thead>
 <tr>
@@ -1856,12 +2088,16 @@ Your CSV file (<code>[SOURCE][CSV_FILE_PATH]</code>) should have the following c
 <td>The name of this column has to match <code>[FITBIT_SECTION][DEVICE_ID_COLUMN]</code>. Separate multiple ids with <code>;</code></td>
 </tr>
 <tr>
+<td>empatica device id</td>
+<td>The name of this column has to match <code>[EMPATICA_SECTION][DEVICE_ID_COLUMN]</code>. Since the most common use case involves having multiple zip files from a single device for each person, set this device id to an arbitrary string (we usually use their <code>pid</code>)</td>
+</tr>
+<tr>
 <td>pid</td>
-<td>Unique identifiers with the format pXXX (your participant files will be named with this string</td>
+<td>Unique identifiers with the format pXXX (your participant files will be named with this string)</td>
 </tr>
 <tr>
 <td>platform</td>
-<td>Use <code>android</code>, <code>ios</code> or <code>multiple</code> as explained above, separate values with <code>;</code></td>
+<td>Use <code>android</code>, <code>ios</code> or <code>infer</code> as explained above, separate values with <code>;</code></td>
 </tr>
 <tr>
 <td>label</td>
@@ -1879,20 +2115,19 @@ Your CSV file (<code>[SOURCE][CSV_FILE_PATH]</code>) should have the following c
 </table>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>device_id,pid,label,platform,start_date,end_date,fitbit_id
-a748ee1a-1d0b-4ae9-9074-279a2b6ba524;dsadas-2324-fgsf-sdwr-gdfgs4rfsdf43,p01,julio,android;ios,2020-01-01,2021-01-01,fitbit1
-4c4cf7a1-0340-44bc-be0f-d5053bf7390c,p02,meng,ios,2021-01-01,2022-01-01,fitbit2
+<p>We added white spaces to this example to make it easy to read but you don&rsquo;t have to.</p>
+<div class="highlight"><pre><span></span><code>device_id                                                                ,fitbit_id, empatica_id ,pid ,label ,platform    ,start_date ,end_date
+a748ee1a-1d0b-4ae9-9074-279a2b6ba524;dsadas-2324-fgsf-sdwr-gdfgs4rfsdf43 ,fitbit1  , p01         ,p01 ,julio ,android;ios ,2020-01-01 ,2021-01-01
+4c4cf7a1-0340-44bc-be0f-d5053bf7390c                                     ,fitbit2  , p02         ,p02 ,meng  ,ios         ,2021-01-01 ,2022-01-01
 </code></pre></div>
 </div>
 <p>Then run </p>
 <div class="highlight"><pre><span></span><code>snakemake -j1 create_participants_files
 </code></pre></div>
-</div>
-</div>
 <hr />
 <h2 id="time-segments">Time Segments<a class="headerlink" href="#time-segments" title="Permanent link">&para;</a></h2>
 <p>Time segments (or epochs) are the time windows on which you want to extract behavioral features. For example, you might want to process data on every day, every morning, or only during weekends. RAPIDS offers three categories of time segments that are flexible enough to cover most use cases: <strong>frequency</strong> (short time windows every day), <strong>periodic</strong> (arbitrary time windows on any day), and <strong>event</strong> (arbitrary time windows around events of interest). See also our <a href="#segment-examples">examples</a>.</p>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Frequency Segments</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Frequency Segments</label><div class="tabbed-content">
 <p>These segments are computed on every day and all have the same duration (for example 30 minutes). Set the following keys in your <code>config.yaml</code></p>
 <div class="highlight"><pre><span></span><code><span class="nt">TIME_SEGMENTS</span><span class="p">:</span> <span class="nl">&amp;time_segments</span>
   <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FREQUENCY</span>
@@ -1933,7 +2168,7 @@ thirtyminutes,30
 </code></pre></div>
 </div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Periodic Segments</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Periodic Segments</label><div class="tabbed-content">
 <p>These segments can be computed every day, or on specific days of the week, month, quarter, and year. Their minimum duration is 1 minute but they can be as long as you want. Set the following keys in your <code>config.yaml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">TIME_SEGMENTS</span><span class="p">:</span> <span class="nl">&amp;time_segments</span>
   <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PERIODIC</span>
@@ -1984,7 +2219,7 @@ night,00:00:00,5H 59M 59S,every_day,0
 <p>This configuration will create five segments instances (<code>daily</code>, <code>morning</code>, <code>afternoon</code>, <code>evening</code>, <code>night</code>) on any given day (<code>every_day</code> set to 0). The <code>daily</code> segment will start at midnight and will last <code>23:59:59</code>, the other four segments will start at 6am, 12pm, 6pm, and 12am respectively and last for <code>05:59:59</code>. </p>
 </div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Event segments</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Event segments</label><div class="tabbed-content">
 <p>These segments can be computed before or after an event of interest (defined as any UNIX timestamp). Their minimum duration is 1 minute but they can be as long as you want. The start of each segment can be shifted backwards or forwards from the specified timestamp. Set the following keys in your <code>config.yaml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">TIME_SEGMENTS</span><span class="p">:</span> <span class="nl">&amp;time_segments</span>
   <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">EVENT</span>
@@ -2044,31 +2279,31 @@ mood,1587906020000,7D,0,0,a748ee1a-1d0b-4ae9-9074-279a2b6ba524
 </div>
 </div>
 <h3 id="segment-examples">Segment Examples<a class="headerlink" href="#segment-examples" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set" data-tabs="4:7"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">5-minutes</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:7"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">5-minutes</label><div class="tabbed-content">
 <p>Use the following <code>Frequency</code> segment file to create 288 (12 * 60 * 24) 5-minute segments starting from midnight of every day in your study
 <div class="highlight"><pre><span></span><code>label,length
 fiveminutes,5
 </code></pre></div></p>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Daily</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Daily</label><div class="tabbed-content">
 <p>Use the following <code>Periodic</code> segment file to create daily segments starting from midnight of every day in your study
 <div class="highlight"><pre><span></span><code>label,start_time,length,repeats_on,repeats_value
 daily,00:00:00,23H 59M 59S,every_day,0
 </code></pre></div></p>
 </div>
-<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Morning</label><div class="tabbed-content">
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Morning</label><div class="tabbed-content">
 <p>Use the following <code>Periodic</code> segment file to create morning segments starting at 06:00:00 and ending at 11:59:59 of every day in your study
 <div class="highlight"><pre><span></span><code>label,start_time,length,repeats_on,repeats_value
 morning,06:00:00,5H 59M 59S,every_day,0
 </code></pre></div></p>
 </div>
-<input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><label for="__tabbed_4_4">Overnight</label><div class="tabbed-content">
+<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">Overnight</label><div class="tabbed-content">
 <p>Use the following <code>Periodic</code> segment file to create overnight segments starting at 20:00:00 and ending at 07:59:59 (next day) of every day in your study
 <div class="highlight"><pre><span></span><code>label,start_time,length,repeats_on,repeats_value
 morning,20:00:00,11H 59M 59S,every_day,0
 </code></pre></div></p>
 </div>
-<input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><label for="__tabbed_4_5">Weekly</label><div class="tabbed-content">
+<input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><label for="__tabbed_3_5">Weekly</label><div class="tabbed-content">
 <p>Use the following <code>Periodic</code> segment file to create <strong>non-overlapping</strong> weekly segments starting at midnight of every <strong>Monday</strong> in your study
 <div class="highlight"><pre><span></span><code>label,start_time,length,repeats_on,repeats_value
 weekly,00:00:00,6D 23H 59M 59S,wday,1
@@ -2078,13 +2313,13 @@ Use the following <code>Periodic</code> segment file to create <strong>overlappi
 weekly,00:00:00,6D 23H 59M 59S,every_day,0
 </code></pre></div></p>
 </div>
-<input id="__tabbed_4_6" name="__tabbed_4" type="radio" /><label for="__tabbed_4_6">Week-ends</label><div class="tabbed-content">
+<input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><label for="__tabbed_3_6">Week-ends</label><div class="tabbed-content">
 <p>Use the following <code>Periodic</code> segment file to create week-end segments starting at midnight of every <strong>Saturday</strong> in your study
 <div class="highlight"><pre><span></span><code>label,start_time,length,repeats_on,repeats_value
 weekend,00:00:00,1D 23H 59M 59S,wday,6
 </code></pre></div></p>
 </div>
-<input id="__tabbed_4_7" name="__tabbed_4" type="radio" /><label for="__tabbed_4_7">Around surveys</label><div class="tabbed-content">
+<input id="__tabbed_3_7" name="__tabbed_3" type="radio" /><label for="__tabbed_3_7">Around surveys</label><div class="tabbed-content">
 <p>Use the following <code>Event</code> segment file to create two 2-hour segments that start 1 hour before surveys answered by 3 participants
 <div class="highlight"><pre><span></span><code>label,event_timestamp,length,shift,shift_direction,device_id
 survey1,1587661220000,2H,1H,-1,a748ee1a-1d0b-4ae9-9074-279a2b6ba524
@@ -2097,20 +2332,146 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 </div>
 </div>
 <hr />
-<h2 id="device-data-source-configuration">Device Data Source Configuration<a class="headerlink" href="#device-data-source-configuration" title="Permanent link">&para;</a></h2>
-<p>You might need to modify the following config keys in your <code>config.yaml</code> depending on what devices your participants used and where you are storing your data (ignore the sections of devices you did not use).</p>
-<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Phone</label><div class="tabbed-content">
-<p>The relevant <code>config.yaml</code> section looks like this by default:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">PHONE_DATA_CONFIGURATION</span><span class="p">:</span>
-  <span class="nt">SOURCE</span><span class="p">:</span> 
-    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DATABASE</span>
-    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nv">*database_group</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_id</span> <span class="c1"># column name</span>
-  <span class="nt">TIMEZONE</span><span class="p">:</span> 
-    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SINGLE</span> <span class="c1"># SINGLE (MULTIPLE support coming soon)</span>
-    <span class="nt">VALUE</span><span class="p">:</span> <span class="nv">*timezone</span>
+<h2 id="timezone-of-your-study">Timezone of your study<a class="headerlink" href="#timezone-of-your-study" title="Permanent link">&para;</a></h2>
+<h3 id="single-timezone">Single timezone<a class="headerlink" href="#single-timezone" title="Permanent link">&para;</a></h3>
+<p>If your study only happened in a single time zone or you want to ignore short trips of your participants to different time zones, select the appropriate code form this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list</a> and change the following config key. Double-check your timezone code pick, for example, US Eastern Time is <code>America/New_York</code> not <code>EST</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">TIMEZONE</span><span class="p">:</span> 
+    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SINGLE</span>
+    <span class="nt">TZCODE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">America/New_York</span>
 </code></pre></div>
-<p><strong>Parameters for <code>[PHONE_DATA_CONFIGURATION]</code></strong></p>
+<h3 id="multiple-timezones">Multiple timezones<a class="headerlink" href="#multiple-timezones" title="Permanent link">&para;</a></h3>
+<p>If your participants lived on different time zones or they travelled across time zones, and you know when participants&rsquo; devices were in a specific time zone, RAPIDS can use this data to process your data streams with the correct date-time. You need to provide RAPIDS with the time zone data in a CSV file (<code>[TZCODES_FILE]</code>) in the format described below.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">TIMEZONE</span><span class="p">:</span> 
+    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MULTIPLE</span>
+    <span class="nt">SINGLE</span><span class="p">:</span>
+      <span class="nt">TZCODE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">America/New_York</span>
+    <span class="nt">MULTIPLE</span><span class="p">:</span>
+      <span class="nt">TZCODES_FILE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">path_to/time_zones_csv.file</span>
+      <span class="nt">IF_MISSING_TZCODE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">STOP</span>
+      <span class="nt">DEFAULT_TZCODE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">America/New_York</span>
+      <span class="nt">FITBIT</span><span class="p">:</span> 
+        <span class="nt">ALLOW_MULTIPLE_TZ_PER_DEVICE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+        <span class="nt">INFER_FROM_SMARTPHONE_TZ</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<p>Parameters for <code>[TIMEZONE]</code></p>
+<table>
+<thead>
+<tr>
+<th>Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[TYPE]</code></td>
+<td>Either <code>SINGLE</code> or <code>MULTIPLE</code> as explained above</td>
+</tr>
+<tr>
+<td><code>[SINGLE][TZCODE]</code></td>
+<td>The time zone code from this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list</a> to be used across all devices</td>
+</tr>
+<tr>
+<td><code>[MULTIPLE][TZCODES_FILE]</code></td>
+<td>A CSV file containing the time and code from this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list</a> visited by each device in the study. Multiple devices can be linked to the same person, read more in <a href="#participant-files">Participants Files</a></td>
+</tr>
+<tr>
+<td><code>[MULTIPLE][IF_MISSING_TZCODE]</code></td>
+<td>When a device is missing from <code>[TZCODES_FILE]</code> Set this flag to <code>STOP</code> to stop RAPIDS execution and show an error, or to <code>USE_DEFAULT</code> to assign the time zone specified in <code>[DEFAULT_TZCODE]</code> to any such devices</td>
+</tr>
+<tr>
+<td><code>[MULTIPLE][FITBIT][ALLOW_MULTIPLE_TZ_PER_DEVICE]</code></td>
+<td>You only need to care about this flag if one or more Fitbit devices sensed data in one or more time zones, and you want RAPIDS to take into account this in its feature computation. Read more in  &ldquo;How does RAPIDS handle Fitbit devices?&rdquo; below.</td>
+</tr>
+<tr>
+<td><code>[MULTIPLE][FITBIT][INFER_FROM_SMARTPHONE_TZ]</code></td>
+<td>You only need to care about this flag if one or more Fitbit devices sensed data in one or more time zones, and you want RAPIDS to take into account this in its feature computation. Read more in  &ldquo;How does RAPIDS handle Fitbit devices?&rdquo; below.</td>
+</tr>
+</tbody>
+</table>
+<details class="info"><summary>Format of <code>TZCODES_FILE</code></summary><p><code>TZCODES_FILE</code> has three columns and a row for each time zone a device visited (a device can be a smartphone or wearable (Fitbit/Empatica)):</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>device_id</code></td>
+<td>A string that uniquely identifies a smartphone or wearable</td>
+</tr>
+<tr>
+<td><code>tzcode</code></td>
+<td>A string with the appropriate code from this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list</a> that represents the time zone where the <code>device</code> sensed data</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>A UNIX timestamp indicating when was the first time this <code>device_id</code> sensed data in <code>tzcode</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>device_id,                            tzcode,              timestamp
+13dbc8a3-dae3-4834-823a-4bc96a7d459d, America/New_York,     1587500000000
+13dbc8a3-dae3-4834-823a-4bc96a7d459d, America/Mexico_City,  1587600000000
+13dbc8a3-dae3-4834-823a-4bc96a7d459d, America/Los_Angeles,  1587700000000
+65sa66a5-2d2d-4524-946v-44ascbv4sad7, Europe/Amsterdam,     1587100000000
+65sa66a5-2d2d-4524-946v-44ascbv4sad7, Europe/Berlin,        1587200000000
+65sa66a5-2d2d-4524-946v-44ascbv4sad7, Europe/Amsterdam,     1587300000000
+</code></pre></div>
+<p>Using this file, RAPDIS will create time zone intervals per device, for example for <code>13dbc8a3-dae3-4834-823a-4bc96a7d459d</code>:</p>
+<ul>
+<li>Interval 1 <code>[1587500000000, 1587599999999]</code> for <code>America/New_York</code></li>
+<li>Interval 2 <code>[1587600000000, 1587699999999]</code> for <code>America/Mexico_City</code></li>
+<li>Interval 3 <code>[1587700000000, now]</code> for <code>America/Los_Angeles</code></li>
+</ul>
+<p>Any sensor data row from a device will be assigned a timezone if it falls within that interval, for example:</p>
+<ul>
+<li>A screen row sensed at <code>1587533333333</code> will be assigned to <code>America/New_York</code> because it falls within Interval 1</li>
+<li>A screen row sensed at <code>1587400000000</code> will be discarded because it was logged outside any interval.</li>
+</ul>
+</details>
+<details class="note"><summary>What happens if participant X lives in Los Angeles but participant Y lives in Amsterdam and they both stayed there during my study?</summary><p>Add a row per participant and set timestamp to <code>0</code>:
+<div class="highlight"><pre><span></span><code>device_id,                            tzcode,              timestamp
+13dbc8a3-dae3-4834-823a-4bc96a7d459d, America/Los_Angeles,  0
+65sa66a5-2d2d-4524-946v-44ascbv4sad7, Europe/Amsterdam,     0
+</code></pre></div></p>
+</details>
+<details class="note"><summary>What happens if I forget to add a timezone for one or more devices?</summary><p>It depends on <code>[IF_MISSING_TZCODE]</code>. </p>
+<p>If <code>[IF_MISSING_TZCODE]</code> is set to <code>STOP</code>, RAPIDS will stop its execution and show you an error message.</p>
+<p>If <code>[IF_MISSING_TZCODE]</code> is set to <code>USE_DEFAULT</code>, it will assign the time zone specified in <code>[DEFAULT_TZCODE]</code> to any devices with missing time zone information in <code>[TZCODES_FILE]</code>. This is helpful if only a few of your participants had multiple timezones and you don&rsquo;t want to specify the same time zone for the rest.</p>
+</details>
+<details class="note"><summary>How does RAPIDS handle Fitbit devices?</summary><p>Fitbit devices are not time zone aware and they always log data with a local date-time string. </p>
+<ul>
+<li>
+<p>When none of the Fitbit devices in your study changed time zones (e.g., <code>p01</code> was always in New York and <code>p02</code> was always in Amsterdam), you can set a single time zone per Fitbit device id along with a timestamp 0 (you can still assign multiple time zones to smartphone device ids)
+<div class="highlight"><pre><span></span><code>device_id, tzcode,              timestamp
+fitbit123, America/New_York,     0
+fitbit999, Europe/Amsterdam,     0
+</code></pre></div></p>
+</li>
+<li>
+<p>On the other hand, when at least one of your Fitbit devices changed time zones <strong>AND</strong> you want RAPIDS to take into account these changes, you need to set <code>[ALLOW_MULTIPLE_TZ_PER_DEVICE]</code> to <code>True</code>. <strong>You have to manually allow this option because you need to be aware it can produce inaccurate features around the times when time zones changed</strong>. This is because we cannot know exactly when the Fitbit device detected and processed the time zone change.</p>
+<p>If you want to <code>ALLOW_MULTIPLE_TZ_PER_DEVICE</code> you will need to add any time zone changes per device in the <code>TZCODES_FILE</code> as explained above. You could obtain this data by hand but if your participants also used a smartphone during your study, you can use their time zone logs. Recall that in RAPIDS every participant is represented with a participant file <code>pXX.yaml</code>, this file links together multiple devices and we will use it to know what smartphone time zone data should be applied to Fitbit devices. Thus set <code>INFER_FROM_SMARTPHONE_TZ</code> to <code>TRUE</code>, if you have included smartphone time zone data in your <code>TZCODE_FILE</code> and you want to make a participant&rsquo;s Fitbit data time zone aware with their respective smartphone data.</p>
+</li>
+</ul>
+</details>
+<hr />
+<h2 id="data-stream-configuration">Data Stream Configuration<a class="headerlink" href="#data-stream-configuration" title="Permanent link">&para;</a></h2>
+<p>Modify the following keys in your <code>config.yaml</code> depending on the <a href="../../datastreams/data-streams-introduction">data stream</a> you want to process.</p>
+<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Phone</label><div class="tabbed-content">
+<p>Set <code>[PHONE_DATA_STREAMS][TYPE]</code> to the smartphone data stream you want to process (e.g. <code>aware_mysql</code>) and configure its parameters (e.g. <code>[DATABASE_GROUP]</code>). Ignore the parameters of streams you are not using (e.g. <code>[FOLDER]</code> of <code>aware_csv</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">PHONE_DATA_STREAMS</span><span class="p">:</span>
+  <span class="nt">USE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aware_mysql</span>
+
+  <span class="c1"># AVAILABLE:</span>
+  <span class="nt">aware_mysql</span><span class="p">:</span>
+    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_GROUP</span>
+
+  <span class="nt">aware_csv</span><span class="p">:</span>
+    <span class="nt">FOLDER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/external/aware_csv</span>
+</code></pre></div>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">aware_mysql</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2120,41 +2481,121 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 </thead>
 <tbody>
 <tr>
-<td><code>[SOURCE] [TYPE]</code></td>
-<td>Only <code>DATABASE</code> is supported (phone data will be pulled from a database)</td>
+<td><code>[DATABASE_GROUP]</code></td>
+<td>A database credentials group. Read the instructions below to set it up</td>
 </tr>
+</tbody>
+</table>
+<details class="info"><summary>Setting up a DATABASE_GROUP and its connection credentials.</summary><ol>
+<li>
+<p>If you haven&rsquo;t done so, create an empty file called <code class="highlight">credentials.yaml</code> in your RAPIDS root directory: </p>
+</li>
+<li>
+<p>Add the following lines to <code>credentials.yaml</code> and replace your database-specific credentials (user, password, host, and database):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">MY_GROUP</span><span class="p">:</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_DATABASE</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_HOST</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_PASSWORD</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_USER</span>
+</code></pre></div>
+</li>
+<li>
+<p>Notes</p>
+<ol>
+<li>
+<p>The label <code>[MY_GROUP]</code> is arbitrary but it has to match the <code>[DATABASE_GROUP]</code> attribute of the data stream you choose to use.</p>
+</li>
+<li>
+<p>Indentation matters</p>
+</li>
+<li>
+<p>You can have more than one credentials group in <code>credentials.yaml</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<details class="hint"><summary>Upgrading from <code>./.env</code> from RAPIDS 0.x</summary><p>In RAPIDS versions 0.x, database credentials were stored in a <code>./.env</code> file. If you are migrating from that type of file, you have two options:</p>
+<ol>
+<li>
+<p>Migrate your credentials by hand:</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">change .env format</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">MY_GROUP</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">user=MY_USER</span>
+<span class="l l-Scalar l-Scalar-Plain">password=MY_PASSWORD</span>
+<span class="l l-Scalar l-Scalar-Plain">host=MY_HOST</span>
+<span class="l l-Scalar l-Scalar-Plain">port=3306</span>
+<span class="l l-Scalar l-Scalar-Plain">database=MY_DATABASE</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">to credentials.yaml format</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">MY_GROUP</span><span class="p">:</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_USER</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_PASSWORD</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_HOST</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_DATABASE</span>
+</code></pre></div>
+</div>
+</div>
+</li>
+<li>
+<p>Use the migration script we provide (make sure your conda environment is active):</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">update_format_env</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="hint"><summary>Connecting to localhost (host machine) from inside our docker container.</summary><p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code>. In a Linux host, you need to run our docker container using <code>docker run --network="host" -d moshiresearch/rapids:latest</code> and then <code>127.0.0.1</code> will point to your host machine.</p>
+</details>
+</details>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">aware_csv</label><div class="tabbed-content">
+<table>
+<thead>
 <tr>
-<td><code>[SOURCE] [DATABASE_GROUP]</code></td>
-<td><code>*database_group</code>  points to the value defined before in  <a href="#database-credentials">Database credentials</a></td>
+<th>Key</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td><code>[SOURCE] [DEVICE_ID_COLUMN]</code></td>
-<td>A column that contains strings that uniquely identify smartphones. For data collected with AWARE this is usually  <code>device_id</code></td>
-</tr>
-<tr>
-<td><code>[TIMEZONE] [TYPE]</code></td>
-<td>Only <code>SINGLE</code> is supported for now</td>
-</tr>
-<tr>
-<td><code>[TIMEZONE] [VALUE]</code></td>
-<td><code>*timezone</code>  points to the value defined before in  <a href="#timezone-of-your-study">Timezone of your study</a></td>
+<td><code>[FOLDER]</code></td>
+<td>Folder where you have to place a CSV file <strong>per</strong> phone sensor. Each file has to contain all the data from every participant you want to process.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Fitbit</label><div class="tabbed-content">
-<p>The relevant <code>config.yaml</code> section looks like this by default:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">FITBIT_DATA_CONFIGURATION</span><span class="p">:</span>
-  <span class="nt">SOURCE</span><span class="p">:</span> 
-    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DATABASE</span> <span class="c1"># DATABASE or FILES (set each [FITBIT_SENSOR][TABLE] attribute with a table name or a file path accordingly)</span>
-    <span class="nt">COLUMN_FORMAT</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">JSON</span> <span class="c1"># JSON or PLAIN_TEXT</span>
-    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="nv">*database_group</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_id</span> <span class="c1"># column name</span>
-  <span class="nt">TIMEZONE</span><span class="p">:</span> 
-    <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SINGLE</span> <span class="c1"># Fitbit devices don&#39;t support time zones so we read this data in the timezone indicated by VALUE </span>
-    <span class="nt">VALUE</span><span class="p">:</span> <span class="nv">*timezone</span>
+</div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Fitbit</label><div class="tabbed-content">
+<p>Set <code>[FITBIT_DATA_STREAMS][TYPE]</code> to the Fitbit data stream you want to process (e.g. <code>fitbitjson_mysql</code>) and configure its parameters (e.g. <code>[DATABASE_GROUP]</code>). Ignore the parameters of the other streams you are not using (e.g. <code>[FOLDER]</code> of <code>aware_csv</code>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You will probably have to tell RAPIDS the name of the columns where you stored your Fitbit data. To do this, modify your chosen stream&rsquo;s <code>format.yaml</code> column mappings to match your raw data column names.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="nt">FITBIT_DATA_STREAMS</span><span class="p">:</span>
+  <span class="nt">USE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fitbitjson_mysql</span>
+
+  <span class="c1"># AVAILABLE:</span>
+  <span class="nt">fitbitjson_mysql</span><span class="p">:</span>
+    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_GROUP</span>
+    <span class="nt">SLEEP_SUMMARY_EPISODE_DAY_ANCHOR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+
+  <span class="nt">fitbitjson_csv</span><span class="p">:</span>
+    <span class="nt">FOLDER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/external/fitbit_csv</span>
+    <span class="nt">SLEEP_SUMMARY_EPISODE_DAY_ANCHOR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+
+  <span class="nt">fitbitparsed_mysql</span><span class="p">:</span>
+    <span class="nt">DATABASE_GROUP</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_GROUP</span>
+    <span class="nt">SLEEP_SUMMARY_EPISODE_DAY_ANCHOR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+
+  <span class="nt">fitbitparsed_csv</span><span class="p">:</span>
+    <span class="nt">FOLDER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/external/fitbit_csv</span>
+    <span class="nt">SLEEP_SUMMARY_EPISODE_DAY_ANCHOR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
-<p><strong>Parameters for For <code>[FITBIT_DATA_CONFIGURATION]</code></strong></p>
+<div class="tabbed-set" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">fitbitjson_mysql</label><div class="tabbed-content">
+<p>This data stream process Fitbit data inside a JSON column as obtained from the Fitbit API and stored in a MySQL database. Read more about its column mappings and mutations in <a href="../../datastreams/fitbitjson-mysql#format"><code>fitbitjson_mysql</code></a>.</p>
 <table>
 <thead>
 <tr>
@@ -2164,42 +2605,102 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 </thead>
 <tbody>
 <tr>
-<td><code>[SOURCE]</code> <code>[TYPE]</code></td>
-<td><code>DATABASE</code> or <code>FILES</code>  (set each <code>[FITBIT_SENSOR]</code> <code>[TABLE]</code> attribute accordingly with a table name or a file path)</td>
+<td><code>[DATABASE_GROUP]</code></td>
+<td>A database credentials group. Read the instructions below to set it up</td>
 </tr>
 <tr>
-<td><code>[SOURCE]</code> <code>[COLUMN_FORMAT]</code></td>
-<td><code>JSON</code> or <code>PLAIN_TEXT</code>. Column format of the source data. If you pulled your data directly from the Fitbit API the column containing the sensor data will be in <code>JSON</code> format</td>
+<td><code>[SLEEP_SUMMARY_EPISODE_DAY_ANCHOR]</code></td>
+<td>One of <code>start</code> or <code>end</code>. Summary sleep episodes are considered as events based on either the start timestamp or end timestamp (they will belong to the day where they start or end).</td>
+</tr>
+</tbody>
+</table>
+<details class="info"><summary>Setting up a DATABASE_GROUP and its connection credentials.</summary><ol>
+<li>
+<p>If you haven&rsquo;t done so, create an empty file called <code class="highlight">credentials.yaml</code> in your RAPIDS root directory: </p>
+</li>
+<li>
+<p>Add the following lines to <code>credentials.yaml</code> and replace your database-specific credentials (user, password, host, and database):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">MY_GROUP</span><span class="p">:</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_DATABASE</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_HOST</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_PASSWORD</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_USER</span>
+</code></pre></div>
+</li>
+<li>
+<p>Notes</p>
+<ol>
+<li>
+<p>The label <code>[MY_GROUP]</code> is arbitrary but it has to match the <code>[DATABASE_GROUP]</code> attribute of the data stream you choose to use.</p>
+</li>
+<li>
+<p>Indentation matters</p>
+</li>
+<li>
+<p>You can have more than one credentials group in <code>credentials.yaml</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<details class="hint"><summary>Upgrading from <code>./.env</code> from RAPIDS 0.x</summary><p>In RAPIDS versions 0.x, database credentials were stored in a <code>./.env</code> file. If you are migrating from that type of file, you have two options:</p>
+<ol>
+<li>
+<p>Migrate your credentials by hand:</p>
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">change .env format</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">MY_GROUP</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">user=MY_USER</span>
+<span class="l l-Scalar l-Scalar-Plain">password=MY_PASSWORD</span>
+<span class="l l-Scalar l-Scalar-Plain">host=MY_HOST</span>
+<span class="l l-Scalar l-Scalar-Plain">port=3306</span>
+<span class="l l-Scalar l-Scalar-Plain">database=MY_DATABASE</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">to credentials.yaml format</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">MY_GROUP</span><span class="p">:</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_USER</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_PASSWORD</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_HOST</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_DATABASE</span>
+</code></pre></div>
+</div>
+</div>
+</li>
+<li>
+<p>Use the migration script we provide (make sure your conda environment is active):</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">update_format_env</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="hint"><summary>Connecting to localhost (host machine) from inside our docker container.</summary><p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code>. In a Linux host, you need to run our docker container using <code>docker run --network="host" -d moshiresearch/rapids:latest</code> and then <code>127.0.0.1</code> will point to your host machine.</p>
+</details>
+</details>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">fitbitjson_csv</label><div class="tabbed-content">
+<p>This data stream process Fitbit data inside a JSON column as obtained from the Fitbit API and stored in a CSV file. Read more about its column mappings and mutations in <a href="../../datastreams/fitbitjson-csv#format"><code>fitbitjson_csv</code></a>.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[FOLDER]</code></td>
+<td>Folder where you have to place a CSV file <strong>per</strong> Fitbit sensor. Each file has to contain all the data from every participant you want to process.</td>
 </tr>
 <tr>
-<td><code>[SOURCE]</code> <code>[DATABASE_GROUP]</code></td>
-<td><code>*database_group</code>  points to the value defined before in  <a href="#database-credentials">Database credentials</a>. Only used if  <code>[TYPE]</code>  is  <code>DATABASE</code> .</td>
-</tr>
-<tr>
-<td><code>[SOURCE]</code> <code>[DEVICE_ID_COLUMN]</code></td>
-<td>A column that contains strings that uniquely identify Fitbit devices.</td>
-</tr>
-<tr>
-<td><code>[TIMEZONE]</code> <code>[TYPE]</code></td>
-<td>Only <code>SINGLE</code> is supported  (Fitbit devices always store data in local time).</td>
-</tr>
-<tr>
-<td><code>[TIMEZONE]</code> <code>[VALUE]</code></td>
-<td><code>*timezone</code>  points to the value defined before in  <a href="#timezone-of-your-study">Timezone of your study</a></td>
+<td><code>[SLEEP_SUMMARY_EPISODE_DAY_ANCHOR]</code></td>
+<td>One of <code>start</code> or <code>end</code>. Summary sleep episodes are considered as events based on either the start timestamp or end timestamp (they will belong to the day where they start or end).</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">Empatica</label><div class="tabbed-content">
-<p>The relevant <code>config.yaml</code> section looks like this by default:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">SOURCE</span><span class="p">:</span> 
-  <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ZIP_FILE</span>
-  <span class="nt">FOLDER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/external/empatica</span>
-<span class="nt">TIMEZONE</span><span class="p">:</span> 
-  <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SINGLE</span> <span class="c1"># Empatica devices don&#39;t support time zones so we read this data in the timezone indicated by VALUE </span>
-  <span class="nt">VALUE</span><span class="p">:</span> <span class="nv">*timezone</span>
-</code></pre></div>
-<p><strong>Parameters for <code>[EMPATICA_DATA_CONFIGURATION]</code></strong></p>
+<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">fitbitparsed_mysql</label><div class="tabbed-content">
+<p>This data stream process Fitbit data stored in multiple columns after being parsed from the JSON column returned by Fitbit API and stored in a MySQL database. Read more about its column mappings and mutations in <a href="../../datastreams/fitbitparsed-mysql#format"><code>fitbitparsed_mysql</code></a>.</p>
 <table>
 <thead>
 <tr>
@@ -2209,24 +2710,127 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 </thead>
 <tbody>
 <tr>
-<td><code>[SOURCE] [TYPE]</code></td>
-<td>Only <code>ZIP_FILE</code> is supported (Empatica devices save sensor data in CSV files that are zipped together).</td>
+<td><code>[DATABASE_GROUP]</code></td>
+<td>A database credentials group. Read the instructions below to set it up</td>
 </tr>
 <tr>
-<td><code>[SOURCE] [FOLDER]</code></td>
-<td>The relative path to a folder containing one folder per participant. The name of a participant folder should match their pid in <code>config[PIDS]</code>, for example <code>p01</code>. Each participant folder can have one or more zip files with any name; in other words, the sensor data contained in those zip files belongs to a single participant. The zip files are <a href="https://support.empatica.com/hc/en-us/articles/201608896-Data-export-and-formatting-from-E4-connect-">automatically</a> generated by Empatica and have a CSV file per sensor (<code>ACC</code>, <code>HR</code>, <code>TEMP</code>, <code>EDA</code>, <code>BVP</code>, <code>TAGS</code>). All CSV files of the same type contained in one or more zip files are uncompressed, parsed, sorted by timestamp, and joinned together.</td>
-</tr>
-<tr>
-<td><code>[TIMEZONE] [TYPE]</code></td>
-<td>Only <code>SINGLE</code> is supported for now</td>
-</tr>
-<tr>
-<td><code>[TIMEZONE] [VALUE]</code></td>
-<td><code>*timezone</code>  points to the value defined before in  <a href="#timezone-of-your-study">Timezone of your study</a></td>
+<td><code>[SLEEP_SUMMARY_EPISODE_DAY_ANCHOR]</code></td>
+<td>One of <code>start</code> or <code>end</code>. Summary sleep episodes are considered as events based on either the start timestamp or end timestamp (they will belong to the day where they start or end).</td>
 </tr>
 </tbody>
 </table>
-<details class="example"><summary>Example of an EMPATICA FOLDER</summary><p>In the file tree below, we want to process the data of three participants: <code>p01</code>, <code>p02</code>, and <code>p03</code>. <code>p01</code> has two zip files, <code>p02</code> has only one zip file, and <code>p03</code> has three zip files. Each zip will have a CSV file per sensor that are joinned together and process by RAPIDS. These zip files are generated by Empatica.
+<details class="info"><summary>Setting up a DATABASE_GROUP and its connection credentials.</summary><ol>
+<li>
+<p>If you haven&rsquo;t done so, create an empty file called <code class="highlight">credentials.yaml</code> in your RAPIDS root directory: </p>
+</li>
+<li>
+<p>Add the following lines to <code>credentials.yaml</code> and replace your database-specific credentials (user, password, host, and database):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">MY_GROUP</span><span class="p">:</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_DATABASE</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_HOST</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_PASSWORD</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_USER</span>
+</code></pre></div>
+</li>
+<li>
+<p>Notes</p>
+<ol>
+<li>
+<p>The label <code>[MY_GROUP]</code> is arbitrary but it has to match the <code>[DATABASE_GROUP]</code> attribute of the data stream you choose to use.</p>
+</li>
+<li>
+<p>Indentation matters</p>
+</li>
+<li>
+<p>You can have more than one credentials group in <code>credentials.yaml</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<details class="hint"><summary>Upgrading from <code>./.env</code> from RAPIDS 0.x</summary><p>In RAPIDS versions 0.x, database credentials were stored in a <code>./.env</code> file. If you are migrating from that type of file, you have two options:</p>
+<ol>
+<li>
+<p>Migrate your credentials by hand:</p>
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">change .env format</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">MY_GROUP</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">user=MY_USER</span>
+<span class="l l-Scalar l-Scalar-Plain">password=MY_PASSWORD</span>
+<span class="l l-Scalar l-Scalar-Plain">host=MY_HOST</span>
+<span class="l l-Scalar l-Scalar-Plain">port=3306</span>
+<span class="l l-Scalar l-Scalar-Plain">database=MY_DATABASE</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">to credentials.yaml format</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">MY_GROUP</span><span class="p">:</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_USER</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_PASSWORD</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_HOST</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MY_DATABASE</span>
+</code></pre></div>
+</div>
+</div>
+</li>
+<li>
+<p>Use the migration script we provide (make sure your conda environment is active):</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">update_format_env</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="hint"><summary>Connecting to localhost (host machine) from inside our docker container.</summary><p>If you are using RAPIDS&rsquo; docker container and Docker-for-mac or Docker-for-Windows 18.03+, you can connect to a MySQL database in your host machine using <code>host.docker.internal</code> instead of <code>127.0.0.1</code> or <code>localhost</code>. In a Linux host, you need to run our docker container using <code>docker run --network="host" -d moshiresearch/rapids:latest</code> and then <code>127.0.0.1</code> will point to your host machine.</p>
+</details>
+</details>
+</div>
+<input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><label for="__tabbed_7_4">fitbitparsed_csv</label><div class="tabbed-content">
+<p>This data stream process Fitbit data stored in multiple columns (plain text) after being parsed from the JSON column returned by Fitbit API and stored in a CSV file. Read more about its column mappings and mutations in <a href="../../datastreams/fitbitparsed-csv#format"><code>fitbitparsed_csv</code></a>.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[FOLDER]</code></td>
+<td>Folder where you have to place a CSV file <strong>per</strong> Fitbit sensor. Each file has to contain all the data from every participant you want to process.</td>
+</tr>
+<tr>
+<td><code>[SLEEP_SUMMARY_EPISODE_DAY_ANCHOR]</code></td>
+<td>One of <code>start</code> or <code>end</code>. Summary sleep episodes are considered as events based on either the start timestamp or end timestamp (they will belong to the day where they start or end).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Empatica</label><div class="tabbed-content">
+<p>Set <code>[USE]</code> to the Empatica data stream you want to use; see the table in <a href="../../datastreams/data-streams-introduction">introduction to data streams</a>. Configure any parameters as indicated below.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">EMPATICA_DATA_STREAMS</span><span class="p">:</span>
+  <span class="nt">USE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">empatica_zip</span>
+
+  <span class="c1"># AVAILABLE:</span>
+  <span class="nt">empatica_zip</span><span class="p">:</span> 
+    <span class="nt">FOLDER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/external/empatica</span>
+</code></pre></div>
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">empatica_zip</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[FOLDER]</code></td>
+<td>The relative path to a folder containing one subfolder per participant. The name of a participant folder should match their device_id assigned in their participant file. Each participant folder can have one or more zip files with any name; in other words, the sensor data in those zip files belong to a single participant. The zip files are <a href="https://support.empatica.com/hc/en-us/articles/201608896-Data-export-and-formatting-from-E4-connect-">automatically</a> generated by Empatica and have a CSV file per sensor (<code>ACC</code>, <code>HR</code>, <code>TEMP</code>, <code>EDA</code>, <code>BVP</code>, <code>TAGS</code>). All CSV files of the same type contained in one or more zip files are uncompressed, parsed, sorted by timestamp, and joined together.</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example of an EMPATICA FOLDER</summary><p>In the file tree below, we want to process three participants&rsquo; data: <code>p01</code>, <code>p02</code>, and <code>p03</code>. <code>p01</code> has two zip files, <code>p02</code> has only one zip file, and <code>p03</code> has three zip files. Each zip has a CSV file per sensor that are joined together and processed by RAPIDS.</p>
 <div class="highlight"><pre><span></span><code>data/ <span class="c1"># this folder exists in the root RAPIDS folder</span>
   external/
     empatica/
@@ -2239,8 +2843,10 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
         t1.zip
         t2.zip
         t3.zip
-</code></pre></div></p>
+</code></pre></div>
 </details>
+</div>
+</div>
 </div>
 </div>
 <hr />
@@ -2253,13 +2859,50 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
                 
               
               
-                
+  <!-- Add custom comment system integration here -->
+  <!-- Utterances integration -->
+
+  <h2 id="__comments">Comments</h2>
+
+   <script type="text/javascript">
+    var rapids_utterances_theme = false
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+          // wait for utterances to load and send it's first message.
+          addEventListener('message', event => {
+            if (event.origin !== 'https://utteranc.es' || rapids_utterances_theme == true) {
+              return;
+            }
+            rapids_utterances_theme = true
+            if(document.body.getAttribute("data-md-color-scheme") == "default")
+              document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "github-light" },"https://utteranc.es/")
+            else
+              document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "photon-dark" },"https://utteranc.es/")
+          });
+          document.getElementById('__palette_1').onclick = function(){
+            document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "github-light" },"https://utteranc.es/")
+          }
+          document.getElementById('__palette_2').onclick = function(){
+            document.querySelector("iframe.utterances-frame").contentWindow.postMessage({ type: "set-theme", theme: "photon-dark" },"https://utteranc.es/")
+          }
+        }
+      }
+  </script>
+
+  <script src="https://utteranc.es/client.js"
+    repo="carissalow/rapids"
+    issue-term="pathname"
+    label="docs comments"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
 
 
-              
             </article>
           </div>
         </div>
+        
       </main>
       
         
@@ -2312,6 +2955,7 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
             Material for MkDocs Insiders
           </a>
         
+        
       </div>
       
   <div class="md-footer-social">
@@ -2332,20 +2976,13 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.9849d06a.min.js", "version": {"method": "mike"}}</script>
     
-      <script src="../../assets/javascripts/vendor.191088e8.min.js"></script>
-      <script src="../../assets/javascripts/bundle.d4cf0930.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: ["navigation.sections", "search.suggest", "search.highlight"],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.e77c40e2.min.js"
-          }, typeof search !== "undefined" && search),
-          version: {"method": "mike"}
-        })
-      </script>
+    
+      <script src="../../assets/javascripts/bundle.7da13850.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
