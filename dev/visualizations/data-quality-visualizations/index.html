@@ -1770,7 +1770,7 @@
                 
                 
                 <h1 id="data-quality-visualizations">Data Quality Visualizations<a class="headerlink" href="#data-quality-visualizations" title="Permanent link">&para;</a></h1>
-<p>We showcase these visualizations with a test study that collected 14 days of smartphone and Fitbit data from two participants (t01 and t02) and extracted behavioral features within five time segments (daily, morning, afternoon, evening, and night).</p>
+<p>We showcase these visualizations with a test study that collected 14 days of smartphone and Fitbit data from two participants (example01 and example02) and extracted behavioral features within five time segments (daily, morning, afternoon, evening, and night).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a href="../../setup/configuration#time-segments">Time segments</a> (e.g. <code>daily</code>, <code>morning</code>, etc.) can have multiple instances (day 1, day 2, or morning 1, morning 2, etc.)</p>
@@ -1784,26 +1784,38 @@
 </div>
 <figure>
   <img src="../../img/h-data-yield.png" max-width="100%" />
-  <figcaption>Histogram of the data yielded minute ratio for a single participant during five time segments (daily, afternoon, evening, and night)</figcaption>
+  <figcaption>Histogram of the data yielded minute ratio for a single participant during five time segments (daily, morning, afternoon, evening, and night)</figcaption>
 </figure>
 
 <h2 id="2-heatmaps-of-overall-data-yield">2. Heatmaps of overall data yield<a class="headerlink" href="#2-heatmaps-of-overall-data-yield" title="Permanent link">&para;</a></h2>
 <p>These heatmaps are a break down per time segment and per participant of <a href="#1-histograms-of-phone-data-yield">Visualization 1</a>. Heatmap&rsquo;s rows represent participants, columns represent time segment instances and the cells’ color represent the valid yielded minute or hour ratio for a participant during a time segment instance.</p>
-<p>As different participants might join a study on different dates and time segments can be of any length and start on any day, the x-axis is labelled with the time delta between the start of each time segment instance minus the start of the first instance. These plots provide a quick study overview of the monitoring coverage per person and per time segment. </p>
-<p>The figure below shows the heatmap of the valid yielded minute ratio for participants t01 and t02 on daily segments and, as we inferred from the previous histogram, the lighter (yellow) color on most time segment instances (cells) indicate both phones sensed data without interruptions for most days (except for the first and last ones).</p>
+<p>As different participants might join a study on different dates and time segments can be of any length and start on any day, the x-axis can be labelled with the absolute time of the start of each time segment instance or the time delta between the start of each time segment instance minus the start of the first instance. These plots provide a quick study overview of the monitoring coverage per person and per time segment. </p>
+<p>The figure below shows the heatmap of the valid yielded minute ratio for participants example01 and example02 on daily segments and, as we inferred from the previous histogram, the lighter (yellow) color on most time segment instances (cells) indicate both phones sensed data without interruptions for most days (except for the first and last ones).</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">[ABSOLUTE_TIME]</label><div class="tabbed-content">
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Click <a href="../../img/hm-data-yield-participants.html">here</a> to see an example of these interactive visualizations in HTML format</p>
+<p>Click <a href="../../img/hm-data-yield-participants-absolute-time.html">here</a> to see an example of these interactive visualizations in HTML format</p>
 </div>
-<figure>
-  <img src="../../img/hm-data-yield-participants.png" max-width="100%" />
+<p><figure>
+  <img src="../../img/hm-data-yield-participants-absolute-time.png" max-width="100%" />
   <figcaption>Overall compliance heatmap for all participants</figcaption>
-</figure>
-
+</figure></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">[RELATIVE_TIME]</label><div class="tabbed-content">
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Click <a href="../../img/hm-data-yield-participants-relative-time.html">here</a> to see an example of these interactive visualizations in HTML format</p>
+</div>
+<p><figure>
+  <img src="../../img/hm-data-yield-participants-relative-time.png" max-width="100%" />
+  <figcaption>Overall compliance heatmap for all participants</figcaption>
+</figure></p>
+</div>
+</div>
 <h2 id="3-heatmap-of-recorded-phone-sensors">3. Heatmap of recorded phone sensors<a class="headerlink" href="#3-heatmap-of-recorded-phone-sensors" title="Permanent link">&para;</a></h2>
 <p>In these heatmaps rows represent time segment instances, columns represent minutes since the start of a time segment instance, and cells’ color shows the number of phone sensors that logged at least one row of data during those 1-minute windows. </p>
 <p>RAPIDS creates a plot per participant and per time segment and can be used as a rough indication of whether time-based sensors were following their sensing schedule (e.g. if location was being sensed every 2 minutes).</p>
-<p>The figure below shows this heatmap for phone sensors collected by participant t01 in daily time segments from Apr 23<sup>rd</sup> 2020 to May 4<sup>th</sup> 2020. We can infer that for most of the monitoring time, the participant’s phone logged data from at least 8 sensors each minute.</p>
+<p>The figure below shows this heatmap for phone sensors collected by participant example01 in daily time segments from Apr 23<sup>rd</sup> 2020 to May 4<sup>th</sup> 2020. We can infer that for most of the monitoring time, the participant’s phone logged data from at least 7 sensors each minute.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Click <a href="../../img/hm-phone-sensors.html">here</a> to see an example of these interactive visualizations in HTML format</p>
@@ -1816,13 +1828,13 @@
 <h2 id="4-heatmap-of-sensor-row-count">4. Heatmap of sensor row count<a class="headerlink" href="#4-heatmap-of-sensor-row-count" title="Permanent link">&para;</a></h2>
 <p>These heatmaps are a per-sensor breakdown of <a href="#1-histograms-of-phone-data-yield">Visualization 1</a> and <a href="#2-heatmaps-of-overall-data-yield">Visualization 2</a>. Note that the second row (ratio of valid yielded minutes) of this heatmap matches the respective participant (bottom) row the screenshot in Visualization 2.</p>
 <p>In these heatmaps rows represent phone or Fitbit sensors, columns represent time segment instances and cell’s color shows the normalized (0 to 1) row count of each sensor within a time segment instance. RAPIDS creates one heatmap per participant and they can be used to judge missing data on a per participant and per sensor basis.</p>
-<p>The figure below shows data for 16 phone sensors (including data yield) of t01’s daily segments (only half of the sensor names and dates are visible in the screenshot but all can be accessed in the interactive plot). From the top two rows, we can see that the phone was sensing data for most of the monitoring period (as suggested by Figure 3 and Figure 4). We can also infer how phone usage influenced the different sensor streams; there are peaks of screen events during the first day (Apr 23<sup>rd</sup>), peaks of location coordinates on Apr 26<sup>th</sup> and Apr 30<sup>th</sup>, and no sent or received SMS except for Apr 23<sup>rd</sup>, Apr 29<sup>th</sup> and Apr 30<sup>th</sup> (unlabeled row between screen and locations).</p>
+<p>The figure below shows data for 14 phone sensors (including data yield) of example01’s daily segments. From the top two rows, we can see that the phone was sensing data for most of the monitoring period (as suggested by Figure 3 and Figure 4). We can also infer how phone usage influenced the different sensor streams; there are peaks of screen events during the first day (Apr 23<sup>rd</sup>), peaks of location coordinates on Apr 26<sup>th</sup> and Apr 30<sup>th</sup>, and no sent or received SMS except for Apr 23<sup>rd</sup>, Apr 29<sup>th</sup> and Apr 30<sup>th</sup> (unlabeled row between screen and locations).</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Click <a href="../../img/hm-sensor_rows.html">here</a> to see an example of these interactive visualizations in HTML format</p>
+<p>Click <a href="../../img/hm-sensor-rows.html">here</a> to see an example of these interactive visualizations in HTML format</p>
 </div>
 <figure>
-  <img src="../../img/hm-sensor_rows.png" max-width="100%" />
+  <img src="../../img/hm-sensor-rows.png" max-width="100%" />
   <figcaption>Heatmap of the sensor row count per time segment of a single participant</figcaption>
 </figure>
                 
