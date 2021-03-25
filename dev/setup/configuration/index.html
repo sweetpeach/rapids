@@ -2427,6 +2427,11 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 <li>A screen row sensed at <code>1587400000000</code> will be discarded because it was logged outside any interval.</li>
 </ul>
 </details>
+<details class="note"><summary>Can I get the <code>TZCODES_FILE</code> from the time zone table collected automatically by the AWARE app?</summary><p>Sure. You can put your timezone table (<code>timezone.csv</code>) collected by AWARE app under <code>data/external</code> folder and run:
+<div class="highlight"><pre><span></span><code>python tools/create_multi_timezones_file.py
+</code></pre></div>
+The <code>TZCODES_FILE</code> will be saved as <code>data/external/multiple_timezones.csv</code> file.</p>
+</details>
 <details class="note"><summary>What happens if participant X lives in Los Angeles but participant Y lives in Amsterdam and they both stayed there during my study?</summary><p>Add a row per participant and set timestamp to <code>0</code>:
 <div class="highlight"><pre><span></span><code>device_id,                            tzcode,              timestamp
 13dbc8a3-dae3-4834-823a-4bc96a7d459d, America/Los_Angeles,  0
