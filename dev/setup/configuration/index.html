@@ -2053,21 +2053,17 @@
 <ol>
 <li>Set <code>CSV_FILE_PATH</code> to a CSV file path that complies with the specs described below</li>
 <li>Set the devices (<code>PHONE</code>, <code>FITBIT</code>, <code>EMPATICA</code>) <code>[ADD]</code> flag to <code>TRUE</code> depending on what devices you used in your study.</li>
-<li>Set <code>[DEVICE_ID_COLUMN]</code> to the column&rsquo;s name in your CSV file that uniquely identifies each device.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="nt">CREATE_PARTICIPANT_FILES</span><span class="p">:</span>
   <span class="nt">CSV_FILE_PATH</span><span class="p">:</span> <span class="s">&quot;your_path/to_your.csv&quot;</span>
   <span class="nt">PHONE_SECTION</span><span class="p">:</span>
     <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TRUE</span> <span class="c1"># or FALSE</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_id</span> <span class="c1"># column name</span>
     <span class="nt">IGNORED_DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
   <span class="nt">FITBIT_SECTION</span><span class="p">:</span>
-    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span> <span class="c1"># or FALSE</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fitbit_id</span> <span class="c1"># column name</span>
+    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TRUE</span> <span class="c1"># or FALSE</span>
     <span class="nt">IGNORED_DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
   <span class="nt">EMPATICA_SECTION</span><span class="p">:</span>
-    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FALSE</span>
-    <span class="nt">DEVICE_ID_COLUMN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">empatica_id</span> <span class="c1"># column name</span>
+    <span class="nt">ADD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TRUE</span> <span class="c1"># or FALSE</span>
     <span class="nt">IGNORED_DEVICE_IDS</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
 </code></pre></div>
 <p>Your CSV file (<code>[CSV_FILE_PATH]</code>) should have the following columns (headers) but the values within each column can be empty:</p>
