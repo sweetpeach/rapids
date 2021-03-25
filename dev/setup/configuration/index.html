@@ -2080,16 +2080,16 @@
 </thead>
 <tbody>
 <tr>
-<td>phone device id</td>
-<td>The name of this column has to match <code>[PHONE_SECTION][DEVICE_ID_COLUMN]</code>. Separate multiple ids with <code>;</code></td>
+<td>device_id</td>
+<td>Phone device id. Separate multiple ids with <code>;</code></td>
 </tr>
 <tr>
-<td>fitbit device id</td>
-<td>The name of this column has to match <code>[FITBIT_SECTION][DEVICE_ID_COLUMN]</code>. Separate multiple ids with <code>;</code></td>
+<td>fitbit_id</td>
+<td>Fitbit device id. Separate multiple ids with <code>;</code></td>
 </tr>
 <tr>
-<td>empatica device id</td>
-<td>The name of this column has to match <code>[EMPATICA_SECTION][DEVICE_ID_COLUMN]</code>. Since the most common use case involves having multiple zip files from a single device for each person, set this device id to an arbitrary string (we usually use their <code>pid</code>)</td>
+<td>empatica_id</td>
+<td>Empatica device id. Since the most common use case involves having multiple zip files from a single device for each person, set this device id to an arbitrary string (we usually use their <code>pid</code>)</td>
 </tr>
 <tr>
 <td>pid</td>
@@ -2105,11 +2105,11 @@
 </tr>
 <tr>
 <td>start_date</td>
-<td>A string with format <code>YYY-MM-DD</code>.</td>
+<td>A string with format <code>YYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 <tr>
 <td>end_date</td>
-<td>A string with format <code>YYY-MM-DD</code>.</td>
+<td>A string with format <code>YYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. By default, <code>YYYY-MM-DD</code> is interpreted as <code>YYYY-MM-DD 00:00:00</code>.</td>
 </tr>
 </tbody>
 </table>
