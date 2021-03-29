@@ -1749,7 +1749,8 @@
                 
                 
                 <h1 id="behavioral-features-introduction">Behavioral Features Introduction<a class="headerlink" href="#behavioral-features-introduction" title="Permanent link">&para;</a></h1>
-<p>Every device sensor has a corresponding config section in <code>config.yaml</code>, these sections follow a similar structure and we&rsquo;ll use <code>PHONE_ACCELEROMETER</code> as an example to explain this structure.</p>
+<p>A behavioral feature is a metric computed from raw sensor data quantifying the behavior of a participant. For example, the time spent at home computed based on location data. These are also known as digital biomarkers. </p>
+<p>RAPIDS&rsquo; <code>config.yaml</code> has a section for each supported device/sensor (e.g., <code>PHONE_ACCELEROMETER</code>, <code>FITBIT_STEPS</code>, <code>EMPATICA_HEARTRATE</code>). These sections follow a similar structure, and they can have one or more feature <code>PROVIDERS</code>, that compute one or more behavioral features.  You will modify the parameters of these <code>PROVIDERS</code> to obtain features from different mobile sensors. We&rsquo;ll use <code>PHONE_ACCELEROMETER</code> as an example to explain this further.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
@@ -1818,7 +1819,7 @@
 <p>It has to be a relative path from RAPIDS&rsquo; root folder and the script&rsquo;s parent folder should be named after the provider, e.g. <code>panda</code>.</p>
 </li>
 </ol>
-<p>These are descriptions of each marker for accessibility:</p>
+<p>These are the descriptions of each marker for accessibility:</p>
 <ol>
 <li>
 <p><strong>Sensor section</strong></p>
