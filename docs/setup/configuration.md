@@ -111,22 +111,18 @@ In your `config.yaml`:
 
 1. Set `CSV_FILE_PATH` to a CSV file path that complies with the specs described below
 2. Set the devices (`PHONE`, `FITBIT`, `EMPATICA`) `[ADD]` flag to `TRUE` depending on what devices you used in your study.
-3. Set `[DEVICE_ID_COLUMN]` to the column's name in your CSV file that uniquely identifies each device.
 
 ```yaml
 CREATE_PARTICIPANT_FILES:
   CSV_FILE_PATH: "your_path/to_your.csv"
   PHONE_SECTION:
     ADD: TRUE # or FALSE
-    DEVICE_ID_COLUMN: device_id # column name
     IGNORED_DEVICE_IDS: []
   FITBIT_SECTION:
-    ADD: FALSE # or FALSE
-    DEVICE_ID_COLUMN: fitbit_id # column name
+    ADD: TRUE # or FALSE
     IGNORED_DEVICE_IDS: []
   EMPATICA_SECTION:
-    ADD: FALSE
-    DEVICE_ID_COLUMN: empatica_id # column name
+    ADD: TRUE # or FALSE
     IGNORED_DEVICE_IDS: []
 ```
 
@@ -134,14 +130,14 @@ Your CSV file (`[CSV_FILE_PATH]`) should have the following columns (headers) bu
 
 | Column           | Description                                                                                               |
 |------------------|-----------------------------------------------------------------------------------------------------------|
-| phone device id  | The name of this column has to match `[PHONE_SECTION][DEVICE_ID_COLUMN]`. Separate multiple ids with `;`  |
-| fitbit device id | The name of this column has to match `[FITBIT_SECTION][DEVICE_ID_COLUMN]`. Separate multiple ids with `;`  |
-| empatica device id | The name of this column has to match `[EMPATICA_SECTION][DEVICE_ID_COLUMN]`. Since the most common use case involves having multiple zip files from a single device for each person, set this device id to an arbitrary string (we usually use their `pid`)  |
+| device_id        | Phone device id. Separate multiple ids with `;`   |
+| fitbit_id        | Fitbit device id. Separate multiple ids with `;`  |
+| empatica_id      | Empatica device id. Since the most common use case involves having multiple zip files from a single device for each person, set this device id to an arbitrary string (we usually use their `pid`)  |
 | pid              | Unique identifiers with the format pXXX (your participant files will be named with this string)            |
 | platform         | Use `android`, `ios` or `infer` as explained above, separate values with `;`            |
 | label            | A human readable string that is used in reports and visualizations.                                       |
-| start_date       | A string with format `YYY-MM-DD`. |
-| end_date         | A string with format `YYY-MM-DD`. |
+| start_date       | A string with format `YYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`. By default, `YYYY-MM-DD` is interpreted as `YYYY-MM-DD 00:00:00`. |
+| end_date         | A string with format `YYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`. By default, `YYYY-MM-DD` is interpreted as `YYYY-MM-DD 00:00:00`. |
 
 !!! example
     We added white spaces to this example to make it easy to read but you don't have to.
@@ -401,6 +397,13 @@ Parameters for `[TIMEZONE]`
 
     - A screen row sensed at `1587533333333` will be assigned to `America/New_York` because it falls within Interval 1
     - A screen row sensed at `1587400000000` will be discarded because it was logged outside any interval.
+
+??? note "Can I get the `TZCODES_FILE` from the time zone table collected automatically by the AWARE app?"
+    Sure. You can put your timezone table (`timezone.csv`) collected by AWARE app under `data/external` folder and run:
+    ```bash
+    python tools/create_multi_timezones_file.py
+    ```
+    The `TZCODES_FILE` will be saved as `data/external/multiple_timezones.csv` file.
 
 ??? note "What happens if participant X lives in Los Angeles but participant Y lives in Amsterdam and they both stayed there during my study?"
     Add a row per participant and set timestamp to `0`:
