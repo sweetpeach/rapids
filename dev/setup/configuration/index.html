@@ -2364,7 +2364,7 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
     <span class="nt">TZCODE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">America/New_York</span>
 </code></pre></div>
 <h3 id="multiple-timezones">Multiple timezones<a class="headerlink" href="#multiple-timezones" title="Permanent link">&para;</a></h3>
-<p>If your participants lived on different time zones or they travelled across time zones, and you know when participants&rsquo; devices were in a specific time zone, RAPIDS can use this data to process your data streams with the correct date-time. You need to provide RAPIDS with the time zone data in a CSV file (<code>[TZCODES_FILE]</code>) in the format described below.</p>
+<p>If your participants lived in different time zones or they traveled across time zones, and you know when participants&rsquo; devices were in a specific time zone, RAPIDS can use this data to process your data streams with the correct date-time. You need to provide RAPIDS with the time zone data in a CSV file (<code>[TZCODES_FILE]</code>) in the format described below.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">TIMEZONE</span><span class="p">:</span> 
     <span class="nt">TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MULTIPLE</span>
     <span class="nt">SINGLE</span><span class="p">:</span>
@@ -2396,7 +2396,7 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 </tr>
 <tr>
 <td><code>[MULTIPLE][TZCODES_FILE]</code></td>
-<td>A CSV file containing the time and code from this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list</a> visited by each device in the study. Multiple devices can be linked to the same person, read more in <a href="#participant-files">Participants Files</a></td>
+<td>A CSV file containing the time zones in which participants&rsquo; devices sensed data (see the required format below). Multiple devices can be linked to the same person, read more in <a href="#participant-files">Participants Files</a></td>
 </tr>
 <tr>
 <td><code>[MULTIPLE][IF_MISSING_TZCODE]</code></td>
@@ -2455,7 +2455,7 @@ survey2,1584291600000,2H,1H,-1,klj34oi2-8frk-2343-21kk-324ljklewlr3
 <li>A screen row sensed at <code>1587400000000</code> will be discarded because it was logged outside any interval.</li>
 </ul>
 </details>
-<details class="note"><summary>Can I get the <code>TZCODES_FILE</code> from the time zone table collected automatically by the AWARE app?</summary><p>Sure. You can put your timezone table (<code>timezone.csv</code>) collected by AWARE app under <code>data/external</code> folder and run:
+<details class="note"><summary>Can I get the <code>TZCODES_FILE</code> from the time zone table collected automatically by the AWARE app?</summary><p>Sure. You can put your timezone table (<code>timezone.csv</code>) collected by the AWARE app under <code>data/external</code> folder and run:
 <div class="highlight"><pre><span></span><code>python tools/create_multi_timezones_file.py
 </code></pre></div>
 The <code>TZCODES_FILE</code> will be saved as <code>data/external/multiple_timezones.csv</code> file.</p>
