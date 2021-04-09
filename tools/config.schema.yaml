@@ -951,10 +951,8 @@ properties:
               - properties:
                   FEATURES:
                     type: object
-                    required: [LEVELS_AND_TYPES_COMBINING_ALL, LEVELS_AND_TYPES, RATIOS_TYPE, RATIOS_SCOPE, ROUTINE]
+                    required: [LEVELS_AND_TYPES, RATIOS_TYPE, RATIOS_SCOPE, ROUTINE]
                     properties:
-                      LEVELS_AND_TYPES_COMBINING_ALL:
-                        type: boolean
                       LEVELS_AND_TYPES:
                         type: array
                         uniqueItems: True
@@ -981,8 +979,10 @@ properties:
                           enum: [starttimefirstmainsleep, endtimelastmainsleep, starttimefirstnap, endtimelastnap]
                   SLEEP_LEVELS:
                     type: object
-                    required: [CLASSIC, STAGES, UNIFIED]
+                    required: [INCLUDE_ALL_GROUPS, CLASSIC, STAGES, UNIFIED]
                     properties:
+                      INCLUDE_ALL_GROUPS:
+                        type: boolean
                       CLASSIC:
                         type: array
                         uniqueItems: True
@@ -1006,12 +1006,12 @@ properties:
                     uniqueItems: True
                     items:
                       type: string
-                      enum: [main, nap]
+                      enum: [main, nap, all]
                   INCLUDE_SLEEP_LATER_THAN:
                       type: number
                       minimum: 0
                       maximum: 1439
-                  REFERENCE_TIME:
+                  ROUTINE_REFERENCE_TIME:
                     type: string
                     enum: [MIDNIGHT, START_OF_THE_SEGMENT]
           PRICE:
