@@ -32,7 +32,7 @@ Parameters description for `[FITBIT_SLEEP_INTRADAY][PROVIDERS][RAPIDS]`:
 |`[SLEEP_LEVELS]`                             | Fitbit’s sleep API Version 1 only provides `CLASSIC` records. However, Version 1.2 provides 2 types of records: `CLASSIC` and `STAGES`. `STAGES` is only available in devices with a heart rate sensor and even those devices will fail to report it if the battery is low or the device is not tight enough. While `CLASSIC` contains 3 sleep levels (`awake`, `restless`, and `asleep`), `STAGES` contains 4 sleep levels (`wake`, `deep`, `light`, `rem`). To make it consistent, RAPIDS grouped them into 2 `UNIFIED` sleep levels: `awake` (`CLASSIC`: `awake` and `restless`; `STAGES`: `wake`) and `asleep` (`CLASSIC`: `asleep`; `STAGES`: `deep`, `light`, and `rem`).
 |`[SLEEP_TYPES]`                              | Types of sleep to be included in the feature extraction computation. Fitbit provides 2 types of sleep: `main`, `nap`.
 |`[INCLUDE_SLEEP_LATER_THAN]`| All resampled sleep rows (bin interval: one minute) that started after this time will be included in the feature computation. It is a number ranging from 0 (midnight) to 1439 (23:59) which denotes the number of minutes after midnight. If a segment is longer than one day, this value is for every day.
-|`[REFERENCE_TIME]`| The reference point from which the `[ROUTINE]` features are to be computed. Chosen from `MIDNIGHT` and `START_OF_THE_SEGMENT`, default is `MIDNIGHT`. If you have multiple time segments per day it might be more informative to set this flag to `START_OF_THE_SEGMENT`.
+|`[ROUTINE_REFERENCE_TIME]`| The reference point from which the `[ROUTINE]` features are to be computed. Chosen from `MIDNIGHT` and `START_OF_THE_SEGMENT`, default is `MIDNIGHT`. If you have multiple time segments per day it might be more informative to set this flag to `START_OF_THE_SEGMENT`.
 
 
 Features description for `[FITBIT_SLEEP_INTRADAY][PROVIDERS][RAPIDS][LEVELS_AND_TYPES]`:
@@ -84,10 +84,10 @@ Features description for `[FITBIT_SLEEP_INTRADAY][PROVIDERS][RAPIDS][ROUTINE]`:
 
 |Feature                           |Units          |Description                                                  |
 |--------------------------------- |-------------- |-------------------------------------------------------------|
-|starttimefirstmainsleep           |minutes        |Start time (in minutes since `REFERENCE_TIME`) of the first main sleep episode after `INCLUDE_EPISODES_LATER_THAN`.
-|endtimelastmainsleep              |minutes        |End time (in minutes since `REFERENCE_TIME`) of the last main sleep episode after `INCLUDE_EPISODES_LATER_THAN`.
-|starttimefirstnap                 |minutes        |Start time (in minutes since `REFERENCE_TIME`) of the first nap episode after `INCLUDE_EPISODES_LATER_THAN`.
-|endtimelastnap                    |minutes        |End time (in minutes since `REFERENCE_TIME`) of the last nap episode after `INCLUDE_EPISODES_LATER_THAN`.
+|starttimefirstmainsleep           |minutes        |Start time (in minutes since `ROUTINE_REFERENCE_TIME`) of the first main sleep episode after `INCLUDE_EPISODES_LATER_THAN`.
+|endtimelastmainsleep              |minutes        |End time (in minutes since `ROUTINE_REFERENCE_TIME`) of the last main sleep episode after `INCLUDE_EPISODES_LATER_THAN`.
+|starttimefirstnap                 |minutes        |Start time (in minutes since `ROUTINE_REFERENCE_TIME`) of the first nap episode after `INCLUDE_EPISODES_LATER_THAN`.
+|endtimelastnap                    |minutes        |End time (in minutes since `ROUTINE_REFERENCE_TIME`) of the last nap episode after `INCLUDE_EPISODES_LATER_THAN`.
 
 
 

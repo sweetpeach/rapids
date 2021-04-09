@@ -69,13 +69,15 @@ def allStatsFeatures(sleep_data, base_sleep_levels, base_sleep_types, features, 
 
     # For CLASSIC
     for sleep_level, sleep_type in itertools.product(base_sleep_levels["CLASSIC"] + ["all"], base_sleep_types + ["all"]):
-        sleep_episodes_classic = sleep_data[sleep_data["is_main_sleep"] == (1 if sleep_type == "main" else 0)] if sleep_type != "all" else sleep_data
+        sleep_episodes_classic = sleep_data[sleep_data["type"] == "classic"]
+        sleep_episodes_classic = sleep_episodes_classic[sleep_episodes_classic["is_main_sleep"] == (1 if sleep_type == "main" else 0)] if sleep_type != "all" else sleep_episodes_classic
         sleep_episodes_classic = sleep_episodes_classic[sleep_episodes_classic["level"] == sleep_level] if sleep_level != "all" else sleep_episodes_classic
         sleep_intraday_features = pd.concat([sleep_intraday_features, statsFeatures(sleep_episodes_classic, features, sleep_level + "classic" + sleep_type)], axis=1)
     
     # For STAGES
     for sleep_level, sleep_type in itertools.product(base_sleep_levels["STAGES"] + ["all"], base_sleep_types + ["all"]):
-        sleep_episodes_stages = sleep_data[sleep_data["is_main_sleep"] == (1 if sleep_type == "main" else 0)] if sleep_type != "all" else sleep_data
+        sleep_episodes_stages = sleep_data[sleep_data["type"] == "stages"]
+        sleep_episodes_stages = sleep_episodes_stages[sleep_episodes_stages["is_main_sleep"] == (1 if sleep_type == "main" else 0)] if sleep_type != "all" else sleep_episodes_stages
         sleep_episodes_stages = sleep_episodes_stages[sleep_episodes_stages["level"] == sleep_level] if sleep_level != "all" else sleep_episodes_stages
         sleep_intraday_features = pd.concat([sleep_intraday_features, statsFeatures(sleep_episodes_stages, features, sleep_level + "stages" + sleep_type)], axis=1)
     
@@ -167,36 +169,36 @@ def ratiosFeatures(sleep_intraday_features, ratios_types, ratios_scopes, sleep_l
     return sleep_intraday_features
 
 
-def singleSleepTypeRoutineFeatures(sleep_intraday_data, routine, reference_time, sleep_type, sleep_intraday_features):
+def singleSleepTypeRoutineFeatures(sleep_intraday_data, routine, routine_reference_time, sleep_type, sleep_intraday_features):
 
     sleep_intraday_data = sleep_intraday_data[sleep_intraday_data["is_main_sleep"] == (1 if sleep_type == "mainsleep" else 0)]
     if "starttimefirst" + sleep_type in routine:
         grouped_first = sleep_intraday_data.groupby(["local_segment"]).first()
-        if reference_time == "MIDNIGHT":
+        if routine_reference_time == "MIDNIGHT":
             sleep_intraday_features["starttimefirst" + sleep_type] = grouped_first["local_start_date_time"].apply(lambda x: x.hour * 60 + x.minute + x.second / 60)
-        elif reference_time == "START_OF_THE_SEGMENT":
+        elif routine_reference_time == "START_OF_THE_SEGMENT":
             sleep_intraday_features["starttimefirst" + sleep_type] = (grouped_first["start_timestamp"] - grouped_first["segment_start_timestamp"]) / (60 * 1000)
         else:
-            raise ValueError("Please check FITBIT_SLEEP_INTRADAY section of config.yaml: REFERENCE_TIME can only be MIDNIGHT or START_OF_THE_SEGMENT.")
+            raise ValueError("Please check FITBIT_SLEEP_INTRADAY section of config.yaml: ROUTINE_REFERENCE_TIME can only be MIDNIGHT or START_OF_THE_SEGMENT.")
     
     if "endtimelast" + sleep_type in routine:
         grouped_last = sleep_intraday_data.groupby(["local_segment"]).last()
-        if reference_time == "MIDNIGHT":
+        if routine_reference_time == "MIDNIGHT":
             sleep_intraday_features["endtimelast" + sleep_type] = grouped_last["local_end_date_time"].apply(lambda x: x.hour * 60 + x.minute + x.second / 60)
-        elif reference_time == "START_OF_THE_SEGMENT":
+        elif routine_reference_time == "START_OF_THE_SEGMENT":
             sleep_intraday_features["endtimelast" + sleep_type] = (grouped_last["end_timestamp"] - grouped_last["segment_start_timestamp"]) / (60 * 1000)
         else:
-            raise ValueError("Please check FITBIT_SLEEP_INTRADAY section of config.yaml: REFERENCE_TIME can only be MIDNIGHT or START_OF_THE_SEGMENT.")
+            raise ValueError("Please check FITBIT_SLEEP_INTRADAY section of config.yaml: ROUTINE_REFERENCE_TIME can only be MIDNIGHT or START_OF_THE_SEGMENT.")
 
     return sleep_intraday_features
 
-def routineFeatures(sleep_intraday_data, routine, reference_time, sleep_type, sleep_intraday_features):        
+def routineFeatures(sleep_intraday_data, routine, routine_reference_time, sleep_type, sleep_intraday_features):        
     
     if "starttimefirstmainsleep" in routine or "endtimelastmainsleep" in routine:
-        sleep_intraday_features = singleSleepTypeRoutineFeatures(sleep_intraday_data, routine, reference_time, "mainsleep", sleep_intraday_features)
+        sleep_intraday_features = singleSleepTypeRoutineFeatures(sleep_intraday_data, routine, routine_reference_time, "mainsleep", sleep_intraday_features)
     
     if "starttimefirstnap" in routine or "endtimelastnap" in routine:
-        sleep_intraday_features = singleSleepTypeRoutineFeatures(sleep_intraday_data, routine, reference_time, "nap", sleep_intraday_features)
+        sleep_intraday_features = singleSleepTypeRoutineFeatures(sleep_intraday_data, routine, routine_reference_time, "nap", sleep_intraday_features)
     
     return sleep_intraday_features
 
@@ -207,7 +209,7 @@ def rapids_features(sensor_data_files, time_segment, provider, filter_data_by_se
 
     consider_all = provider["FEATURES"]["LEVELS_AND_TYPES_COMBINING_ALL"]
     include_sleep_later_than = provider["INCLUDE_SLEEP_LATER_THAN"]
-    reference_time = provider["REFERENCE_TIME"]
+    routine_reference_time = provider["ROUTINE_REFERENCE_TIME"]
 
     requested_intraday_features = provider["FEATURES"]
     requested_sleep_levels = provider["SLEEP_LEVELS"]
@@ -254,7 +256,7 @@ def rapids_features(sensor_data_files, time_segment, provider, filter_data_by_se
         sleep_intraday_features = ratiosFeatures(sleep_intraday_features, intraday_features_to_compute["RATIOS_TYPE"], intraday_features_to_compute["RATIOS_SCOPE"], sleep_levels_to_compute, sleep_types_to_compute)
         
         # ROUTINE: only compute requested features
-        sleep_intraday_features = routineFeatures(sleep_intraday_data, intraday_features_to_compute["ROUTINE"], reference_time, sleep_types_to_compute, sleep_intraday_features)
+        sleep_intraday_features = routineFeatures(sleep_intraday_data, intraday_features_to_compute["ROUTINE"], routine_reference_time, sleep_types_to_compute, sleep_intraday_features)
 
         # Reset index and discard features which are not requested by user
         sleep_intraday_features.index.name = "local_segment"
