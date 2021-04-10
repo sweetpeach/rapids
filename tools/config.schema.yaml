@@ -1022,11 +1022,13 @@ properties:
                     uniqueItems: True
                     items:
                       type: string
-                      enum: [avgduration, avgratioduration, avgstarttimeofepisodemain, avgendtimeofepisodemain, avgmidpointofepisodemain, "stdstarttimeofepisodemain", "stdendtimeofepisodemain", "stdmidpointofepisodemain", socialjetlag, meanssdstarttimeofepisodemain, meanssdendtimeofepisodemain, meanssdmidpointofepisodemain, medianssdstarttimeofepisodemain, medianssdendtimeofepisodemain, medianssdmidpointofepisodemain]
+                      enum: [avgduration, avgratioduration, avgstarttimeofepisodemain, avgendtimeofepisodemain, avgmidpointofepisodemain, stdstarttimeofepisodemain, stdendtimeofepisodemain, stdmidpointofepisodemain, socialjetlag, rmssdmeanstarttimeofepisodemain, rmssdmeanendtimeofepisodemain, rmssdmeanmidpointofepisodemain, rmssdmedianstarttimeofepisodemain, rmssdmedianendtimeofepisodemain, rmssdmedianmidpointofepisodemain]
                   SLEEP_LEVELS:
                     type: object
-                    required: [CLASSIC, STAGES, UNIFIED]
+                    required: [INCLUDE_ALL_GROUPS, CLASSIC, STAGES, UNIFIED]
                     properties:
+                      INCLUDE_ALL_GROUPS:
+                        type: boolean
                       CLASSIC:
                         type: array
                         uniqueItems: True
@@ -1051,18 +1053,10 @@ properties:
                     items:
                       type: string
                       enum: [WEEKEND, WEEK, ALL]
-                  GROUP_EPISODES_WITHIN:
-                    type: object
-                    required: [START_TIME, LENGTH]
-                    properties:
-                      START_TIME:
-                        type: number
-                        minimum: 0
-                        maximum: 1439
-                      LENGTH:
-                        type: number
-                        minimum: 0
-                        maximum: 1440
+                  LAST_NIGHT_END:
+                    type: number
+                    minimum: 0
+                    maximum: 1439
         additionalProperties:
           $ref: "#/definitions/PROVIDER"
   
