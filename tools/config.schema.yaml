@@ -1007,7 +1007,7 @@ properties:
                     items:
                       type: string
                       enum: [main, nap, all]
-                  INCLUDE_SLEEP_LATER_THAN:
+                  LAST_NIGHT_END:
                       type: number
                       minimum: 0
                       maximum: 1439

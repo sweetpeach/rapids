@@ -212,7 +212,7 @@ def rapids_features(sensor_data_files, time_segment, provider, filter_data_by_se
 
     sleep_intraday_data = pd.read_csv(sensor_data_files["sensor_data"])
 
-    include_sleep_later_than = provider["INCLUDE_SLEEP_LATER_THAN"]
+    last_night_end = provider["LAST_NIGHT_END"]
     routine_reference_time = provider["ROUTINE_REFERENCE_TIME"]
 
     requested_intraday_features = provider["FEATURES"]
@@ -239,10 +239,10 @@ def rapids_features(sensor_data_files, time_segment, provider, filter_data_by_se
     features_fullnames = featuresFullNames(intraday_features_to_compute, sleep_levels_to_compute, sleep_types_to_compute, levels_include_all_groups)
     sleep_intraday_features = pd.DataFrame(columns=features_fullnames)
     
-    # Include sleep later than
+    # Any 1-minute sleep chuncks with a local time before LAST_NIGHT_END will be discarded.
     start_minutes = sleep_intraday_data.groupby("start_timestamp").first()["local_time"].apply(lambda x: int(x.split(":")[0]) * 60 + int(x.split(":")[1]) + int(x.split(":")[2]) / 60).to_frame().rename(columns={"local_time": "start_minutes"}).reset_index()
     sleep_intraday_data = sleep_intraday_data.merge(start_minutes, on="start_timestamp", how="left")
-    sleep_intraday_data = sleep_intraday_data[sleep_intraday_data["start_minutes"] >= include_sleep_later_than]
+    sleep_intraday_data = sleep_intraday_data[sleep_intraday_data["start_minutes"] >= last_night_end]
     del sleep_intraday_data["start_minutes"]
 
     sleep_intraday_data = filter_data_by_segment(sleep_intraday_data, time_segment)
